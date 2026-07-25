@@ -127,12 +127,20 @@ authority's page first; a wrong link is worse than none.
   not developers. Deferred until the domain and DNS exist at launch, so the alias
   can live on the project domain and be re-pointed if it attracts spam.
 
-  **Name it for its purpose, not generically.** A `hello@` or `contact@` address
-  will receive blocked-path reports, and the moment this site starts accepting
-  those it has become Pathwatch — the model that failed because authorities won't
-  act on third-party reports. Something like `wronglink@footpath.org.uk` or
-  `corrections@` states the scope in the address itself. Avoid starting it with
-  "report": that is the exact word someone with a blocked path is scanning for.
+  **Decided: `wrong-link@footpath.org.uk`**, with `wronglink@` configured as a
+  second alias to the same inbox so a dropped hyphen doesn't bounce. Publish only
+  the hyphenated form — it parses faster than the run-together version.
+
+  **Named for its purpose, not generically, on purpose.** A `hello@` or
+  `contact@` address will receive blocked-path reports, and the moment this site
+  starts accepting those it has become Pathwatch — the model that failed because
+  authorities won't act on third-party reports. `corrections@` was rejected as
+  ambiguous: on a site about paths it could be read as corrections to the
+  definitive map. Anything starting "report" was rejected outright, since that is
+  the word someone with a blocked path is scanning for.
+
+  The GitHub issues link stays alongside it as a secondary route — it also does
+  the provenance work of showing the site is maintained in the open.
 
   The address alone won't be enough. The footer needs to say plainly that path
   problems go to the council and not to us, and a bounce or autoreply saying the
