@@ -162,7 +162,7 @@ DESC = {
     "Hackney": "Highway obstruction report — no rights-of-way form published",
     "Hartlepool": "Countryside access enquiry form",
     "Havering": "Rights-of-way page — links to the parks enquiry form",
-    "Herefordshire": "Highways report form",
+    "Herefordshire": "Highways report form — covers rights of way",
     "Hertfordshire": "Highway fault form — choose “Public rights of way”",
     "Isle of Anglesey": "Path maintenance page — phone or general online form",
     "Isle of Wight": "Rights-of-way team page — online forms or phone",
