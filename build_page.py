@@ -22,6 +22,7 @@ DONE = {
     "Ceredigion": "https://www.ceredigion.gov.uk/resident/coast-countryside/public-rights-of-way/path-management/",
     "Conwy": "https://www.conwy.gov.uk/en/Resident/Leisure-sport-and-health/Coast-and-Countryside/Public-Rights-of-Way.aspx",
     "Cornwall": "https://www.cornwall.gov.uk/environment/countryside/public-rights-of-way/",
+    "Coventry": "https://www.coventry.gov.uk/rights-way/public-rights-way",
     "Cumberland": "https://www.cumberland.gov.uk/parks-culture-and-leisure/countryside-access",
     "Denbighshire": "https://www.denbighshire.gov.uk/en/parking-roads-and-travel/public-rights-of-way/about-public-rights-of-way.aspx",
     "Derbyshire": "https://www.derbyshire.gov.uk/leisure/countryside/access/rights-of-way/rights-of-way.aspx",
@@ -63,6 +64,7 @@ DONE = {
     "Rochdale": "https://www.rochdale.gov.uk/environment-pests/rights-way",
     "Rotherham": "https://www.rotherham.gov.uk/rights-way/public-rights-of-way",
     "Salford": "https://www.salford.gov.uk/parking-roads-and-travel/footpaths-and-pavements/public-rights-of-way/",
+    "Sandwell": "https://www.sandwell.gov.uk/roads-travel-parking/public-rights-way-prow",
     "Sheffield": "https://www.sheffield.gov.uk/roads-pavements/prow",
     "Shropshire": "https://next.shropshire.gov.uk/outdoor-partnerships/report-a-rights-of-way-issue-and-feedback/",
     "Solihull": "https://solihullcouncil.custhelp.com/app/smbc/dio/report_it/forms/transport_highways/report_prow",
@@ -76,6 +78,7 @@ DONE = {
     "Tameside": "https://www.tameside.gov.uk/rightsofway",
     "Trafford": "https://www.trafford.gov.uk/streets-roads-and-transport/roads-highways-and-pavements/public-rights-way-prow/about-public-rights-way-prow",
     "Wakefield": "https://myaccount.wakefield.gov.uk/forms/footpaths-and-bridleways/",
+    "Walsall": "https://go.walsall.gov.uk/roads-parking-and-travel/public-rights-of-way-prow",
     "Warwickshire": "https://rightsofway.warwickshire.gov.uk/",
     "West Sussex": "https://www.westsussex.gov.uk/land-waste-and-housing/public-paths-and-the-countryside/public-rights-of-way/report-a-problem-with-a-right-of-way/",
     "Westmorland and Furness": "https://www.westmorlandandfurness.gov.uk/parks-culture-and-leisure/countryside-access-and-rights-way",
@@ -95,6 +98,7 @@ DESC = {
     "Ceredigion": "Email and phone — no online form",
     "Conwy": "Rights-of-way page — links to the report form",
     "Cornwall": "Rights-of-way page — links to the report form",
+    "Coventry": "Rights-of-way page — email and phone",
     "Cumberland": "Countryside access page — links to the report form",
     "Denbighshire": "Rights-of-way page",
     "Derbyshire": "Rights-of-way page — links to the report form",
@@ -120,12 +124,14 @@ DESC = {
     "Rochdale": "Rights-of-way page — email and phone",
     "Rotherham": "Rights-of-way page — links to the report form",
     "Salford": "Rights-of-way page — links to the report form",
+    "Sandwell": "Rights-of-way page — email",
     "Sheffield": "Rights-of-way page — email or general enquiry form",
     "Staffordshire": "Interactive rights-of-way map — sign-in needed to report",
     "Stockport": "Rights-of-way hub — links onward to report",
     "Swansea": "Email — no online form",
     "Tameside": "Rights-of-way page — links to the report form",
     "Trafford": "Rights-of-way page",
+    "Walsall": "Rights-of-way page — email and phone",
     "Warwickshire": "Interactive rights-of-way map — report via “New issue”",
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
     "Wiltshire": "Rights-of-way page — links to the report form",
@@ -569,7 +575,7 @@ HTML = f'''<!DOCTYPE html>
 
   <section class="hero">
     <h1>Report a blocked right of way</h1>
-    <p>Footpaths, bridleways and byways are kept open by the <strong>highway authority</strong> for the area the path runs through &mdash; usually a county or unitary council, and not necessarily where you live.</p>
+    <p>Footpaths, bridleways and byways are kept open by the <strong>highway authority</strong> for the area the path runs through &mdash; usually a county or unitary council.</p>
   </section>
 
   <hr class="row-rule">
