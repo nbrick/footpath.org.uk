@@ -10,10 +10,12 @@ OUT_DIR = Path(__file__).resolve().parent
 
 # --- Authorities we have a verified reporting link for -----------------------
 DONE = {
-    "Bath and North East Somerset": "https://fix.bathnes.gov.uk/",
-    "Buckinghamshire": "https://fixmystreet.buckinghamshire.gov.uk/",
+    "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
+    "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
     "Hillingdon": "https://www.hillingdon.gov.uk/article/7576/Report-a-public-right-of-way-issue-including-bridleways-and-footpaths",
-    "Lincolnshire": "https://fixmystreet.lincolnshire.gov.uk/",
+    "Lincolnshire": "https://www.lincolnshire.gov.uk/coast-countryside/public-rights-way/3",
+    "Newcastle upon Tyne": "https://new.newcastle.gov.uk/travel/management/rightsofway/report",
+    "North Lincolnshire": "https://www.northlincs.gov.uk/planning-and-environment/access-to-the-countryside/",
     "Oxfordshire": "https://www.oxfordshire.gov.uk/residents/environment-and-planning/countryside/countryside-access/public-rights-way/report-footpath-issue",
     "Rhondda Cynon Taf": "https://www.rctcbc.gov.uk/EN/Resident/PlanningandBuildingControl/Countryside/PublicRightsofWay/ReportanissuewithaPublicRightofWay.aspx",
     "Somerset": "https://www.somerset.gov.uk/roads-travel-and-parking/report-a-problem-with-a-public-right-of-way/",
@@ -22,9 +24,7 @@ DONE = {
 
 # Short descriptor of where a verified link lands. Default = dedicated RoW form.
 DESC = {
-    "Bath and North East Somerset": "Council fault reporting (FixMyStreet)",
-    "Buckinghamshire": "Council fault reporting (FixMyStreet)",
-    "Lincolnshire": "Council fault reporting (FixMyStreet)",
+    "North Lincolnshire": "Countryside access page — links to the report form",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
