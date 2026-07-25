@@ -66,26 +66,67 @@ Don't hand-edit `index.html`. Add the authority to the `DONE` dict in
 
     python3 build_page.py
 
-That rebuilds the whole page — moving the row from a red "Link needed" marker to
-a working link and updating the counts. Verify every URL by actually opening the
+That rebuilds the whole page — moving the row from "Not checked yet" to a
+working link and updating the counts. Verify every URL by actually opening the
 authority's page first; a wrong link is worse than none.
 
 ## Still to do
 
+- **Link coverage.** 107 of 175 authorities still unchecked. Some councils block
+  automated fetching with a 403, so those need opening in a browser by hand.
+- **Inner London.** Twelve boroughs are flagged as having no definitive map. If
+  that's right, "Not checked yet" misrepresents them and they need their own row
+  state. Supporting evidence: Highways Act 1980 s.130A explicitly excludes inner
+  London authorities from the obstruction-notice procedure, so they clearly do
+  sit outside the normal regime — but the definitive-map claim itself is still
+  unconfirmed.
 - **A contact address on the project domain.** The footer currently sends people
   to GitHub issues, which needs an account most visitors won't have — walkers,
   not developers. `hello@footpath.org.uk` (or similar) as the primary route, with
   GitHub kept as a secondary. Deliberately deferred until the domain and DNS
   exist at launch, so the alias can live on the project domain and be re-pointed
   if it attracts spam.
-- **Link coverage.** 120 of 175 authorities still unchecked.
-- **Inner London.** Twelve boroughs are flagged as having no definitive map. If
-  that's right, "Not checked yet" misrepresents them and they need their own row
-  state; the claim needs confirming first.
 - **Google Fonts.** The page pulls Bricolage Grotesque from
   `fonts.googleapis.com`, so every visitor's browser contacts Google before the
   page renders. Worth self-hosting the font or dropping it, both to remove the
   third-party request and to stop the page depending on someone else's CDN.
+
+## Ideas worth building
+
+Roughly in order of value per hour of work.
+
+- **What to do when nothing happens.** The site currently stops at "here is the
+  form", and that is where people give up. Two levers are worth stating plainly,
+  both verified against legislation.gov.uk:
+  - **Highways Act 1980 s.130A** — any person may serve notice on the highway
+    authority requiring it to secure removal of an obstruction, and the authority
+    must respond within **one month**. Hardly anyone knows this exists. It turns
+    an ignored report into a formal clock.
+  - **Highways Act 1980 s.134** — where a path is ploughed, the occupier must
+    reinstate it within **14 days** of first disturbance for sowing, or **24
+    hours** otherwise (extendable by the authority up to 28 days). Failure is an
+    offence carrying a level 3 fine. Ploughing is the commonest rural obstruction
+    and most walkers assume nothing can be done about it.
+- **Place, not council.** The list asks which authority you want; the user knows
+  where they were walking. In two-tier areas that mismatch is exactly where
+  reports go astray — someone in the Peak District near Sheffield needs
+  Derbyshire and will type "Sheffield". A bundled place-name or postcode-district
+  to authority lookup (ONS publish the data) would turn the question into "where
+  were you?". Biggest improvement to the core job, and the most work.
+- **Publish the links as data.** The scarce asset is not the page, it is the
+  hand-verified links — nobody else has these, because everyone else
+  pattern-matches council URLs. Emitting `authorities.json` from the same build
+  costs almost nothing and lets the Ramblers, OpenStreetMap or any walking app
+  consume it.
+- **Grid reference helper.** The hardest field on any council form is "exactly
+  where". Browser geolocation converted to an OS grid reference in-page, with
+  nothing transmitted anywhere.
+
+### Deliberately not doing
+
+Collecting, forwarding or tracking reports. The Ramblers tried it with Pathwatch
+and retired it because authorities wouldn't accept third-party submissions — and
+it would cost the one claim this site can make cleanly.
 
 ## Credit
 
