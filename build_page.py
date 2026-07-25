@@ -490,6 +490,19 @@ NATIONAL_PARKS = [
                  "council, but the reporting route is the council&rsquo;s."),
     },
     {
+        "title": "In the Broads, it&rsquo;s the councils, not the Authority",
+        "match": ["broads", "norfolk broads", "wroxham", "horning", "hickling",
+                  "potter heigham", "ranworth", "oulton broad", "beccles",
+                  "wherrymans way", "norfolk", "suffolk"],
+        "where": "In the Broads",
+        "authorities": [],
+        "body": ("The Broads Authority describes its access role as open access land "
+                 "&mdash; placing notices, appointing wardens, deciding applications to "
+                 "restrict access &mdash; rather than the rights-of-way network. "
+                 "<b>Norfolk and Suffolk</b> remain the highway authorities for the "
+                 "footpaths, and both are in the list above."),
+    },
+    {
         "title": "On Dartmoor, report it to the National Park",
         "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
                   "moretonhampstead", "chagford", "two moors way", "okehampton",
