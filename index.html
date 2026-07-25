@@ -250,6 +250,12 @@
     body { font-size: 16px; }
     .brand { font-size: 0.98rem; }
     .about summary { font-size: 0.8rem; }
+
+    /* The descriptor was sharing its line with a nowrap "Report a problem",
+       leaving it barely 190px on a phone — enough to wrap even the short ones.
+       Drop it to its own full-width line instead. */
+    .go { grid-row: 1 / 2; }
+    .meta { grid-column: 1 / -1; margin-top: 4px; }
   }
   @media (prefers-reduced-motion: reduce) {
     a.row:hover .go { transform: none; }
