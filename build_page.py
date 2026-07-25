@@ -750,7 +750,7 @@ HTML = f'''<!DOCTYPE html>
            enterkeyhint="search" placeholder="Start typing the council or county where the path is&hellip;">
   </div>
 
-  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map, roughly ordered by how much path network each one looks after. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked &ldquo;Not checked yet&rdquo; are ones nobody has verified a reporting link for &mdash; every link here was opened and confirmed by hand before it went up.</p>
+  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map, roughly ordered by how much path network each one looks after.</p>
 
   <ul class="authorities" id="list">
 {rows_html}
