@@ -12,21 +12,41 @@ OUT_DIR = Path(__file__).resolve().parent
 DONE = {
     "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
+    "Cambridgeshire": "https://www.cambridgeshire.gov.uk/residents/libraries-leisure-culture/countryside-access/rights-of-way",
     "Ceredigion": "https://www.ceredigion.gov.uk/resident/coast-countryside/public-rights-of-way/path-management/",
+    "Derbyshire": "https://www.derbyshire.gov.uk/leisure/countryside/access/rights-of-way/rights-of-way.aspx",
+    "Devon": "https://www.devon.gov.uk/roads-and-transport/report-a-problem/report-a-problem-with-a-public-right-of-way/",
+    "East Sussex": "https://www.eastsussex.gov.uk/leisure-tourism/discover-east-sussex/rights-of-way/problems-on-rights-of-way/report",
+    "Essex": "https://www.essexhighways.org/tell-us/public-rights-of-way-issues",
+    "Gloucestershire": "https://www.gloucestershire.gov.uk/prow/report-a-problem/",
+    "Hertfordshire": "https://www.hertfordshire.gov.uk/services/highways-roads-and-pavements/report-a-problem/report-a-highway-fault/what-type-of-fault-are-you-reporting.aspx",
     "Hillingdon": "https://www.hillingdon.gov.uk/article/7576/Report-a-public-right-of-way-issue-including-bridleways-and-footpaths",
+    "Lancashire": "https://www.lancashire.gov.uk/roads-parking-and-travel/report-it/public-right-of-way/",
     "Lincolnshire": "https://www.lincolnshire.gov.uk/coast-countryside/public-rights-way/3",
     "Newcastle upon Tyne": "https://new.newcastle.gov.uk/travel/management/rightsofway/report",
     "North Lincolnshire": "https://www.northlincs.gov.uk/planning-and-environment/access-to-the-countryside/",
+    "Nottinghamshire": "https://www.nottinghamshire.gov.uk/planning-and-environment/walking-cycling-and-rights-of-way/rights-of-way/report-problem",
     "Oxfordshire": "https://www.oxfordshire.gov.uk/residents/environment-and-planning/countryside/countryside-access/public-rights-way/report-footpath-issue",
     "Rhondda Cynon Taf": "https://www.rctcbc.gov.uk/EN/Resident/PlanningandBuildingControl/Countryside/PublicRightsofWay/ReportanissuewithaPublicRightofWay.aspx",
     "Somerset": "https://www.somerset.gov.uk/roads-travel-and-parking/report-a-problem-with-a-public-right-of-way/",
+    "Staffordshire": "https://prow.staffordshire.gov.uk/standardmap.aspx",
+    "Suffolk": "https://www.suffolk.gov.uk/roads-and-transport/public-rights-of-way-in-suffolk/report-a-public-right-of-way-issue",
     "Surrey": "https://www.surreycc.gov.uk/culture-and-leisure/countryside/management/footpaths-byways-and-bridleways/report-a-problem",
+    "Warwickshire": "https://rightsofway.warwickshire.gov.uk/",
+    "West Sussex": "https://www.westsussex.gov.uk/land-waste-and-housing/public-paths-and-the-countryside/public-rights-of-way/report-a-problem-with-a-right-of-way/",
+    "Worcestershire": "https://capublic.worcestershire.gov.uk/PROWPublic/PROWFault.aspx",
 }
 
 # Short descriptor of where a verified link lands. Default = dedicated RoW form.
 DESC = {
+    "Cambridgeshire": "Rights-of-way page — links to the report form",
     "Ceredigion": "Email and phone — no online form",
+    "Derbyshire": "Rights-of-way page — links to the report form",
+    "Hertfordshire": "Highway fault form — choose “Public rights of way”",
+    "Lancashire": "Email report — no online form",
     "North Lincolnshire": "Countryside access page — links to the report form",
+    "Staffordshire": "Interactive rights-of-way map — sign-in needed to report",
+    "Warwickshire": "Interactive rights-of-way map — report via “New issue”",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
