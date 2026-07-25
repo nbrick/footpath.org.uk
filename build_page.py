@@ -431,6 +431,38 @@ NATIONAL_PARKS = [
                  "the Authority does maintain."),
     },
     {
+        # The Authority's own page: rights of way "are the legal responsibility of
+        # and maintained by Highway Authorities". Councils, unambiguously.
+        "title": "In the Peak District, it&rsquo;s the councils, not the National Park",
+        "match": ["peak district", "kinder", "kinder scout", "edale", "bakewell",
+                  "castleton", "dovedale", "mam tor", "stanage", "curbar",
+                  "hathersage", "tideswell", "monsal", "derbyshire",
+                  "staffordshire", "cheshire east", "sheffield", "barnsley",
+                  "kirklees", "oldham"],
+        "where": "In the Peak District",
+        "authorities": [],
+        "body": ("The Authority is explicit that public rights of way &ldquo;are the legal "
+                 "responsibility of and maintained by Highway Authorities&rdquo;. Here that "
+                 "means <b>Derbyshire, Staffordshire, Cheshire East, Sheffield, Barnsley, "
+                 "Kirklees and Oldham</b>, all of which are in the list above. The "
+                 "Authority looks after open access land, and owns the Trails &mdash; the "
+                 "former railway lines &mdash; which are its own responsibility."),
+    },
+    {
+        "title": "On Exmoor, report it to the National Park",
+        "match": ["exmoor", "dunkery", "porlock", "lynton", "lynmouth",
+                  "dulverton", "simonsbath", "tarr steps", "doone valley",
+                  "devon", "somerset"],
+        "url": "https://www.exmoor-nationalpark.gov.uk/exmoor-for-everyone/out-and-about-essentials/report-a-path-problem",
+        "link": "Report a path problem",
+        "where": "On Exmoor",
+        "authorities": ["Devon", "Somerset"],
+        "body": ("Exmoor National Park Authority takes path reports directly, by email or "
+                 "phone, with a duty ranger at weekends and on bank holidays. Its online "
+                 "reporting runs on Somerset Council&rsquo;s mapping system, which covers "
+                 "the whole park including the Devon side."),
+    },
+    {
         "title": "On Dartmoor, report it to the National Park",
         "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
                   "moretonhampstead", "chagford", "two moors way", "okehampton",
