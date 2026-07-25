@@ -92,10 +92,19 @@ authority's page first; a wrong link is worse than none.
   has.
 - **A contact address on the project domain.** The footer currently sends people
   to GitHub issues, which needs an account most visitors won't have — walkers,
-  not developers. `hello@footpath.org.uk` (or similar) as the primary route, with
-  GitHub kept as a secondary. Deliberately deferred until the domain and DNS
-  exist at launch, so the alias can live on the project domain and be re-pointed
-  if it attracts spam.
+  not developers. Deferred until the domain and DNS exist at launch, so the alias
+  can live on the project domain and be re-pointed if it attracts spam.
+
+  **Name it for its purpose, not generically.** A `hello@` or `contact@` address
+  will receive blocked-path reports, and the moment this site starts accepting
+  those it has become Pathwatch — the model that failed because authorities won't
+  act on third-party reports. Something like `wronglink@footpath.org.uk` or
+  `corrections@` states the scope in the address itself. Avoid starting it with
+  "report": that is the exact word someone with a blocked path is scanning for.
+
+  The address alone won't be enough. The footer needs to say plainly that path
+  problems go to the council and not to us, and a bounce or autoreply saying the
+  same would catch the rest.
 - **Google Fonts.** The page pulls Bricolage Grotesque from
   `fonts.googleapis.com`, so every visitor's browser contacts Google before the
   page renders. Worth self-hosting the font or dropping it, both to remove the
