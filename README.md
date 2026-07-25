@@ -74,12 +74,22 @@ authority's page first; a wrong link is worse than none.
 
 - **Link coverage.** 107 of 175 authorities still unchecked. Some councils block
   automated fetching with a 403, so those need opening in a browser by hand.
-- **Inner London.** Twelve boroughs are flagged as having no definitive map. If
-  that's right, "Not checked yet" misrepresents them and they need their own row
-  state. Supporting evidence: Highways Act 1980 s.130A explicitly excludes inner
-  London authorities from the obstruction-notice procedure, so they clearly do
-  sit outside the normal regime — but the definitive-map claim itself is still
-  unconfirmed.
+- **Inner London — decided: treat as ordinary rows.** The source list flags twelve
+  boroughs as having no definitive map, but that doesn't survive checking.
+  Wildlife and Countryside Act 1981 s.66 defines "surveying authority" to include
+  London borough councils with no inner-London exclusion, and the s.53 duty to
+  keep a definitive map under continuous review has no London carve-out. What is
+  true is narrower: Highways Act 1980 s.130A excludes inner London authorities
+  from the obstruction-notice procedure. So whether a given borough has recorded
+  paths is a question of fact per borough, not a legal blanket, and each gets
+  checked like anywhere else. A distinct row state is still the right answer for
+  an authority with genuinely no recorded network — but only once that is
+  verified, not on the source list's say-so.
+- **The denominator.** Some authorities may never have a reporting link, so
+  "n of 175" measures against a target that cannot be reached. Decision for now
+  is to leave it at 175 rather than adjust it on an assumption. Worth revisiting
+  at launch, where the count probably doesn't need the prominence it currently
+  has.
 - **A contact address on the project domain.** The footer currently sends people
   to GitHub issues, which needs an account most visitors won't have — walkers,
   not developers. `hello@footpath.org.uk` (or similar) as the primary route, with
