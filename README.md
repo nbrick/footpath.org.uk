@@ -34,6 +34,37 @@ wrong link is worse than no link, because it sends someone reporting a real
 obstruction to the wrong place. Rows nobody has checked say so plainly rather
 than guessing.
 
+Coverage is better than the row count suggests. The list is ordered by roughly
+how much path network each authority looks after, so the rows that matter most
+were done first: **120 of 175 rows, but about 94% of the estimated network**.
+
+## National parks
+
+In seven of the thirteen national parks the **park authority**, not the highway
+authority, looks after the rights of way and takes the reports. In the other six
+the councils keep it. There is no rule to infer — the function is delegated by
+agreement, so each park had to be read individually, and assuming either way
+would have been wrong about half the time.
+
+| Park authority takes the report | Councils keep it |
+| --- | --- |
+| Bannau Brycheiniog, Dartmoor, Exmoor, Lake District, North York Moors, Yorkshire Dales, Pembrokeshire Coast | Eryri, South Downs, Peak District, New Forest, Northumberland, the Broads |
+
+This is handled in two places, both generated from the same `NATIONAL_PARKS`
+list in `build_page.py` so they cannot drift apart:
+
+- **A search panel** appears when someone searches a park or a place inside one.
+  Unlike the Scotland and Northern Ireland panels, these are *additive* —
+  searching "Pembrokeshire" shows the council row and the park note together,
+  because which one is needed depends on where the path is.
+- **A note under the affected rows**, for anyone scrolling rather than searching.
+  Only rows whose park takes the reports get one; where the councils keep the
+  function the row was already right.
+
+Adding a park means adding one entry to `NATIONAL_PARKS`. Set `authorities` to
+an empty list where the councils keep the function, and omit `url` where the
+answer is a row in the list rather than another website.
+
 ## Keeping it out of search for now
 
 `index.html` carries a `<meta name="robots" content="noindex, nofollow">` tag.
@@ -72,8 +103,9 @@ authority's page first; a wrong link is worse than none.
 
 ## Still to do
 
-- **Link coverage.** 107 of 175 authorities still unchecked. Some councils block
-  automated fetching with a 403, so those need opening in a browser by hand.
+- **Link coverage.** 55 of 175 authorities still unchecked, together holding
+  about 6% of the estimated network. Wales is the weakest region. Many councils
+  block automated fetching with a 403, so those need opening in a browser.
 - **Inner London — decided: treat as ordinary rows.** The source list flags twelve
   boroughs as having no definitive map, but that doesn't survive checking.
   Wildlife and Countryside Act 1981 s.66 defines "surveying authority" to include
