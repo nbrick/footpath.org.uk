@@ -156,7 +156,7 @@ DESC = {
     "Derbyshire": "Rights-of-way page — links to the report form",
     "Doncaster": "Rights-of-way page — links to the report form",
     "Dudley": "Rights-of-way page — links to the report form",
-    "East Riding of Yorkshire": "Rights-of-way page — phone and email",
+    "East Riding of Yorkshire": "Rights-of-way page — links to the report map",
     "Gateshead": "Rights-of-way page",
     "Gwynedd": "Rights-of-way page — links to the report form",
     "Hackney": "Highway obstruction report — no rights-of-way form published",
