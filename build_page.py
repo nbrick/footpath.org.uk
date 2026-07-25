@@ -150,7 +150,7 @@ DESC = {
     "Cornwall": "Rights-of-way page — links to the report form",
     "Coventry": "Rights-of-way page — email and phone",
     "Croydon": "Rights-of-way page — phone only",
-    "Cumberland": "Countryside access page — links to the report form",
+    "Cumberland": "Countryside access page",
     "Darlington": "Rights-of-way page — email and phone",
     "Denbighshire": "Rights-of-way page",
     "Derbyshire": "Rights-of-way page — links to the report form",
