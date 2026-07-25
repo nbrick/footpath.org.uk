@@ -180,7 +180,7 @@ DESC = {
     "Trafford": "Rights-of-way page",
     "Walsall": "Rights-of-way page — email and phone",
     "Wandsworth": "Street problem form — choose “Highway obstructions”",
-    "Warrington": "Rights-of-way page",
+    "Warrington": "Rights-of-way page — links to the report form",
     "Warwickshire": "Interactive rights-of-way map — report via “New issue”",
     "West Berkshire": "Rights-of-way page — links to the report form",
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
