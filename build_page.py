@@ -115,6 +115,7 @@ DONE = {
     "Westmorland and Furness": "https://www.westmorlandandfurness.gov.uk/parks-culture-and-leisure/countryside-access-and-rights-way",
     "Wigan": "https://www.wigan.gov.uk/Resident/Parking-Roads-Travel/Public-rights-of-way/Report-a-problem.aspx",
     "Wiltshire": "https://www.wiltshire.gov.uk/recreation-rights-of-way",
+    "Windsor and Maidenhead": "https://www.rbwm.gov.uk/transport-and-streets/rights-way",
     "Wirral": "https://my.wirral.gov.uk/service/Public_Right_of_Way_problem",
     "Wokingham": "https://www.wokingham.gov.uk/roads/report/report-problems-public-rights-way",
     "Worcestershire": "https://capublic.worcestershire.gov.uk/PROWPublic/PROWFault.aspx",
@@ -193,6 +194,7 @@ DESC = {
     "West Berkshire": "Rights-of-way page — links to the report form",
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
     "Wiltshire": "Rights-of-way page — links to the report form",
+    "Windsor and Maidenhead": "Rights-of-way page — links to the report form",
     "Wirral": "Report form — account optional",
     "York": "Rights-of-way page — email and phone",
 }
