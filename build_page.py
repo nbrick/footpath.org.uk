@@ -413,7 +413,7 @@ HTML = f'''<!DOCTYPE html>
     line-height: 1.05;
     letter-spacing: -0.025em;
     margin: 0 0 10px;
-    max-width: 17ch;
+    max-width: 20ch;
   }}
   .hero p {{
     font-size: 1.06rem; color: var(--ink-soft); margin: 0; max-width: 48ch;
@@ -585,7 +585,7 @@ HTML = f'''<!DOCTYPE html>
   </header>
 
   <section class="hero">
-    <h1>Report a blocked right of way</h1>
+    <h1>Report a blocked public right of way</h1>
     <p>Footpaths, bridleways and byways are kept open by the <strong>highway authority</strong> for the area the path runs through &mdash; usually a county or unitary council.</p>
   </section>
 
