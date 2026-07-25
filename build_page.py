@@ -20,8 +20,11 @@ DONE = {
     "Cambridgeshire": "https://www.cambridgeshire.gov.uk/residents/libraries-leisure-culture/countryside-access/rights-of-way",
     "Cardiff": "https://www.cardiffcouncilforms.co.uk/article/1699",
     "Ceredigion": "https://www.ceredigion.gov.uk/resident/coast-countryside/public-rights-of-way/path-management/",
+    "Cheshire East": "https://www.cheshireeast.gov.uk/leisure,_culture_and_tourism/public_rights_of_way/contact_public_rights_of_way.aspx",
+    "Cheshire West and Chester": "https://www.cheshirewestandchester.gov.uk/residents/transport-and-roads/public-rights-of-way",
     "Conwy": "https://www.conwy.gov.uk/en/Resident/Leisure-sport-and-health/Coast-and-Countryside/Public-Rights-of-Way.aspx",
     "Cornwall": "https://www.cornwall.gov.uk/environment/countryside/public-rights-of-way/",
+    "County Durham": "https://www.durham.gov.uk/article/2751/Report-a-problem-with-a-Public-Right-of-Way",
     "Coventry": "https://www.coventry.gov.uk/rights-way/public-rights-way",
     "Cumberland": "https://www.cumberland.gov.uk/parks-culture-and-leisure/countryside-access",
     "Denbighshire": "https://www.denbighshire.gov.uk/en/parking-roads-and-travel/public-rights-of-way/about-public-rights-of-way.aspx",
@@ -49,11 +52,14 @@ DONE = {
     "Lincolnshire": "https://www.lincolnshire.gov.uk/coast-countryside/public-rights-way/3",
     "Liverpool": "https://liverpool.gov.uk/parking-roads-and-travel/public-rights-of-way/",
     "Merthyr Tydfil": "https://www.merthyr.gov.uk/do-it-online/report/rights-of-way/",
+    "Milton Keynes": "https://www.milton-keynes.gov.uk/environment-parks-and-open-spaces/rights-way/public-rights-way",
     "Monmouthshire": "https://access.monmouthshire.gov.uk/standardmap.aspx",
     "Newcastle upon Tyne": "https://new.newcastle.gov.uk/travel/management/rightsofway/report",
     "Newport": "https://www.newport.gov.uk/our-city/see-and-do/green-spaces/public-rights-way",
     "Norfolk": "https://www.norfolk.gov.uk/roads-and-transport/roads/report-a-problem",
     "North Lincolnshire": "https://www.northlincs.gov.uk/planning-and-environment/access-to-the-countryside/",
+    "North Northamptonshire": "https://www.northnorthants.gov.uk/rights-way-and-searches/report-public-right-way-issue",
+    "North Somerset": "https://www.n-somerset.gov.uk/my-services/libraries-leisure-open-spaces/parks-countryside/public-rights-way/report-issue-public-right-way",
     "North Yorkshire": "https://www.northyorks.gov.uk/roads-parking-and-travel/public-rights-way/rights-way-maintenance",
     "Northumberland": "https://www.northumberland.gov.uk/about-council/digital-maps/public-rights-way-northumberland",
     "Nottinghamshire": "https://www.nottinghamshire.gov.uk/planning-and-environment/walking-cycling-and-rights-of-way/rights-of-way/report-problem",
@@ -86,6 +92,7 @@ DONE = {
     "Wiltshire": "https://www.wiltshire.gov.uk/recreation-rights-of-way",
     "Wirral": "https://my.wirral.gov.uk/service/Public_Right_of_Way_problem",
     "Worcestershire": "https://capublic.worcestershire.gov.uk/PROWPublic/PROWFault.aspx",
+    "York": "https://www.york.gov.uk/ReportPROWProblem",
 }
 
 # Short descriptor of where a verified link lands. Default = dedicated RoW form.
@@ -96,6 +103,8 @@ DESC = {
     "Calderdale": "Rights-of-way page — general council contact only",
     "Cambridgeshire": "Rights-of-way page — links to the report form",
     "Ceredigion": "Email and phone — no online form",
+    "Cheshire East": "Rights-of-way contact page — form, email or phone",
+    "Cheshire West and Chester": "Rights-of-way page — links to the report form",
     "Conwy": "Rights-of-way page — links to the report form",
     "Cornwall": "Rights-of-way page — links to the report form",
     "Coventry": "Rights-of-way page — email and phone",
@@ -114,6 +123,7 @@ DESC = {
     "Lancashire": "Email report — no online form",
     "Leicestershire": "Council report-it portal — covers rights of way",
     "Liverpool": "Rights-of-way page — links to the contact form",
+    "Milton Keynes": "Rights-of-way page — phone, no online form",
     "Monmouthshire": "Interactive rights-of-way map — sign-in needed to report",
     "Newport": "Rights-of-way page",
     "Norfolk": "Roads and transport report form",
@@ -136,6 +146,7 @@ DESC = {
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
     "Wiltshire": "Rights-of-way page — links to the report form",
     "Wirral": "Report form — account optional",
+    "York": "Rights-of-way page — email and phone",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
