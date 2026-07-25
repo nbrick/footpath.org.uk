@@ -435,7 +435,7 @@ HTML = f'''<!DOCTYPE html>
 
   <section class="hero">
     <h1>Report a blocked right of way</h1>
-    <p>Reports go to the <strong>highway authority</strong> for the area the path runs through &mdash; usually a county or unitary council. That may not be where you live.</p>
+    <p>Footpaths, bridleways and byways are kept open by the <strong>highway authority</strong> for the area the path runs through &mdash; usually a county or unitary council, and not necessarily where you live.</p>
   </section>
 
   <hr class="row-rule">
