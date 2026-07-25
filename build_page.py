@@ -14,7 +14,9 @@ DONE = {
     "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
     "Bolton": "https://www.bolton.gov.uk/walking-cycling-rights-way/public-right-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
+    "Bury": "https://www.bury.gov.uk/index.aspx?articleid=11283",
     "Caerphilly": "https://eforms.caerphilly.gov.uk/forms/webCAHWPRW101.aspx",
+    "Calderdale": "https://new.calderdale.gov.uk/streets-and-transport/public-rights-way",
     "Cambridgeshire": "https://www.cambridgeshire.gov.uk/residents/libraries-leisure-culture/countryside-access/rights-of-way",
     "Cardiff": "https://www.cardiffcouncilforms.co.uk/article/1699",
     "Ceredigion": "https://www.ceredigion.gov.uk/resident/coast-countryside/public-rights-of-way/path-management/",
@@ -58,6 +60,8 @@ DONE = {
     "Oxfordshire": "https://www.oxfordshire.gov.uk/residents/environment-and-planning/countryside/countryside-access/public-rights-way/report-footpath-issue",
     "Powys": "https://en.powys.gov.uk/article/2589/Report-a-concern-with-a-right-of-way",
     "Rhondda Cynon Taf": "https://www.rctcbc.gov.uk/EN/Resident/PlanningandBuildingControl/Countryside/PublicRightsofWay/ReportanissuewithaPublicRightofWay.aspx",
+    "Rochdale": "https://www.rochdale.gov.uk/environment-pests/rights-way",
+    "Rotherham": "https://www.rotherham.gov.uk/rights-way/public-rights-of-way",
     "Salford": "https://www.salford.gov.uk/parking-roads-and-travel/footpaths-and-pavements/public-rights-of-way/",
     "Sheffield": "https://www.sheffield.gov.uk/roads-pavements/prow",
     "Shropshire": "https://next.shropshire.gov.uk/outdoor-partnerships/report-a-rights-of-way-issue-and-feedback/",
@@ -77,6 +81,7 @@ DONE = {
     "Westmorland and Furness": "https://www.westmorlandandfurness.gov.uk/parks-culture-and-leisure/countryside-access-and-rights-way",
     "Wigan": "https://www.wigan.gov.uk/Resident/Parking-Roads-Travel/Public-rights-of-way/Report-a-problem.aspx",
     "Wiltshire": "https://www.wiltshire.gov.uk/recreation-rights-of-way",
+    "Wirral": "https://my.wirral.gov.uk/service/Public_Right_of_Way_problem",
     "Worcestershire": "https://capublic.worcestershire.gov.uk/PROWPublic/PROWFault.aspx",
 }
 
@@ -84,6 +89,8 @@ DONE = {
 DESC = {
     "Barnsley": "Rights-of-way page — links to the report form",
     "Bolton": "Rights-of-way page — email and phone",
+    "Bury": "Rights-of-way page — links to the report form",
+    "Calderdale": "Rights-of-way page — general council contact only",
     "Cambridgeshire": "Rights-of-way page — links to the report form",
     "Ceredigion": "Email and phone — no online form",
     "Conwy": "Rights-of-way page — links to the report form",
@@ -110,6 +117,8 @@ DESC = {
     "North Yorkshire": "Rights-of-way page — links to the report form",
     "Northumberland": "Rights-of-way page — links to the report form",
     "Oldham": "Rights-of-way page — links to the report form",
+    "Rochdale": "Rights-of-way page — email and phone",
+    "Rotherham": "Rights-of-way page — links to the report form",
     "Salford": "Rights-of-way page — links to the report form",
     "Sheffield": "Rights-of-way page — email or general enquiry form",
     "Staffordshire": "Interactive rights-of-way map — sign-in needed to report",
@@ -120,6 +129,7 @@ DESC = {
     "Warwickshire": "Interactive rights-of-way map — report via “New issue”",
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
     "Wiltshire": "Rights-of-way page — links to the report form",
+    "Wirral": "Report form — account optional",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
@@ -311,6 +321,7 @@ HTML = f'''<!DOCTYPE html>
   :root {{
     --paper:      #ECEDE5;
     --paper-2:    #E3E4DA;
+    --paper-up:   #F7F8F2;
     --ink:        #20291F;
     --ink-soft:   #545E4C;
     --hair:       #C7C8BA;
@@ -360,7 +371,7 @@ HTML = f'''<!DOCTYPE html>
   .about-body {{
     position: absolute; right: 0; top: calc(100% + 6px); z-index: 20;
     width: min(42ch, calc(100vw - 44px));
-    background: var(--paper-2); border: 1px solid var(--hair);
+    background: var(--paper-up); border: 1px solid var(--hair);
     border-radius: 10px; padding: 15px 17px;
     box-shadow: 0 10px 28px rgba(32,41,31,0.14);
     font-size: 0.88rem; color: var(--ink-soft);
