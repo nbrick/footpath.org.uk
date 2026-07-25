@@ -18,31 +18,20 @@ Ireland have separate systems and aren't included.
 There is deliberately **no `CNAME` file** in this bundle, so the site stays on
 the github.io URL and doesn't try to claim footpath.org.uk yet.
 
-## Before you publish: two things to know
+## Current state
 
-1. **Pages from a private repo needs a paid plan.** On a free personal account,
-   GitHub Pages only works from a *public* repo. A private repo can publish Pages
-   only on GitHub Pro/Team/Enterprise.
-2. **The published site is public either way.** A private repo hides your source
-   code, not the page — anyone with the URL can view a Pages site. Genuinely
-   access-restricted Pages is Enterprise-only.
+The repo is public and the site is live at
+`https://nbrick.github.io/footpath.org.uk/`, served by GitHub Pages from `main`
+at the repo root.
 
-If you want it truly non-public while it's this incomplete, don't enable Pages at
-all yet — just open `index.html` in a browser to preview locally. Zero exposure,
-no plan needed.
+`index.html` carries `<meta name="robots" content="noindex, nofollow">`, so it
+stays out of search results while coverage is still being filled in. There is
+deliberately no `CNAME` and no custom domain yet — see the launch steps below.
 
-## Publish to the github.io URL
-
-With repo `nbrick/footpath.org.uk`, the site will live at
-`https://nbrick.github.io/footpath.org.uk/`.
-
-1. Upload `index.html`, `robots.txt`, `build_page.py`, `README.md` to the repo.
-2. Settings -> Pages -> Source: Deploy from a branch, Branch: `main`,
-   folder: `/ (root)` -> Save.
-3. Do NOT set a Custom domain yet, and don't add a `CNAME` file.
-
-(Private repo -> you'll need Pro or above for step 2. Otherwise set the repo to
-Public.)
+Every link on the site was opened and confirmed by hand before it went up. A
+wrong link is worse than no link, because it sends someone reporting a real
+obstruction to the wrong place. Rows nobody has checked say so plainly rather
+than guessing.
 
 ## Keeping it out of search for now
 
