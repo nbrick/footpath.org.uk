@@ -415,6 +415,22 @@ NATIONAL_PARKS = [
                  "access land, and will take a report either way."),
     },
     {
+        # Another exception, and a partial one: the Authority keeps the South Downs
+        # Way itself but the councils kept everything else. No row notes.
+        "title": "In the South Downs, it&rsquo;s the councils, not the National Park",
+        "match": ["south downs", "south downs way", "beachy head", "seven sisters",
+                  "ditchling", "butser", "petersfield", "midhurst", "arundel",
+                  "hampshire", "west sussex", "east sussex", "brighton and hove"],
+        "where": "In the South Downs",
+        "authorities": [],
+        "body": ("The Authority&rsquo;s own account is that when the park was created the "
+                 "local highway authorities chose to keep responsibility for maintaining "
+                 "the footpaths, so <b>Hampshire, West Sussex, East Sussex and Brighton "
+                 "and Hove</b> handle rights of way here. All four are in the list above. "
+                 "The one exception is the South Downs Way itself, a National Trail, which "
+                 "the Authority does maintain."),
+    },
+    {
         "title": "On Dartmoor, report it to the National Park",
         "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
                   "moretonhampstead", "chagford", "two moors way", "okehampton",
@@ -579,10 +595,18 @@ def park_notes(name):
     )
 
 
+def park_link(p):
+    """Some parks have no useful destination — the answer is a row in the list."""
+    if not p.get("url"):
+        return ""
+    return (f' <a href="{esc(p["url"])}" target="_blank" rel="noopener noreferrer">'
+            f'{p["link"]}</a>.')
+
+
 parks_html = "\n".join(
     f'''  <div class="park" data-names="{esc("|".join(sorted(p["match"])))}">
     <h3>{p["title"]}</h3>
-    <p>{p["body"]} <a href="{esc(p["url"])}" target="_blank" rel="noopener noreferrer">{p["link"]}</a>.</p>
+    <p>{p["body"]}{park_link(p)}</p>
   </div>'''
     for p in NATIONAL_PARKS
 )
