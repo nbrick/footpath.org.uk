@@ -17,6 +17,7 @@
     --ink:        #20291F;
     --ink-soft:   #545E4C;
     --hair:       #C7C8BA;
+    --field:      #FFFFFF;
     --rowmaps:    #C42B6E;
     --rowmaps-dk: #96204F;
     --waymark:    #E6AC24;
@@ -45,7 +46,7 @@
     border-radius: 3px;
   }
 
-  .mast { padding: 26px 0 8px; }
+  .mast { padding: 18px 0 6px; }
   .brand {
     display: inline-flex; align-items: center; gap: 9px;
     font-family: "Bricolage Grotesque", ui-sans-serif, sans-serif;
@@ -54,18 +55,18 @@
   }
   .brand svg { display: block; }
 
-  .hero { padding: 20px 0 4px; }
+  .hero { padding: 12px 0 2px; }
   .hero h1 {
     font-family: "Bricolage Grotesque", ui-sans-serif, sans-serif;
     font-weight: 700;
-    font-size: clamp(2rem, 7.5vw, 3.1rem);
-    line-height: 1.03;
+    font-size: clamp(1.9rem, 6.8vw, 2.7rem);
+    line-height: 1.05;
     letter-spacing: -0.025em;
-    margin: 0 0 16px;
-    max-width: 15ch;
+    margin: 0 0 10px;
+    max-width: 17ch;
   }
   .hero p {
-    font-size: 1.12rem; color: var(--ink-soft); margin: 0; max-width: 46ch;
+    font-size: 1.06rem; color: var(--ink-soft); margin: 0; max-width: 48ch;
   }
   .hero strong { color: var(--ink); font-weight: 600; }
 
@@ -73,7 +74,7 @@
     height: 0; border: 0;
     border-top: 3px dashed var(--rowmaps);
     opacity: 0.9;
-    margin: 30px 0 26px;
+    margin: 20px 0 16px;
   }
 
   .list-head {
@@ -89,14 +90,15 @@
   .count b { color: var(--ink); font-weight: 700; }
 
   .coverage {
-    font-size: 0.83rem; color: var(--ink-soft); margin: 6px 0 16px; max-width: 60ch;
+    font-size: 0.83rem; color: var(--ink-soft); margin: 10px 0 0; max-width: 62ch;
   }
 
   .controls { margin-bottom: 6px; }
   .filter {
-    width: 100%; font: inherit; font-size: 0.98rem; padding: 11px 14px;
-    background: var(--paper); border: 1.5px solid var(--hair);
+    width: 100%; font: inherit; font-size: 1.02rem; padding: 13px 15px;
+    background: var(--field); border: 1.5px solid #B4B6A6;
     border-radius: 8px; color: var(--ink);
+    box-shadow: 0 1px 2px rgba(32,41,31,0.06);
   }
   .filter::placeholder { color: var(--ink-soft); }
   .filter:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
@@ -204,8 +206,8 @@
   </header>
 
   <section class="hero">
-    <h1>A right of way blocked? Report it to the people who can act.</h1>
-    <p>Footpaths, bridleways and byways are kept open by the local <strong>highway authority</strong> &mdash; usually the county or unitary council for the area <strong>the path runs through</strong>. If you were away from home when you found the problem, that&rsquo;s the council you need, not the one where you live.</p>
+    <h1>Report a blocked right of way</h1>
+    <p>Reports go to the <strong>highway authority</strong> for the area the path runs through &mdash; usually a county or unitary council. That may not be where you live.</p>
   </section>
 
   <hr class="row-rule">
@@ -214,12 +216,12 @@
     <h2>Find the authority</h2>
     <span class="count"><b>55</b> of 175 linked so far</span>
   </div>
-  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked &ldquo;Not checked yet&rdquo; are ones nobody has verified a reporting link for &mdash; every link here was opened and confirmed by hand before it went up.</p>
-
   <div class="controls">
     <label for="filter" style="position:absolute;left:-9999px;">Filter authorities by name</label>
     <input id="filter" class="filter" type="text" inputmode="search" autocomplete="off" placeholder="Start typing the council or county where the path is&hellip;">
   </div>
+
+  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked &ldquo;Not checked yet&rdquo; are ones nobody has verified a reporting link for &mdash; every link here was opened and confirmed by hand before it went up.</p>
 
   <ul class="authorities" id="list">
     <li class="todo">
