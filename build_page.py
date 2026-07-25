@@ -866,6 +866,7 @@ HTML = f'''<!DOCTYPE html>
   }}
   .go {{
     grid-column: 2 / 3; grid-row: 1 / 3;
+    align-self: start; padding-top: 2px;
     font-size: 0.92rem; font-weight: 600; color: var(--rowmaps);
     white-space: nowrap; transition: transform .15s ease, color .15s ease;
   }}
