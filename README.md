@@ -121,6 +121,16 @@ Roughly in order of value per hour of work.
 - **Grid reference helper.** The hardest field on any council form is "exactly
   where". Browser geolocation converted to an OS grid reference in-page, with
   nothing transmitted anywhere.
+- **Order the list by something more useful than the alphabet.** Sorting by
+  length of rights-of-way network would put the authorities where blocked paths
+  actually happen at the top — currently Barking and Dagenham leads and North
+  Yorkshire, with the largest network in England outside the national parks, is
+  buried. Two caveats. The figures need sourcing per authority (Rights of Way
+  Improvement Plans and Defra survey data both carry them, so it is 175 more
+  things to verify and get wrong). And alphabetical is what people expect from a
+  list they might scan, so any other order probably has to be stated on the page
+  rather than left to be inferred. A cheaper variant: keep the alphabet and show
+  network length as row metadata instead.
 
 ### Deliberately not doing
 
