@@ -10,6 +10,7 @@ OUT_DIR = Path(__file__).resolve().parent
 
 # --- Authorities we have a verified reporting link for -----------------------
 DONE = {
+    "Barnsley": "https://www.barnsley.gov.uk/services/parks-and-open-spaces/public-footpaths-and-rights-of-way/using-a-public-right-of-way/",
     "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
     "Caerphilly": "https://eforms.caerphilly.gov.uk/forms/webCAHWPRW101.aspx",
@@ -34,7 +35,9 @@ DONE = {
     "Hillingdon": "https://www.hillingdon.gov.uk/article/7576/Report-a-public-right-of-way-issue-including-bridleways-and-footpaths",
     "Isle of Anglesey": "https://www.anglesey.gov.wales/en/Residents/Parking-roads-and-travel/Public-rights-of-way/Path-maintenance-looking-after-Angleseys-paths.aspx",
     "Kent": "https://www.kent.gov.uk/environment-waste-and-planning/public-rights-of-way/report-a-problem-on-a-right-of-way",
+    "Kirklees": "https://www.kirklees.gov.uk/beta/countryside-parks-and-open-spaces/public-rights-of-way.aspx",
     "Lancashire": "https://www.lancashire.gov.uk/roads-parking-and-travel/report-it/public-right-of-way/",
+    "Leeds": "https://www.leeds.gov.uk/parks-and-countryside/public-rights-of-way/report-a-problem-with-a-public-right-of-way",
     "Leicestershire": "https://leicestershirecc-self.achieveservice.com/service/report-it",
     "Lincolnshire": "https://www.lincolnshire.gov.uk/coast-countryside/public-rights-way/3",
     "Merthyr Tydfil": "https://www.merthyr.gov.uk/do-it-online/report/rights-of-way/",
@@ -49,6 +52,7 @@ DONE = {
     "Oxfordshire": "https://www.oxfordshire.gov.uk/residents/environment-and-planning/countryside/countryside-access/public-rights-way/report-footpath-issue",
     "Powys": "https://en.powys.gov.uk/article/2589/Report-a-concern-with-a-right-of-way",
     "Rhondda Cynon Taf": "https://www.rctcbc.gov.uk/EN/Resident/PlanningandBuildingControl/Countryside/PublicRightsofWay/ReportanissuewithaPublicRightofWay.aspx",
+    "Sheffield": "https://www.sheffield.gov.uk/roads-pavements/prow",
     "Shropshire": "https://next.shropshire.gov.uk/outdoor-partnerships/report-a-rights-of-way-issue-and-feedback/",
     "Somerset": "https://www.somerset.gov.uk/roads-travel-and-parking/report-a-problem-with-a-public-right-of-way/",
     "Staffordshire": "https://prow.staffordshire.gov.uk/standardmap.aspx",
@@ -58,11 +62,14 @@ DONE = {
     "Warwickshire": "https://rightsofway.warwickshire.gov.uk/",
     "West Sussex": "https://www.westsussex.gov.uk/land-waste-and-housing/public-paths-and-the-countryside/public-rights-of-way/report-a-problem-with-a-right-of-way/",
     "Westmorland and Furness": "https://www.westmorlandandfurness.gov.uk/parks-culture-and-leisure/countryside-access-and-rights-way",
+    "Wigan": "https://www.wigan.gov.uk/Resident/Parking-Roads-Travel/Public-rights-of-way/Report-a-problem.aspx",
+    "Wiltshire": "https://www.wiltshire.gov.uk/recreation-rights-of-way",
     "Worcestershire": "https://capublic.worcestershire.gov.uk/PROWPublic/PROWFault.aspx",
 }
 
 # Short descriptor of where a verified link lands. Default = dedicated RoW form.
 DESC = {
+    "Barnsley": "Rights-of-way page — links to the report form",
     "Cambridgeshire": "Rights-of-way page — links to the report form",
     "Ceredigion": "Email and phone — no online form",
     "Conwy": "Rights-of-way page — links to the report form",
@@ -75,6 +82,7 @@ DESC = {
     "Herefordshire": "Report form — sign-in needed",
     "Hertfordshire": "Highway fault form — choose “Public rights of way”",
     "Isle of Anglesey": "Path maintenance page — phone or general online form",
+    "Kirklees": "Rights-of-way page — email and phone",
     "Lancashire": "Email report — no online form",
     "Leicestershire": "Council report-it portal — covers rights of way",
     "Monmouthshire": "Interactive rights-of-way map — sign-in needed to report",
@@ -83,10 +91,12 @@ DESC = {
     "North Lincolnshire": "Countryside access page — links to the report form",
     "North Yorkshire": "Rights-of-way page — links to the report form",
     "Northumberland": "Rights-of-way page — links to the report form",
+    "Sheffield": "Rights-of-way page — email or general enquiry form",
     "Staffordshire": "Interactive rights-of-way map — sign-in needed to report",
     "Swansea": "Email — no online form",
     "Warwickshire": "Interactive rights-of-way map — report via “New issue”",
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
+    "Wiltshire": "Rights-of-way page — links to the report form",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
