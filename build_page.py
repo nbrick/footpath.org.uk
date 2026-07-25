@@ -176,7 +176,7 @@ DESC = {
     "Milton Keynes": "Rights-of-way page — phone, no online form",
     "Monmouthshire": "Interactive rights-of-way map — sign-in needed to report",
     "Newport": "Rights-of-way page",
-    "Norfolk": "Roads and transport report form",
+    "Norfolk": "Report form — scroll to “Public right of way or trail”",
     "North Lincolnshire": "Countryside access page — links to the report form",
     "North Tyneside": "Rights-of-way FAQs — leads with how to report",
     "North Yorkshire": "Rights-of-way page — links to the report form",
