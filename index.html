@@ -46,7 +46,32 @@
     border-radius: 3px;
   }
 
-  .mast { padding: 18px 0 6px; }
+  .mast {
+    padding: 18px 0 6px; position: relative;
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  }
+
+  .about summary {
+    list-style: none; cursor: pointer;
+    font-size: 0.85rem; color: var(--ink-soft);
+    border-bottom: 1px dotted #A8AA9A; padding-bottom: 1px;
+    white-space: nowrap;
+  }
+  .about summary::-webkit-details-marker { display: none; }
+  .about summary:hover, .about[open] summary { color: var(--ink); border-bottom-color: var(--ink); }
+  .about summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+  .about-body {
+    position: absolute; right: 0; top: calc(100% + 6px); z-index: 20;
+    width: min(42ch, calc(100vw - 44px));
+    background: var(--paper-2); border: 1px solid var(--hair);
+    border-radius: 10px; padding: 15px 17px;
+    box-shadow: 0 10px 28px rgba(32,41,31,0.14);
+    font-size: 0.88rem; color: var(--ink-soft);
+  }
+  .about-body p { margin: 0 0 9px; }
+  .about-body p:last-child { margin-bottom: 0; }
+  .about-body b { color: var(--ink); font-weight: 600; }
+  .about-body a { color: var(--rowmaps-dk); font-weight: 600; }
   .brand {
     display: inline-flex; align-items: center; gap: 9px;
     font-family: "Bricolage Grotesque", ui-sans-serif, sans-serif;
@@ -186,6 +211,8 @@
   @media (max-width: 460px) {
     .go { font-size: 0.86rem; }
     body { font-size: 16px; }
+    .brand { font-size: 0.98rem; }
+    .about summary { font-size: 0.8rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     a.row:hover .go { transform: none; }
@@ -203,6 +230,14 @@
       </svg>
       footpath.org.uk
     </a>
+    <details class="about" id="about">
+      <summary>About this site</summary>
+      <div class="about-body">
+        <p><b>A shortcut, nothing more.</b> A blocked path is reported to the highway authority for the area it runs through, and working out which one that is tends to be the slowest part. This site does that bit and then gets out of the way.</p>
+        <p><b>Every link is checked by hand.</b> Each one was opened and confirmed to be that authority&rsquo;s own reporting route before it went up. A wrong link is worse than none &mdash; it sends someone reporting a real obstruction to the wrong place &mdash; so rows nobody has checked yet say exactly that instead of guessing.</p>
+        <p><b>Independent.</b> Not affiliated with any council, and built in the open on <a href="https://github.com/nbrick/footpath.org.uk" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </div>
+    </details>
   </header>
 
   <section class="hero">
@@ -1496,6 +1531,20 @@
     }
 
     input.addEventListener('input', apply);
+  })();
+
+  (function () {
+    var about = document.getElementById('about');
+    if (!about) return;
+    document.addEventListener('click', function (e) {
+      if (about.open && !about.contains(e.target)) about.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && about.open) {
+        about.open = false;
+        about.querySelector('summary').focus();
+      }
+    });
   })();
 </script>
 </body>
