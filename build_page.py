@@ -1146,10 +1146,18 @@ HTML = f'''<!DOCTYPE html>
 with open(OUT_DIR / "index.html", "w", encoding="utf-8") as f:
     f.write(HTML)
 
-# robots.txt — effective once the site is served from the domain root
-# (footpath.org.uk/robots.txt). On the github.io/<repo>/ project path it is
-# not read by crawlers; the noindex meta tag is what keeps the preview private.
-ROBOTS = "User-agent: *\nDisallow: /\n"
+# robots.txt — now live, because the site is served from the domain root at
+# footpath.org.uk/robots.txt. It was inert while the site sat on a github.io
+# project path, where crawlers read nbrick.github.io/robots.txt instead.
+#
+# Tied to NOINDEX deliberately. The two are not independent: "Disallow: /" stops
+# a crawler fetching the page at all, so it never sees the noindex tag either.
+# Turning off NOINDEX while robots.txt still said Disallow would look like
+# launching and change nothing — and a disallowed URL can still be indexed bare
+# from an external link, with the meta tag unreadable, which is the exact
+# outcome the flag exists to prevent.
+ROBOTS = ("User-agent: *\nDisallow: /\n" if NOINDEX
+          else "User-agent: *\nDisallow:\n")
 with open(OUT_DIR / "robots.txt", "w", encoding="utf-8") as f:
     f.write(ROBOTS)
 
