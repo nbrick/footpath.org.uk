@@ -376,7 +376,8 @@ NATIONAL_PARKS = [
     {
         "title": "On Dartmoor, report it to the National Park",
         "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
-                  "moretonhampstead", "chagford", "two moors way", "okehampton"],
+                  "moretonhampstead", "chagford", "two moors way", "okehampton",
+                  "devon"],
         "url": "https://www.dartmoor.gov.uk/enjoy-dartmoor/outdoor-activities/report-a-path-problem",
         "link": "Report a path problem",
         "body": ("Dartmoor National Park Authority manages the public rights of way "
@@ -387,7 +388,8 @@ NATIONAL_PARKS = [
     {
         "title": "In the Lake District, report it to the National Park",
         "match": ["lake district", "lakes", "windermere", "keswick", "ambleside",
-                  "scafell", "helvellyn", "borrowdale", "langdale"],
+                  "scafell", "helvellyn", "borrowdale", "langdale",
+                  "cumberland", "westmorland and furness"],
         "url": "https://www.lakedistrict.gov.uk/visiting/plan-your-visit/rowupdates/reporting-a-problem-on-a-right-of-way",
         "link": "Reporting a problem on a right of way",
         "body": ("The Lake District National Park Authority maintains over 3,200km of "
@@ -396,9 +398,23 @@ NATIONAL_PARKS = [
                  "and Furness remain the highway authorities outside the boundary."),
     },
     {
+        "title": "In the North York Moors, report it to the National Park",
+        "match": ["north york moors", "helmsley", "goathland", "rosedale",
+                  "farndale", "danby", "cleveland way", "pickering",
+                  "north yorkshire", "redcar and cleveland"],
+        "url": "https://www.northyorkmoors.org.uk/plan-your-visit/rights-of-way/rights-of-way-feedback-form",
+        "link": "Rights of Way feedback form",
+        "body": ("North York Moors National Park Authority takes reports on any public "
+                 "right of way inside the park and aims to investigate within 28 working "
+                 "days &mdash; a grid reference is essential, so bring one. North Yorkshire "
+                 "and Redcar and Cleveland remain the highway authorities outside the "
+                 "boundary."),
+    },
+    {
         "title": "In the Yorkshire Dales, report it to the National Park",
         "match": ["yorkshire dales", "dales", "wharfedale", "swaledale",
-                  "wensleydale", "malham", "ingleborough", "whernside"],
+                  "wensleydale", "malham", "ingleborough", "whernside",
+                  "north yorkshire", "westmorland and furness"],
         "url": "https://www.yorkshiredales.org.uk/things-to-do/get-outdoors/where-can-i-go/rights-of-way-and-countryside-access/",
         "link": "Rights of way and countryside access",
         "body": ("The Yorkshire Dales National Park Authority&rsquo;s rangers maintain the "
