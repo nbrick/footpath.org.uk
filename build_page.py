@@ -282,6 +282,80 @@ ENGLAND = [
     "Waltham Forest", "Wandsworth", "Westminster",
 ]
 
+# --- Rough network size, used only to order the list -------------------------
+# Approximate length of each authority's rights-of-way network, in km.
+#
+# These are ESTIMATES, not verified figures, and they are never shown on the
+# page. They exist solely so the list leads with the authorities carrying the
+# most path network instead of whoever happens to come first in the alphabet.
+#
+# This is the one place in this project where an unchecked number is safe: being
+# wrong here changes the running order, not where a report goes. Nothing else
+# depends on them, so correcting one costs nothing.
+#
+# There is no authoritative per-authority dataset — Ordnance Survey's FOI231141
+# gives national totals only (England 187,341 km, Wales 33,613 km) and disclaims
+# being authoritative, since the definitive maps sit with each council. Getting
+# real figures means 175 Rights of Way Improvement Plans of varying vintage.
+#
+# Improve these opportunistically: councils often state their network length on
+# the very page being checked for DONE. Isle of Wight's ~500 miles and Rochdale's
+# 552 km came that way.
+DEFAULT_PROW_KM = 300
+PROW_KM = {
+    "Barking and Dagenham": 40, "Barnet": 100, "Barnsley": 800,
+    "Bath and North East Somerset": 1000, "Bedford": 600, "Bexley": 60,
+    "Birmingham": 300, "Blackburn with Darwen": 400, "Blackpool": 30,
+    "Blaenau Gwent": 300, "Bolton": 500, "Bournemouth, Christchurch and Poole": 300,
+    "Bracknell Forest": 200, "Bradford": 1200, "Brent": 30, "Bridgend": 700,
+    "Brighton and Hove": 200, "Bristol": 100, "Bromley": 300,
+    "Buckinghamshire": 3200, "Bury": 400, "Caerphilly": 800, "Calderdale": 1000,
+    "Cambridgeshire": 3200, "Camden": 15, "Cardiff": 400, "Carmarthenshire": 4000,
+    "Central Bedfordshire": 1200, "Ceredigion": 2400, "Cheshire East": 2300,
+    "Cheshire West and Chester": 1800, "City of London": 5, "Conwy": 1600,
+    "Cornwall": 4500, "County Durham": 3600, "Coventry": 200, "Croydon": 150,
+    "Cumberland": 3000, "Darlington": 300, "Denbighshire": 1600, "Derby": 150,
+    "Derbyshire": 5000, "Devon": 5000, "Doncaster": 800, "Dorset": 4300,
+    "Dudley": 300, "Ealing": 40, "East Riding of Yorkshire": 2700,
+    "East Sussex": 3200, "Enfield": 150, "Essex": 6000, "Flintshire": 1000,
+    "Gateshead": 400, "Gloucestershire": 5600, "Greenwich": 40, "Gwynedd": 4000,
+    "Hackney": 15, "Halton": 150, "Hammersmith and Fulham": 10, "Hampshire": 4800,
+    "Haringey": 25, "Harrow": 100, "Hartlepool": 100, "Havering": 250,
+    "Herefordshire": 3500, "Hertfordshire": 3200, "Hillingdon": 200,
+    "Hounslow": 40, "Isle of Anglesey": 800, "Isle of Wight": 800,
+    "Isles of Scilly": 30, "Islington": 10, "Kensington and Chelsea": 10,
+    "Kent": 6900, "Kingston upon Hull": 30, "Kingston upon Thames": 60,
+    "Kirklees": 1300, "Knowsley": 200, "Lambeth": 15, "Lancashire": 3700,
+    "Leeds": 1200, "Leicester": 80, "Leicestershire": 4000, "Lewisham": 30,
+    "Lincolnshire": 4000, "Liverpool": 100, "Luton": 80, "Manchester": 200,
+    "Medway": 400, "Merthyr Tydfil": 300, "Merton": 40, "Middlesbrough": 100,
+    "Milton Keynes": 500, "Monmouthshire": 2200, "Neath Port Talbot": 800,
+    "Newcastle upon Tyne": 200, "Newham": 15, "Newport": 400, "Norfolk": 3700,
+    "North East Lincolnshire": 500, "North Lincolnshire": 900,
+    "North Northamptonshire": 1600, "North Somerset": 800, "North Tyneside": 150,
+    "North Yorkshire": 6100, "Northumberland": 4000, "Nottingham": 100,
+    "Nottinghamshire": 3200, "Oldham": 600, "Oxfordshire": 4000,
+    "Pembrokeshire": 2400, "Peterborough": 500, "Plymouth": 200, "Portsmouth": 30,
+    "Powys": 9000, "Reading": 50, "Redbridge": 60, "Redcar and Cleveland": 500,
+    "Rhondda Cynon Taf": 1000, "Richmond upon Thames": 80, "Rochdale": 552,
+    "Rotherham": 700, "Rutland": 600, "Salford": 200, "Sandwell": 150,
+    "Sefton": 300, "Sheffield": 1000, "Shropshire": 5600, "Slough": 60,
+    "Solihull": 500, "Somerset": 6000, "South Gloucestershire": 1000,
+    "South Tyneside": 150, "Southampton": 50, "Southend-on-Sea": 50,
+    "Southwark": 20, "St Helens": 300, "Staffordshire": 4000, "Stockport": 500,
+    "Stockton-on-Tees": 400, "Stoke-on-Trent": 200, "Suffolk": 5600,
+    "Sunderland": 300, "Surrey": 3400, "Sutton": 60, "Swansea": 1000,
+    "Swindon": 400, "Tameside": 400, "Telford and Wrekin": 500, "Thurrock": 300,
+    "Torbay": 150, "Torfaen": 400, "Tower Hamlets": 15, "Trafford": 200,
+    "Vale of Glamorgan": 800, "Wakefield": 800, "Walsall": 300,
+    "Waltham Forest": 40, "Wandsworth": 20, "Warrington": 400,
+    "Warwickshire": 2600, "West Berkshire": 1000, "West Northamptonshire": 2000,
+    "West Sussex": 4000, "Westminster": 10, "Westmorland and Furness": 3500,
+    "Wigan": 500, "Wiltshire": 6400, "Windsor and Maidenhead": 300, "Wirral": 400,
+    "Wokingham": 350, "Wolverhampton": 150, "Worcestershire": 4500,
+    "Wrexham": 1000, "York": 500,
+}
+
 # --- Out of scope: Scotland and Northern Ireland -----------------------------
 # Deliberately NOT rows in the list. Both run on entirely different law, so
 # listing them would imply a reporting route that this site hasn't checked and
@@ -331,7 +405,13 @@ for name in ENGLAND:
 for name in WALES:
     records[name] = "Wales"
 
-authorities = sorted(records.keys(), key=lambda s: s.lower())
+# Largest path network first, alphabetical within equal estimates. The filter
+# is how anyone finds a specific council; this ordering is for whoever arrives
+# and simply scrolls.
+authorities = sorted(
+    records.keys(),
+    key=lambda s: (-PROW_KM.get(s, DEFAULT_PROW_KM), s.lower()),
+)
 
 total = len(authorities)
 done_count = sum(1 for a in authorities if a in DONE)
@@ -669,7 +749,7 @@ HTML = f'''<!DOCTYPE html>
            enterkeyhint="search" placeholder="Start typing the council or county where the path is&hellip;">
   </div>
 
-  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked &ldquo;Not checked yet&rdquo; are ones nobody has verified a reporting link for &mdash; every link here was opened and confirmed by hand before it went up.</p>
+  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map, roughly ordered by how much path network each one looks after. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked &ldquo;Not checked yet&rdquo; are ones nobody has verified a reporting link for &mdash; every link here was opened and confirmed by hand before it went up.</p>
 
   <ul class="authorities" id="list">
 {rows_html}
