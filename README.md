@@ -1,8 +1,9 @@
 # footpath.org.uk
 
 A signpost, not a form. It routes a person who's found a blocked public right of
-way straight to the correct highway authority's own reporting page. It collects
-nothing and stores nothing.
+way straight to the correct highway authority's own reporting page. There's no
+form, no account and no database here — the report goes to the council, not
+through this site.
 
 Covers every highway authority in England and Wales. Scotland and Northern
 Ireland have separate systems and aren't included.
@@ -68,6 +69,23 @@ Don't hand-edit `index.html`. Add the authority to the `DONE` dict in
 That rebuilds the whole page — moving the row from a red "Link needed" marker to
 a working link and updating the counts. Verify every URL by actually opening the
 authority's page first; a wrong link is worse than none.
+
+## Still to do
+
+- **A contact address on the project domain.** The footer currently sends people
+  to GitHub issues, which needs an account most visitors won't have — walkers,
+  not developers. `hello@footpath.org.uk` (or similar) as the primary route, with
+  GitHub kept as a secondary. Deliberately deferred until the domain and DNS
+  exist at launch, so the alias can live on the project domain and be re-pointed
+  if it attracts spam.
+- **Link coverage.** 120 of 175 authorities still unchecked.
+- **Inner London.** Twelve boroughs are flagged as having no definitive map. If
+  that's right, "Not checked yet" misrepresents them and they need their own row
+  state; the claim needs confirming first.
+- **Google Fonts.** The page pulls Bricolage Grotesque from
+  `fonts.googleapis.com`, so every visitor's browser contacts Google before the
+  page renders. Worth self-hosting the font or dropping it, both to remove the
+  third-party request and to stop the page depending on someone else's CDN.
 
 ## Credit
 
