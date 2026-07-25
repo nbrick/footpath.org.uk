@@ -93,7 +93,7 @@
     font-size: 0.83rem; color: var(--ink-soft); margin: 6px 0 16px; max-width: 60ch;
   }
 
-  .controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 6px; }
+  .controls { margin-bottom: 6px; }
   .filter {
     width: 100%; font: inherit; font-size: 0.98rem; padding: 11px 14px;
     background: var(--paper); border: 1.5px solid var(--hair);
@@ -101,11 +101,6 @@
   }
   .filter::placeholder { color: var(--ink-soft); }
   .filter:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }
-  .toggle {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 0.88rem; color: var(--ink-soft); cursor: pointer; user-select: none;
-  }
-  .toggle input { width: 16px; height: 16px; accent-color: var(--warn); }
 
   ul.authorities { list-style: none; margin: 6px 0 0; padding: 0; }
   ul.authorities li { border-top: 1px solid var(--hair); }
@@ -215,1229 +210,1228 @@
   <div class="controls">
     <label for="filter" style="position:absolute;left:-9999px;">Filter authorities by name</label>
     <input id="filter" class="filter" type="text" inputmode="search" autocomplete="off" placeholder="Start typing a council or county&hellip;">
-    <label class="toggle"><input type="checkbox" id="onlyMissing"> Show only authorities that still need a link</label>
   </div>
 
   <ul class="authorities" id="list">
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="barking and dagenham">
         <span class="name">Barking and Dagenham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="barnet">
         <span class="name">Barnet</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="barnsley">
         <span class="name">Barnsley</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.bathnes.gov.uk/report-problem-public-right-way" target="_blank" rel="noopener noreferrer" data-name="bath and north east somerset banes">
         <span class="name">Bath and North East Somerset</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bedford">
         <span class="name">Bedford</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bexley">
         <span class="name">Bexley</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="birmingham">
         <span class="name">Birmingham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="blackburn with darwen">
         <span class="name">Blackburn with Darwen</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="blackpool">
         <span class="name">Blackpool</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="blaenau gwent">
         <span class="name">Blaenau Gwent</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bolton">
         <span class="name">Bolton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bournemouth christchurch and poole">
         <span class="name">Bournemouth, Christchurch and Poole</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bracknell forest">
         <span class="name">Bracknell Forest</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bradford">
         <span class="name">Bradford</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="brent">
         <span class="name">Brent</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bridgend">
         <span class="name">Bridgend</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="brighton and hove">
         <span class="name">Brighton and Hove</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bristol city of bristol">
         <span class="name">Bristol</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bromley">
         <span class="name">Bromley</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/" target="_blank" rel="noopener noreferrer" data-name="buckinghamshire">
         <span class="name">Buckinghamshire</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="bury">
         <span class="name">Bury</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="caerphilly">
         <span class="name">Caerphilly</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="calderdale">
         <span class="name">Calderdale</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="cambridgeshire">
         <span class="name">Cambridgeshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="camden">
         <span class="name">Camden</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="cardiff">
         <span class="name">Cardiff</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="carmarthenshire">
         <span class="name">Carmarthenshire</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="central bedfordshire">
         <span class="name">Central Bedfordshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.ceredigion.gov.uk/resident/coast-countryside/public-rights-of-way/path-management/" target="_blank" rel="noopener noreferrer" data-name="ceredigion">
         <span class="name">Ceredigion</span>
         <span class="meta"><span class="tag">Wales</span> Email and phone — no online form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="cheshire east">
         <span class="name">Cheshire East</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="cheshire west and chester">
         <span class="name">Cheshire West and Chester</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="city of london">
         <span class="name">City of London</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="conwy">
         <span class="name">Conwy</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="cornwall">
         <span class="name">Cornwall</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="county durham durham">
         <span class="name">County Durham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="coventry">
         <span class="name">Coventry</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="croydon">
         <span class="name">Croydon</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="cumberland">
         <span class="name">Cumberland</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="darlington">
         <span class="name">Darlington</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="denbighshire">
         <span class="name">Denbighshire</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="derby">
         <span class="name">Derby</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="derbyshire">
         <span class="name">Derbyshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="devon">
         <span class="name">Devon</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="doncaster">
         <span class="name">Doncaster</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="dorset">
         <span class="name">Dorset</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="dudley">
         <span class="name">Dudley</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="ealing">
         <span class="name">Ealing</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="east riding of yorkshire">
         <span class="name">East Riding of Yorkshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="east sussex">
         <span class="name">East Sussex</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="enfield">
         <span class="name">Enfield</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="essex">
         <span class="name">Essex</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="flintshire">
         <span class="name">Flintshire</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="gateshead">
         <span class="name">Gateshead</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="gloucestershire">
         <span class="name">Gloucestershire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="greenwich">
         <span class="name">Greenwich</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="gwynedd">
         <span class="name">Gwynedd</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="hackney">
         <span class="name">Hackney</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="halton">
         <span class="name">Halton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="hammersmith and fulham">
         <span class="name">Hammersmith and Fulham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="hampshire">
         <span class="name">Hampshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="haringey">
         <span class="name">Haringey</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="harrow">
         <span class="name">Harrow</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="hartlepool">
         <span class="name">Hartlepool</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="havering">
         <span class="name">Havering</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="herefordshire">
         <span class="name">Herefordshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="hertfordshire">
         <span class="name">Hertfordshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.hillingdon.gov.uk/article/7576/Report-a-public-right-of-way-issue-including-bridleways-and-footpaths" target="_blank" rel="noopener noreferrer" data-name="hillingdon">
         <span class="name">Hillingdon</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="hounslow">
         <span class="name">Hounslow</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="isle of anglesey anglesey ynys mon">
         <span class="name">Isle of Anglesey</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="isle of wight">
         <span class="name">Isle of Wight</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="isles of scilly">
         <span class="name">Isles of Scilly</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="islington">
         <span class="name">Islington</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="kensington and chelsea royal borough kensington">
         <span class="name">Kensington and Chelsea</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="kent">
         <span class="name">Kent</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="kingston upon hull hull">
         <span class="name">Kingston upon Hull</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="kingston upon thames royal kingston thames">
         <span class="name">Kingston upon Thames</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="kirklees">
         <span class="name">Kirklees</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="knowsley">
         <span class="name">Knowsley</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="lambeth">
         <span class="name">Lambeth</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="lancashire">
         <span class="name">Lancashire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="leeds">
         <span class="name">Leeds</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="leicester">
         <span class="name">Leicester</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="leicestershire">
         <span class="name">Leicestershire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="lewisham">
         <span class="name">Lewisham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.lincolnshire.gov.uk/coast-countryside/public-rights-way/3" target="_blank" rel="noopener noreferrer" data-name="lincolnshire">
         <span class="name">Lincolnshire</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="liverpool">
         <span class="name">Liverpool</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="luton">
         <span class="name">Luton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="manchester">
         <span class="name">Manchester</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="medway">
         <span class="name">Medway</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="merthyr tydfil">
         <span class="name">Merthyr Tydfil</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="merton">
         <span class="name">Merton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="middlesbrough">
         <span class="name">Middlesbrough</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="milton keynes">
         <span class="name">Milton Keynes</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="monmouthshire">
         <span class="name">Monmouthshire</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="neath port talbot">
         <span class="name">Neath Port Talbot</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://new.newcastle.gov.uk/travel/management/rightsofway/report" target="_blank" rel="noopener noreferrer" data-name="newcastle upon tyne">
         <span class="name">Newcastle upon Tyne</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="newham">
         <span class="name">Newham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="newport">
         <span class="name">Newport</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="norfolk">
         <span class="name">Norfolk</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="north east lincolnshire">
         <span class="name">North East Lincolnshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.northlincs.gov.uk/planning-and-environment/access-to-the-countryside/" target="_blank" rel="noopener noreferrer" data-name="north lincolnshire">
         <span class="name">North Lincolnshire</span>
         <span class="meta"><span class="tag">England</span> Countryside access page — links to the report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="north northamptonshire">
         <span class="name">North Northamptonshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="north somerset">
         <span class="name">North Somerset</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="north tyneside">
         <span class="name">North Tyneside</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="north yorkshire">
         <span class="name">North Yorkshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="northumberland">
         <span class="name">Northumberland</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="nottingham">
         <span class="name">Nottingham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="nottinghamshire">
         <span class="name">Nottinghamshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="oldham">
         <span class="name">Oldham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.oxfordshire.gov.uk/residents/environment-and-planning/countryside/countryside-access/public-rights-way/report-footpath-issue" target="_blank" rel="noopener noreferrer" data-name="oxfordshire">
         <span class="name">Oxfordshire</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="pembrokeshire">
         <span class="name">Pembrokeshire</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="peterborough">
         <span class="name">Peterborough</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="plymouth">
         <span class="name">Plymouth</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="portsmouth">
         <span class="name">Portsmouth</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="powys">
         <span class="name">Powys</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="reading">
         <span class="name">Reading</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="redbridge">
         <span class="name">Redbridge</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="redcar and cleveland">
         <span class="name">Redcar and Cleveland</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.rctcbc.gov.uk/EN/Resident/PlanningandBuildingControl/Countryside/PublicRightsofWay/ReportanissuewithaPublicRightofWay.aspx" target="_blank" rel="noopener noreferrer" data-name="rhondda cynon taf rct">
         <span class="name">Rhondda Cynon Taf</span>
         <span class="meta"><span class="tag">Wales</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="richmond upon thames">
         <span class="name">Richmond upon Thames</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="rochdale">
         <span class="name">Rochdale</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="rotherham">
         <span class="name">Rotherham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="rutland">
         <span class="name">Rutland</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="salford">
         <span class="name">Salford</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="sandwell">
         <span class="name">Sandwell</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="sefton">
         <span class="name">Sefton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="sheffield">
         <span class="name">Sheffield</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="shropshire">
         <span class="name">Shropshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="slough">
         <span class="name">Slough</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="solihull">
         <span class="name">Solihull</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.somerset.gov.uk/roads-travel-and-parking/report-a-problem-with-a-public-right-of-way/" target="_blank" rel="noopener noreferrer" data-name="somerset">
         <span class="name">Somerset</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="south gloucestershire">
         <span class="name">South Gloucestershire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="south tyneside">
         <span class="name">South Tyneside</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="southampton">
         <span class="name">Southampton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="southend-on-sea">
         <span class="name">Southend-on-Sea</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="southwark">
         <span class="name">Southwark</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="st helens">
         <span class="name">St Helens</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="staffordshire">
         <span class="name">Staffordshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="stockport">
         <span class="name">Stockport</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="stockton-on-tees">
         <span class="name">Stockton-on-Tees</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="stoke-on-trent">
         <span class="name">Stoke-on-Trent</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="suffolk">
         <span class="name">Suffolk</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="sunderland">
         <span class="name">Sunderland</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="done" data-status="done">
+    <li class="done">
       <a class="row" href="https://www.surreycc.gov.uk/culture-and-leisure/countryside/management/footpaths-byways-and-bridleways/report-a-problem" target="_blank" rel="noopener noreferrer" data-name="surrey">
         <span class="name">Surrey</span>
         <span class="meta"><span class="tag">England</span> Rights-of-way report form</span>
         <span class="go">Report a problem &rarr;</span>
       </a>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="sutton">
         <span class="name">Sutton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="swansea">
         <span class="name">Swansea</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="swindon">
         <span class="name">Swindon</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="tameside">
         <span class="name">Tameside</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="telford and wrekin telford">
         <span class="name">Telford and Wrekin</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="thurrock">
         <span class="name">Thurrock</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="torbay">
         <span class="name">Torbay</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="torfaen">
         <span class="name">Torfaen</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="tower hamlets">
         <span class="name">Tower Hamlets</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="trafford">
         <span class="name">Trafford</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="vale of glamorgan">
         <span class="name">Vale of Glamorgan</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wakefield">
         <span class="name">Wakefield</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="walsall">
         <span class="name">Walsall</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="waltham forest">
         <span class="name">Waltham Forest</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wandsworth">
         <span class="name">Wandsworth</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="warrington">
         <span class="name">Warrington</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="warwickshire">
         <span class="name">Warwickshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="west berkshire">
         <span class="name">West Berkshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="west northamptonshire">
         <span class="name">West Northamptonshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="west sussex">
         <span class="name">West Sussex</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="westminster">
         <span class="name">Westminster</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="westmorland and furness">
         <span class="name">Westmorland and Furness</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wigan">
         <span class="name">Wigan</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wiltshire">
         <span class="name">Wiltshire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="windsor and maidenhead royal borough windsor">
         <span class="name">Windsor and Maidenhead</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wirral">
         <span class="name">Wirral</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wokingham">
         <span class="name">Wokingham</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wolverhampton">
         <span class="name">Wolverhampton</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="worcestershire">
         <span class="name">Worcestershire</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="wrexham">
         <span class="name">Wrexham</span>
         <span class="meta"><span class="tag">Wales</span> reporting link not added yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
       </div>
     </li>
-    <li class="todo" data-status="todo">
+    <li class="todo">
       <div class="row row--todo" data-name="york">
         <span class="name">York</span>
         <span class="meta"><span class="tag">England</span> reporting link not added yet</span>
@@ -1468,20 +1462,16 @@
 <script>
   (function () {
     var input = document.getElementById('filter');
-    var onlyMissing = document.getElementById('onlyMissing');
     var items = Array.prototype.slice.call(document.querySelectorAll('#list > li'));
     var noMatch = document.getElementById('noMatch');
 
     function apply() {
       var q = (input.value || '').trim().toLowerCase();
-      var missOnly = onlyMissing.checked;
       var shown = 0;
       items.forEach(function (li) {
         var row = li.querySelector('.row');
         var hay = row.getAttribute('data-name') || '';
-        var matchesText = q === '' || hay.indexOf(q) !== -1;
-        var matchesMiss = !missOnly || li.getAttribute('data-status') === 'todo';
-        var show = matchesText && matchesMiss;
+        var show = q === '' || hay.indexOf(q) !== -1;
         li.style.display = show ? '' : 'none';
         if (show) shown++;
       });
@@ -1489,7 +1479,6 @@
     }
 
     input.addEventListener('input', apply);
-    onlyMissing.addEventListener('change', apply);
   })();
 </script>
 </body>

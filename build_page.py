@@ -138,7 +138,7 @@ for name in authorities:
         url = esc(DONE[name])
         desc = esc(DESC.get(name, DEFAULT_DESC))
         rows.append(
-            f'''    <li class="done" data-status="done">
+            f'''    <li class="done">
       <a class="row" href="{url}" target="_blank" rel="noopener noreferrer" data-name="{hay}">
         <span class="name">{disp}</span>
         <span class="meta"><span class="tag">{nation}</span> {desc}</span>
@@ -147,7 +147,7 @@ for name in authorities:
     </li>''')
     else:
         rows.append(
-            f'''    <li class="todo" data-status="todo">
+            f'''    <li class="todo">
       <div class="row row--todo" data-name="{hay}">
         <span class="name">{disp}</span>
         <span class="meta"><span class="tag">{nation}</span> reporting link not added yet</span>
@@ -251,7 +251,7 @@ HTML = f'''<!DOCTYPE html>
     font-size: 0.83rem; color: var(--ink-soft); margin: 6px 0 16px; max-width: 60ch;
   }}
 
-  .controls {{ display: flex; flex-direction: column; gap: 10px; margin-bottom: 6px; }}
+  .controls {{ margin-bottom: 6px; }}
   .filter {{
     width: 100%; font: inherit; font-size: 0.98rem; padding: 11px 14px;
     background: var(--paper); border: 1.5px solid var(--hair);
@@ -259,11 +259,6 @@ HTML = f'''<!DOCTYPE html>
   }}
   .filter::placeholder {{ color: var(--ink-soft); }}
   .filter:focus-visible {{ outline: 3px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }}
-  .toggle {{
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 0.88rem; color: var(--ink-soft); cursor: pointer; user-select: none;
-  }}
-  .toggle input {{ width: 16px; height: 16px; accent-color: var(--warn); }}
 
   ul.authorities {{ list-style: none; margin: 6px 0 0; padding: 0; }}
   ul.authorities li {{ border-top: 1px solid var(--hair); }}
@@ -373,7 +368,6 @@ HTML = f'''<!DOCTYPE html>
   <div class="controls">
     <label for="filter" style="position:absolute;left:-9999px;">Filter authorities by name</label>
     <input id="filter" class="filter" type="text" inputmode="search" autocomplete="off" placeholder="Start typing a council or county&hellip;">
-    <label class="toggle"><input type="checkbox" id="onlyMissing"> Show only authorities that still need a link</label>
   </div>
 
   <ul class="authorities" id="list">
@@ -402,20 +396,16 @@ HTML = f'''<!DOCTYPE html>
 <script>
   (function () {{
     var input = document.getElementById('filter');
-    var onlyMissing = document.getElementById('onlyMissing');
     var items = Array.prototype.slice.call(document.querySelectorAll('#list > li'));
     var noMatch = document.getElementById('noMatch');
 
     function apply() {{
       var q = (input.value || '').trim().toLowerCase();
-      var missOnly = onlyMissing.checked;
       var shown = 0;
       items.forEach(function (li) {{
         var row = li.querySelector('.row');
         var hay = row.getAttribute('data-name') || '';
-        var matchesText = q === '' || hay.indexOf(q) !== -1;
-        var matchesMiss = !missOnly || li.getAttribute('data-status') === 'todo';
-        var show = matchesText && matchesMiss;
+        var show = q === '' || hay.indexOf(q) !== -1;
         li.style.display = show ? '' : 'none';
         if (show) shown++;
       }});
@@ -423,7 +413,6 @@ HTML = f'''<!DOCTYPE html>
     }}
 
     input.addEventListener('input', apply);
-    onlyMissing.addEventListener('change', apply);
   }})();
 </script>
 </body>
