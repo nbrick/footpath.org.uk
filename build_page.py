@@ -396,6 +396,25 @@ NATIONAL_PARKS = [
                  "authority outside it."),
     },
     {
+        # An exception: here the councils keep the function, so no row notes —
+        # Gwynedd and Conwy are already the right answer. The panel exists so that
+        # searching "Snowdon" or "Eryri" resolves to something instead of nothing.
+        "title": "In Eryri (Snowdonia), it&rsquo;s the councils, not the National Park",
+        "match": ["eryri", "snowdonia", "snowdon", "yr wyddfa", "betws-y-coed",
+                  "beddgelert", "cadair idris", "llanberis", "ogwen", "tryfan",
+                  "glyderau", "carneddau", "rhinogydd"],
+        "url": "https://eryri.gov.wales/protect/eryri-national-park-wardens/reporting-a-problem-on-a-public-right-of-way/",
+        "link": "Reporting a problem on a public right of way",
+        "where": "In Eryri",
+        "authorities": [],
+        "body": ("Unlike most national parks, Eryri leaves rights of way with the "
+                 "councils: the Authority states that <b>Gwynedd Council and Conwy "
+                 "Council</b> are the designated highway authorities for the network, and "
+                 "refers reports it receives on to them. Both are in the list above, and "
+                 "going straight there is quicker. The Authority does look after open "
+                 "access land, and will take a report either way."),
+    },
+    {
         "title": "On Dartmoor, report it to the National Park",
         "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
                   "moretonhampstead", "chagford", "two moors way", "okehampton",
@@ -777,11 +796,17 @@ HTML = f'''<!DOCTYPE html>
     padding: 3px 11px;
   }}
 
-  /* national park note, sibling of the row: an anchor can't nest inside one */
+  /* national park note, sibling of the row: an anchor can't nest inside one.
+     Kept as a quiet footnote to the row above rather than a block of its own,
+     so a list with seventeen of them still reads as one list. */
   .parknote {{
-    margin: -8px 0 0; padding: 0 4px 14px 2px;
-    font-size: 0.8rem; color: var(--ink-soft); max-width: 62ch;
-    border-left: 2px solid var(--focus); padding-left: 10px; margin-left: 2px;
+    margin: -11px 0 0; padding: 0 4px 14px 18px;
+    font-size: 0.78rem; line-height: 1.45;
+    color: var(--ink-soft); max-width: 62ch; position: relative;
+  }}
+  .parknote::before {{
+    content: "\\21B3"; position: absolute; left: 3px; top: 0;
+    color: var(--hair); font-size: 0.85rem;
   }}
   .parknote a {{ color: var(--rowmaps-dk); font-weight: 600; }}
 

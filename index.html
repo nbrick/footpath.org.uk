@@ -169,11 +169,17 @@
     padding: 3px 11px;
   }
 
-  /* national park note, sibling of the row: an anchor can't nest inside one */
+  /* national park note, sibling of the row: an anchor can't nest inside one.
+     Kept as a quiet footnote to the row above rather than a block of its own,
+     so a list with seventeen of them still reads as one list. */
   .parknote {
-    margin: -8px 0 0; padding: 0 4px 14px 2px;
-    font-size: 0.8rem; color: var(--ink-soft); max-width: 62ch;
-    border-left: 2px solid var(--focus); padding-left: 10px; margin-left: 2px;
+    margin: -11px 0 0; padding: 0 4px 14px 18px;
+    font-size: 0.78rem; line-height: 1.45;
+    color: var(--ink-soft); max-width: 62ch; position: relative;
+  }
+  .parknote::before {
+    content: "\21B3"; position: absolute; left: 3px; top: 0;
+    color: var(--hair); font-size: 0.85rem;
   }
   .parknote a { color: var(--rowmaps-dk); font-weight: 600; }
 
@@ -1537,6 +1543,10 @@
   <div class="park" data-names="bannau brycheiniog|black mountains|blaenau gwent|brecon|brecon beacons|caerphilly|carmarthenshire|crickhowell|fforest fawr|llangorse|merthyr tydfil|monmouthshire|neath port talbot|pen y fan|powys|rhondda cynon taf|talgarth|torfaen|ystradfellte">
     <h3>In Bannau Brycheiniog (the Brecon Beacons), report it to the National Park</h3>
     <p>Powys Council states that paths and land inside the park are managed directly by the National Park Authority, which runs its own rights-of-way reporting system. The park took its Welsh name in 2023; the authority is still legally the Brecon Beacons National Park Authority, which is why the link lands on a beacons-npa.gov.uk address. Nine Welsh authorities reach into the park, and each remains the highway authority outside it. <a href="https://rightsofway.beacons-npa.gov.uk" target="_blank" rel="noopener noreferrer">Report a right of way problem</a>.</p>
+  </div>
+  <div class="park" data-names="beddgelert|betws-y-coed|cadair idris|carneddau|eryri|glyderau|llanberis|ogwen|rhinogydd|snowdon|snowdonia|tryfan|yr wyddfa">
+    <h3>In Eryri (Snowdonia), it&rsquo;s the councils, not the National Park</h3>
+    <p>Unlike most national parks, Eryri leaves rights of way with the councils: the Authority states that <b>Gwynedd Council and Conwy Council</b> are the designated highway authorities for the network, and refers reports it receives on to them. Both are in the list above, and going straight there is quicker. The Authority does look after open access land, and will take a report either way. <a href="https://eryri.gov.wales/protect/eryri-national-park-wardens/reporting-a-problem-on-a-public-right-of-way/" target="_blank" rel="noopener noreferrer">Reporting a problem on a public right of way</a>.</p>
   </div>
   <div class="park" data-names="chagford|dartmoor|devon|haytor|moretonhampstead|okehampton|postbridge|princetown|two moors way|widecombe">
     <h3>On Dartmoor, report it to the National Park</h3>
