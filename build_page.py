@@ -12,6 +12,7 @@ OUT_DIR = Path(__file__).resolve().parent
 DONE = {
     "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
+    "Ceredigion": "https://www.ceredigion.gov.uk/resident/coast-countryside/public-rights-of-way/path-management/",
     "Hillingdon": "https://www.hillingdon.gov.uk/article/7576/Report-a-public-right-of-way-issue-including-bridleways-and-footpaths",
     "Lincolnshire": "https://www.lincolnshire.gov.uk/coast-countryside/public-rights-way/3",
     "Newcastle upon Tyne": "https://new.newcastle.gov.uk/travel/management/rightsofway/report",
@@ -24,6 +25,7 @@ DONE = {
 
 # Short descriptor of where a verified link lands. Default = dedicated RoW form.
 DESC = {
+    "Ceredigion": "Email and phone — no online form",
     "North Lincolnshire": "Countryside access page — links to the report form",
 }
 DEFAULT_DESC = "Rights-of-way report form"
