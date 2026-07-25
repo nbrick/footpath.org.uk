@@ -12,12 +12,13 @@ Ireland have separate systems and aren't included.
 
 - `index.html` — the whole site (one self-contained file)
 - `robots.txt` — asks crawlers to stay away (see note below on when it applies)
+- `CNAME` — claims `footpath.org.uk` for GitHub Pages
 - `build_page.py` — regenerates `index.html`; the single source of truth for the
   authority list, links, and the noindex flag
 - `README.md` — this file
 
-There is deliberately **no `CNAME` file** in this bundle, so the site stays on
-the github.io URL and doesn't try to claim footpath.org.uk yet.
+`build_page.py` only writes `index.html` and `robots.txt`, so rebuilding never
+touches `CNAME`.
 
 ## Current state
 
@@ -25,9 +26,16 @@ The repo is public and the site is live at
 `https://nbrick.github.io/footpath.org.uk/`, served by GitHub Pages from `main`
 at the repo root.
 
-`index.html` carries `<meta name="robots" content="noindex, nofollow">`, so it
-stays out of search results while coverage is still being filled in. There is
-deliberately no `CNAME` and no custom domain yet — see the launch steps below.
+DNS is on Cloudflare: four `A` records to GitHub's Pages IPs plus a `www` CNAME,
+all **DNS only** rather than proxied, because proxying blocks GitHub from issuing
+its TLS certificate. Cloudflare Email Routing forwards `wrong-link@` and
+`wronglink@` to a real inbox; it was chosen over the registrar's own forwarding
+because it applies Sender Rewriting, so forwarded mail still passes SPF instead
+of landing in the destination's spam folder.
+
+`index.html` still carries `<meta name="robots" content="noindex, nofollow">`.
+The domain is claimed and the site is served from it, but it stays out of search
+until that flag is deliberately turned off.
 
 Every link on the site was opened and confirmed by hand before it went up. A
 wrong link is worse than no link, because it sends someone reporting a real
