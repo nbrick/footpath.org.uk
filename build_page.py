@@ -706,7 +706,7 @@ for name in authorities:
             f'''    <li class="done">
       <a class="row" href="{url}" target="_blank" rel="noopener noreferrer" data-name="{hay}">
         <span class="name">{disp}</span>
-        <span class="meta"><span class="tag">{nation}</span> {desc}</span>
+        <span class="meta"><span class="tag">{nation}</span><span class="desc">{desc}</span></span>
         <span class="go">Report a problem &rarr;</span>
       </a>{park_notes(name)}
     </li>''')
@@ -715,7 +715,7 @@ for name in authorities:
             f'''    <li class="todo">
       <div class="row row--todo" data-name="{hay}">
         <span class="name">{disp}</span>
-        <span class="meta"><span class="tag">{nation}</span> we haven&rsquo;t checked this one yet</span>
+        <span class="meta"><span class="tag">{nation}</span><span class="desc">we haven&rsquo;t checked this one yet</span></span>
         <span class="go go--todo" role="img" aria-label="Reporting link not checked yet">Not checked yet</span>
       </div>{park_notes(name)}
     </li>''')
@@ -870,12 +870,17 @@ HTML = f'''<!DOCTYPE html>
   a.row:hover .go {{ transform: translateX(3px); color: var(--rowmaps-dk); }}
 
   .name {{ font-weight: 600; font-size: 1.08rem; letter-spacing: -0.01em; }}
-  .meta {{ grid-column: 1 / 2; font-size: 0.8rem; color: var(--ink-soft); margin-top: 2px; }}
+  /* flex so a descriptor wrapping to a second line lines up with the first,
+     rather than running back under the England/Wales pill */
+  .meta {{
+    grid-column: 1 / 2; font-size: 0.8rem; color: var(--ink-soft); margin-top: 2px;
+    display: flex; align-items: baseline; gap: 6px;
+  }}
   .tag {{
-    display: inline-block; font-size: 0.72rem; font-weight: 600;
+    flex: none; font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.03em; text-transform: uppercase; color: var(--ink-soft);
     border: 1px solid var(--hair); border-radius: 20px;
-    padding: 1px 8px; margin-right: 6px; vertical-align: 1px;
+    padding: 1px 8px;
   }}
   .go {{
     grid-column: 2 / 3; grid-row: 1 / 3;
