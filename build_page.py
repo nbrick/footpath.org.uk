@@ -380,6 +380,8 @@ NATIONAL_PARKS = [
                   "devon"],
         "url": "https://www.dartmoor.gov.uk/enjoy-dartmoor/outdoor-activities/report-a-path-problem",
         "link": "Report a path problem",
+        "where": "On Dartmoor",
+        "authorities": ["Devon"],
         "body": ("Dartmoor National Park Authority manages the public rights of way "
                  "inside the park <b>on behalf of Devon County Council</b>, and takes "
                  "reports through its own system &mdash; first-time users have to create "
@@ -392,6 +394,8 @@ NATIONAL_PARKS = [
                   "cumberland", "westmorland and furness"],
         "url": "https://www.lakedistrict.gov.uk/visiting/plan-your-visit/rowupdates/reporting-a-problem-on-a-right-of-way",
         "link": "Reporting a problem on a right of way",
+        "where": "In the Lake District",
+        "authorities": ["Cumberland", "Westmorland and Furness"],
         "body": ("The Lake District National Park Authority maintains over 3,200km of "
                  "public rights of way inside the park and takes reports itself &mdash; "
                  "they go to the area Ranger to investigate. Cumberland and Westmorland "
@@ -404,6 +408,8 @@ NATIONAL_PARKS = [
                   "north yorkshire", "redcar and cleveland"],
         "url": "https://www.northyorkmoors.org.uk/plan-your-visit/rights-of-way/rights-of-way-feedback-form",
         "link": "Rights of Way feedback form",
+        "where": "In the North York Moors",
+        "authorities": ["North Yorkshire", "Redcar and Cleveland"],
         "body": ("North York Moors National Park Authority takes reports on any public "
                  "right of way inside the park and aims to investigate within 28 working "
                  "days &mdash; a grid reference is essential, so bring one. North Yorkshire "
@@ -417,6 +423,8 @@ NATIONAL_PARKS = [
                   "north yorkshire", "westmorland and furness"],
         "url": "https://www.yorkshiredales.org.uk/things-to-do/get-outdoors/where-can-i-go/rights-of-way-and-countryside-access/",
         "link": "Rights of way and countryside access",
+        "where": "In the Yorkshire Dales",
+        "authorities": ["North Yorkshire", "Westmorland and Furness"],
         "body": ("The Yorkshire Dales National Park Authority&rsquo;s rangers maintain the "
                  "2,623km of public rights of way inside the park, and ask to be contacted "
                  "first about obstructions and path furniture. North Yorkshire and "
@@ -428,6 +436,8 @@ NATIONAL_PARKS = [
                   "preseli", "newgale", "dale"],
         "url": "https://www.pembrokeshirecoast.wales/about-the-national-park/access-and-rights-of-way/public-rights-of-way/",
         "link": "Public rights of way",
+        "where": "On the Pembrokeshire Coast",
+        "authorities": ["Pembrokeshire"],
         "body": ("Pembrokeshire Coast National Park Authority asks to be contacted about "
                  "the condition of public paths inside the park, which includes most of "
                  "the Coast Path. Pembrokeshire County Council holds the definitive map "
@@ -509,6 +519,25 @@ def esc(s):
              .replace('"', "&quot;"))
 
 
+# Which parks overlap each authority, so a row can carry the warning for anyone
+# scrolling rather than searching. Without this, someone reads "Devon" and clicks
+# through, never learning that Dartmoor's paths are handled elsewhere.
+PARKS_BY_AUTHORITY = {}
+for _p in NATIONAL_PARKS:
+    for _a in _p["authorities"]:
+        PARKS_BY_AUTHORITY.setdefault(_a, []).append(_p)
+
+
+def park_notes(name):
+    """Sibling note(s) under a row whose area includes a covered national park."""
+    return "".join(
+        f'\n      <p class="parknote">{p["where"]}, reports go to the '
+        f'<a href="{esc(p["url"])}" target="_blank" rel="noopener noreferrer">'
+        f'National Park Authority</a>.</p>'
+        for p in PARKS_BY_AUTHORITY.get(name, [])
+    )
+
+
 parks_html = "\n".join(
     f'''  <div class="park" data-names="{esc("|".join(sorted(p["match"])))}">
     <h3>{p["title"]}</h3>
@@ -542,7 +571,7 @@ for name in authorities:
         <span class="name">{disp}</span>
         <span class="meta"><span class="tag">{nation}</span> {desc}</span>
         <span class="go">Report a problem &rarr;</span>
-      </a>
+      </a>{park_notes(name)}
     </li>''')
     else:
         rows.append(
@@ -551,7 +580,7 @@ for name in authorities:
         <span class="name">{disp}</span>
         <span class="meta"><span class="tag">{nation}</span> we haven&rsquo;t checked this one yet</span>
         <span class="go go--todo" role="img" aria-label="Reporting link not checked yet">Not checked yet</span>
-      </div>
+      </div>{park_notes(name)}
     </li>''')
 
 rows_html = "\n".join(rows)
@@ -725,6 +754,14 @@ HTML = f'''<!DOCTYPE html>
     border: 1px solid var(--hair); border-radius: 20px;
     padding: 3px 11px;
   }}
+
+  /* national park note, sibling of the row: an anchor can't nest inside one */
+  .parknote {{
+    margin: -8px 0 0; padding: 0 4px 14px 2px;
+    font-size: 0.8rem; color: var(--ink-soft); max-width: 62ch;
+    border-left: 2px solid var(--focus); padding-left: 10px; margin-left: 2px;
+  }}
+  .parknote a {{ color: var(--rowmaps-dk); font-weight: 600; }}
 
   .no-match {{ padding: 18px 2px; color: var(--ink-soft); display: none; }}
 
