@@ -210,8 +210,8 @@ for name in authorities:
             f'''    <li class="todo">
       <div class="row row--todo" data-name="{hay}">
         <span class="name">{disp}</span>
-        <span class="meta"><span class="tag">{nation}</span> reporting link not added yet</span>
-        <span class="go go--todo" role="img" aria-label="Reporting link still needed">Link needed</span>
+        <span class="meta"><span class="tag">{nation}</span> we haven&rsquo;t checked this one yet</span>
+        <span class="go go--todo" role="img" aria-label="Reporting link not checked yet">Not checked yet</span>
       </div>
     </li>''')
 
@@ -223,8 +223,9 @@ HTML = f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>footpath.org.uk &mdash; report a blocked public right of way</title>
-<meta name="description" content="A blocked footpath, bridleway or byway is reported to the local highway authority &mdash; usually your county or unitary council. Find yours and go straight to its reporting page. Covers England and Wales.">
-{noindex_tag}<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="A blocked footpath, bridleway or byway is reported to the highway authority for the area the path runs through &mdash; usually a county or unitary council, and not necessarily the one where you live. Find the right one and go straight to its reporting page. Covers England and Wales.">
+{noindex_tag}<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect width='22' height='22' rx='5' fill='%2320291F'/%3E%3Cpath d='M4 11h11M11 5l6 6-6 6' fill='none' stroke='%23E6AC24' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&display=swap" rel="stylesheet">
 <style>
@@ -238,8 +239,6 @@ HTML = f'''<!DOCTYPE html>
     --rowmaps-dk: #96204F;
     --waymark:    #E6AC24;
     --focus:      #1B5E44;
-    --warn:       #C0392B;
-    --warn-bg:    #FBE4E1;
   }}
 
   * {{ box-sizing: border-box; }}
@@ -346,16 +345,14 @@ HTML = f'''<!DOCTYPE html>
     white-space: nowrap; transition: transform .15s ease, color .15s ease;
   }}
 
-  /* missing-link state */
-  li.todo .name {{ color: var(--ink-soft); }}
+  /* not-yet-checked state: recede quietly, don't shout */
+  li.todo .name {{ color: var(--ink-soft); font-weight: 500; }}
   .go--todo {{
-    color: #fff; background: var(--warn);
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 4px 11px; border-radius: 6px;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    color: var(--ink-soft); background: transparent;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+    border: 1px solid var(--hair); border-radius: 20px;
+    padding: 3px 11px;
   }}
-  li.todo {{ background: linear-gradient(90deg, var(--warn-bg) 0%, transparent 42%); }}
 
   .no-match {{ padding: 18px 2px; color: var(--ink-soft); display: none; }}
 
@@ -414,26 +411,26 @@ HTML = f'''<!DOCTYPE html>
 
   <section class="hero">
     <h1>A right of way blocked? Report it to the people who can act.</h1>
-    <p>Footpaths, bridleways and byways are kept open by the local <strong>highway authority</strong> &mdash; usually your county or unitary council. Find yours below and go straight to its reporting page.</p>
+    <p>Footpaths, bridleways and byways are kept open by the local <strong>highway authority</strong> &mdash; usually the county or unitary council for the area <strong>the path runs through</strong>. If you were away from home when you found the problem, that&rsquo;s the council you need, not the one where you live.</p>
   </section>
 
   <hr class="row-rule">
 
   <div class="list-head">
-    <h2>Find your authority</h2>
+    <h2>Find the authority</h2>
     <span class="count"><b>{done_count}</b> of {total} linked so far</span>
   </div>
-  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked <span style="color:var(--warn);font-weight:700;">Link needed</span> don&rsquo;t have a checked reporting link yet.</p>
+  <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked &ldquo;Not checked yet&rdquo; are ones nobody has verified a reporting link for &mdash; every link here was opened and confirmed by hand before it went up.</p>
 
   <div class="controls">
     <label for="filter" style="position:absolute;left:-9999px;">Filter authorities by name</label>
-    <input id="filter" class="filter" type="text" inputmode="search" autocomplete="off" placeholder="Start typing a council or county&hellip;">
+    <input id="filter" class="filter" type="text" inputmode="search" autocomplete="off" placeholder="Start typing the council or county where the path is&hellip;">
   </div>
 
   <ul class="authorities" id="list">
 {rows_html}
   </ul>
-  <p class="no-match" id="noMatch">No authority by that name here. Check the spelling, or search your council&rsquo;s own website for &ldquo;report a problem with a public right of way&rdquo;.</p>
+  <p class="no-match" id="noMatch">No authority by that name here. Check the spelling, or search that council&rsquo;s own website for &ldquo;report a problem with a public right of way&rdquo;.</p>
 
   <div class="prep">
     <h3>Worth having ready before you click through</h3>
@@ -446,7 +443,7 @@ HTML = f'''<!DOCTYPE html>
   </div>
 
   <footer>
-    <p class="status">{done_count} of {total} authorities linked. The remaining {todo_count} are listed and marked &ldquo;Link needed&rdquo; &mdash; each one&rsquo;s reporting link is added as it&rsquo;s checked.</p>
+    <p class="status">{done_count} of {total} authorities linked. The remaining {todo_count} are listed and marked &ldquo;Not checked yet&rdquo; &mdash; each one&rsquo;s reporting link goes up once it&rsquo;s been opened and confirmed.</p>
     <p>Every link goes to the authority&rsquo;s own website &mdash; this site collects nothing and stores nothing. Found a wrong or dead link? That&rsquo;s the one thing worth telling us about.</p>
     <p>Authority list reflects local-government structure as of July 2026; it will change as the 2027&ndash;2028 unitary reorganisations take effect. Links last checked July 2026.</p>
   </footer>
