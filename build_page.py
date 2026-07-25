@@ -359,6 +359,55 @@ PROW_KM = {
     "Wrexham": 1000, "York": 500,
 }
 
+# --- National parks ----------------------------------------------------------
+# In many national parks the park authority, not the highway authority, actually
+# looks after the rights of way and takes the reports. This is done by agreement
+# rather than by statute, so it varies park by park and has to be checked one at
+# a time — the Peak District, for instance, appears to leave the function with
+# the county councils while the Lake District does the work itself.
+#
+# These are NOT rows in the list: park authorities are not highway authorities,
+# and the county or unitary is still the right answer outside the park boundary.
+# They surface as a panel when someone searches a park name, alongside whatever
+# authorities matched rather than instead of them.
+#
+# Only parks that have been checked appear here. The rest simply have no panel.
+NATIONAL_PARKS = [
+    {
+        "title": "In the Lake District, report it to the National Park",
+        "match": ["lake district", "lakes", "windermere", "keswick", "ambleside",
+                  "scafell", "helvellyn", "borrowdale", "langdale"],
+        "url": "https://www.lakedistrict.gov.uk/visiting/plan-your-visit/rowupdates/reporting-a-problem-on-a-right-of-way",
+        "link": "Reporting a problem on a right of way",
+        "body": ("The Lake District National Park Authority maintains over 3,200km of "
+                 "public rights of way inside the park and takes reports itself &mdash; "
+                 "they go to the area Ranger to investigate. Cumberland and Westmorland "
+                 "and Furness remain the highway authorities outside the boundary."),
+    },
+    {
+        "title": "In the Yorkshire Dales, report it to the National Park",
+        "match": ["yorkshire dales", "dales", "wharfedale", "swaledale",
+                  "wensleydale", "malham", "ingleborough", "whernside"],
+        "url": "https://www.yorkshiredales.org.uk/things-to-do/get-outdoors/where-can-i-go/rights-of-way-and-countryside-access/",
+        "link": "Rights of way and countryside access",
+        "body": ("The Yorkshire Dales National Park Authority&rsquo;s rangers maintain the "
+                 "2,623km of public rights of way inside the park, and ask to be contacted "
+                 "first about obstructions and path furniture. North Yorkshire and "
+                 "Westmorland and Furness remain the highway authorities outside it."),
+    },
+    {
+        "title": "On the Pembrokeshire Coast, report it to the National Park",
+        "match": ["pembrokeshire coast", "coast path", "st davids", "tenby",
+                  "preseli", "newgale", "dale"],
+        "url": "https://www.pembrokeshirecoast.wales/about-the-national-park/access-and-rights-of-way/public-rights-of-way/",
+        "link": "Public rights of way",
+        "body": ("Pembrokeshire Coast National Park Authority asks to be contacted about "
+                 "the condition of public paths inside the park, which includes most of "
+                 "the Coast Path. Pembrokeshire County Council holds the definitive map "
+                 "for the whole county and remains the highway authority outside it."),
+    },
+]
+
 # --- Out of scope: Scotland and Northern Ireland -----------------------------
 # Deliberately NOT rows in the list. Both run on entirely different law, so
 # listing them would imply a reporting route that this site hasn't checked and
@@ -432,6 +481,14 @@ def esc(s):
     return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
              .replace('"', "&quot;"))
 
+
+parks_html = "\n".join(
+    f'''  <div class="park" data-names="{esc("|".join(sorted(p["match"])))}">
+    <h3>{p["title"]}</h3>
+    <p>{p["body"]} <a href="{esc(p["url"])}" target="_blank" rel="noopener noreferrer">{p["link"]}</a>.</p>
+  </div>'''
+    for p in NATIONAL_PARKS
+)
 
 scotland_hay = esc(offscope_haystack(SCOTLAND, SCOTLAND_ALIASES))
 ni_hay = esc(offscope_haystack(NORTHERN_IRELAND, NORTHERN_IRELAND_ALIASES))
@@ -644,20 +701,21 @@ HTML = f'''<!DOCTYPE html>
 
   .no-match {{ padding: 18px 2px; color: var(--ink-soft); display: none; }}
 
-  /* shown when someone searches a Scottish or NI place: explain, don't dead-end */
-  .offscope {{
+  /* search-triggered notes: Scotland and NI, and national parks */
+  .offscope, .park {{
     display: none;
     margin: 14px 0 0; background: var(--paper-2);
     border-left: 3px solid var(--waymark); border-radius: 0 8px 8px 0;
     padding: 16px 18px;
   }}
-  .offscope h3 {{
+  .park {{ border-left-color: var(--focus); }}
+  .offscope h3, .park h3 {{
     font-family: "Bricolage Grotesque", ui-sans-serif, sans-serif;
     font-size: 0.98rem; margin: 0 0 6px; font-weight: 600;
   }}
-  .offscope p {{ margin: 0; font-size: 0.9rem; color: var(--ink-soft); }}
-  .offscope a {{ color: var(--rowmaps-dk); font-weight: 600; }}
-  .offscope b {{ color: var(--ink); font-weight: 600; }}
+  .offscope p, .park p {{ margin: 0; font-size: 0.9rem; color: var(--ink-soft); }}
+  .offscope a, .park a {{ color: var(--rowmaps-dk); font-weight: 600; }}
+  .offscope b, .park b {{ color: var(--ink); font-weight: 600; }}
 
   .prep {{
     margin: 30px 0 0; background: var(--paper-2);
@@ -757,6 +815,8 @@ HTML = f'''<!DOCTYPE html>
   <ul class="authorities" id="list">
 {rows_html}
   </ul>
+{parks_html}
+
   <div class="offscope" id="offscope-scotland" data-names="{scotland_hay}">
     <h3>Scotland works differently</h3>
     <p>Not a gap in this list &mdash; a different system. The <a href="https://www.legislation.gov.uk/asp/2003/2/contents" target="_blank" rel="noopener noreferrer">Land Reform (Scotland) Act 2003</a> gives a right of responsible access to most land and water, rather than recording particular routes on a definitive map. Every Scottish council, plus the Cairngorms and Loch Lomond &amp; The Trossachs park authorities, is an <b>access authority</b> with a statutory duty to uphold that right, so an obstruction goes to that authority&rsquo;s access officer. NatureScot&rsquo;s <a href="https://www.nature.scot/enjoying-outdoors/your-access-rights" target="_blank" rel="noopener noreferrer">guide to your access rights</a> explains what the right covers.</p>
@@ -799,6 +859,7 @@ HTML = f'''<!DOCTYPE html>
     var items = Array.prototype.slice.call(document.querySelectorAll('#list > li'));
     var noMatch = document.getElementById('noMatch');
     var offscope = Array.prototype.slice.call(document.querySelectorAll('.offscope'));
+    var parks = Array.prototype.slice.call(document.querySelectorAll('.park'));
 
     function apply() {{
       var q = (input.value || '').trim().toLowerCase();
@@ -809,6 +870,19 @@ HTML = f'''<!DOCTYPE html>
         var show = q === '' || hay.indexOf(q) !== -1;
         li.style.display = show ? '' : 'none';
         if (show) shown++;
+      }});
+
+      // National parks: additive, not a fallback. Someone searching "Pembrokeshire"
+      // should see the council row AND the note about the park authority, since
+      // which one they need depends on where the path is.
+      var parkHit = false;
+      parks.forEach(function (panel) {{
+        var names = (panel.getAttribute('data-names') || '').split('|');
+        var hit = q.length >= 4 && names.some(function (n) {{
+          return n.indexOf(q) !== -1;
+        }});
+        panel.style.display = hit ? 'block' : 'none';
+        if (hit) parkHit = true;
       }});
 
       // Scotland / Northern Ireland: answer the question rather than dead-end.
@@ -824,7 +898,8 @@ HTML = f'''<!DOCTYPE html>
         if (hit) offscopeHit = true;
       }});
 
-      noMatch.style.display = (shown === 0 && !offscopeHit) ? 'block' : 'none';
+      noMatch.style.display =
+        (shown === 0 && !offscopeHit && !parkHit) ? 'block' : 'none';
     }}
 
     input.addEventListener('input', apply);

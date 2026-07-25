@@ -171,20 +171,21 @@
 
   .no-match { padding: 18px 2px; color: var(--ink-soft); display: none; }
 
-  /* shown when someone searches a Scottish or NI place: explain, don't dead-end */
-  .offscope {
+  /* search-triggered notes: Scotland and NI, and national parks */
+  .offscope, .park {
     display: none;
     margin: 14px 0 0; background: var(--paper-2);
     border-left: 3px solid var(--waymark); border-radius: 0 8px 8px 0;
     padding: 16px 18px;
   }
-  .offscope h3 {
+  .park { border-left-color: var(--focus); }
+  .offscope h3, .park h3 {
     font-family: "Bricolage Grotesque", ui-sans-serif, sans-serif;
     font-size: 0.98rem; margin: 0 0 6px; font-weight: 600;
   }
-  .offscope p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
-  .offscope a { color: var(--rowmaps-dk); font-weight: 600; }
-  .offscope b { color: var(--ink); font-weight: 600; }
+  .offscope p, .park p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+  .offscope a, .park a { color: var(--rowmaps-dk); font-weight: 600; }
+  .offscope b, .park b { color: var(--ink); font-weight: 600; }
 
   .prep {
     margin: 30px 0 0; background: var(--paper-2);
@@ -1508,6 +1509,19 @@
       </div>
     </li>
   </ul>
+  <div class="park" data-names="ambleside|borrowdale|helvellyn|keswick|lake district|lakes|langdale|scafell|windermere">
+    <h3>In the Lake District, report it to the National Park</h3>
+    <p>The Lake District National Park Authority maintains over 3,200km of public rights of way inside the park and takes reports itself &mdash; they go to the area Ranger to investigate. Cumberland and Westmorland and Furness remain the highway authorities outside the boundary. <a href="https://www.lakedistrict.gov.uk/visiting/plan-your-visit/rowupdates/reporting-a-problem-on-a-right-of-way" target="_blank" rel="noopener noreferrer">Reporting a problem on a right of way</a>.</p>
+  </div>
+  <div class="park" data-names="dales|ingleborough|malham|swaledale|wensleydale|wharfedale|whernside|yorkshire dales">
+    <h3>In the Yorkshire Dales, report it to the National Park</h3>
+    <p>The Yorkshire Dales National Park Authority&rsquo;s rangers maintain the 2,623km of public rights of way inside the park, and ask to be contacted first about obstructions and path furniture. North Yorkshire and Westmorland and Furness remain the highway authorities outside it. <a href="https://www.yorkshiredales.org.uk/things-to-do/get-outdoors/where-can-i-go/rights-of-way-and-countryside-access/" target="_blank" rel="noopener noreferrer">Rights of way and countryside access</a>.</p>
+  </div>
+  <div class="park" data-names="coast path|dale|newgale|pembrokeshire coast|preseli|st davids|tenby">
+    <h3>On the Pembrokeshire Coast, report it to the National Park</h3>
+    <p>Pembrokeshire Coast National Park Authority asks to be contacted about the condition of public paths inside the park, which includes most of the Coast Path. Pembrokeshire County Council holds the definitive map for the whole county and remains the highway authority outside it. <a href="https://www.pembrokeshirecoast.wales/about-the-national-park/access-and-rights-of-way/public-rights-of-way/" target="_blank" rel="noopener noreferrer">Public rights of way</a>.</p>
+  </div>
+
   <div class="offscope" id="offscope-scotland" data-names="aberdeen city|aberdeenshire|angus|argyll and bute|arran|ayr|ben nevis|cairngorm|cairngorms|city of edinburgh|clackmannanshire|dumfries and galloway|dundee city|east ayrshire|east dunbartonshire|east lothian|east renfrewshire|falkirk|fife|galloway|glasgow city|harris|hebrides|highland|inverclyde|inverness|lewis|loch lomond and the trossachs|lochaber|midlothian|moray|mull|na h-eileanan siar|north ayrshire|north lanarkshire|orkney islands|outer hebrides|perth|perth and kinross|renfrewshire|scotland|scottish|scottish borders|shetland islands|skye|south ayrshire|south lanarkshire|stirling|trossachs|west dunbartonshire|west lothian|western isles">
     <h3>Scotland works differently</h3>
     <p>Not a gap in this list &mdash; a different system. The <a href="https://www.legislation.gov.uk/asp/2003/2/contents" target="_blank" rel="noopener noreferrer">Land Reform (Scotland) Act 2003</a> gives a right of responsible access to most land and water, rather than recording particular routes on a definitive map. Every Scottish council, plus the Cairngorms and Loch Lomond &amp; The Trossachs park authorities, is an <b>access authority</b> with a statutory duty to uphold that right, so an obstruction goes to that authority&rsquo;s access officer. NatureScot&rsquo;s <a href="https://www.nature.scot/enjoying-outdoors/your-access-rights" target="_blank" rel="noopener noreferrer">guide to your access rights</a> explains what the right covers.</p>
@@ -1550,6 +1564,7 @@
     var items = Array.prototype.slice.call(document.querySelectorAll('#list > li'));
     var noMatch = document.getElementById('noMatch');
     var offscope = Array.prototype.slice.call(document.querySelectorAll('.offscope'));
+    var parks = Array.prototype.slice.call(document.querySelectorAll('.park'));
 
     function apply() {
       var q = (input.value || '').trim().toLowerCase();
@@ -1560,6 +1575,19 @@
         var show = q === '' || hay.indexOf(q) !== -1;
         li.style.display = show ? '' : 'none';
         if (show) shown++;
+      });
+
+      // National parks: additive, not a fallback. Someone searching "Pembrokeshire"
+      // should see the council row AND the note about the park authority, since
+      // which one they need depends on where the path is.
+      var parkHit = false;
+      parks.forEach(function (panel) {
+        var names = (panel.getAttribute('data-names') || '').split('|');
+        var hit = q.length >= 4 && names.some(function (n) {
+          return n.indexOf(q) !== -1;
+        });
+        panel.style.display = hit ? 'block' : 'none';
+        if (hit) parkHit = true;
       });
 
       // Scotland / Northern Ireland: answer the question rather than dead-end.
@@ -1575,7 +1603,8 @@
         if (hit) offscopeHit = true;
       });
 
-      noMatch.style.display = (shown === 0 && !offscopeHit) ? 'block' : 'none';
+      noMatch.style.display =
+        (shown === 0 && !offscopeHit && !parkHit) ? 'block' : 'none';
     }
 
     input.addEventListener('input', apply);
