@@ -189,6 +189,48 @@ ENGLAND = [
     "Waltham Forest", "Wandsworth", "Westminster",
 ]
 
+# --- Out of scope: Scotland and Northern Ireland -----------------------------
+# Deliberately NOT rows in the list. Both run on entirely different law, so
+# listing them would imply a reporting route that this site hasn't checked and
+# would distort the coverage count. But someone searching "Highland" or
+# "Belfast" deserves an answer, not "no authority by that name".
+SCOTLAND = [
+    "Aberdeen City", "Aberdeenshire", "Angus", "Argyll and Bute",
+    "City of Edinburgh", "Clackmannanshire", "Dumfries and Galloway",
+    "Dundee City", "East Ayrshire", "East Dunbartonshire", "East Lothian",
+    "East Renfrewshire", "Falkirk", "Fife", "Glasgow City", "Highland",
+    "Inverclyde", "Midlothian", "Moray", "Na h-Eileanan Siar", "North Ayrshire",
+    "North Lanarkshire", "Orkney Islands", "Perth and Kinross", "Renfrewshire",
+    "Scottish Borders", "Shetland Islands", "South Ayrshire", "South Lanarkshire",
+    "Stirling", "West Dunbartonshire", "West Lothian",
+    # the two national park authorities are access authorities too
+    "Cairngorms", "Loch Lomond and The Trossachs",
+]
+SCOTLAND_ALIASES = [
+    "scotland", "scottish", "inverness", "perth", "skye", "western isles",
+    "outer hebrides", "lewis", "harris", "mull", "arran", "ayr", "trossachs",
+    "galloway", "lochaber", "hebrides", "ben nevis", "cairngorm",
+]
+
+NORTHERN_IRELAND = [
+    "Antrim and Newtownabbey", "Ards and North Down",
+    "Armagh City, Banbridge and Craigavon", "Belfast",
+    "Causeway Coast and Glens", "Derry City and Strabane",
+    "Fermanagh and Omagh", "Lisburn and Castlereagh", "Mid and East Antrim",
+    "Mid Ulster", "Newry, Mourne and Down",
+]
+NORTHERN_IRELAND_ALIASES = [
+    "northern ireland", "ulster", "londonderry", "ballymena", "bangor",
+    "coleraine", "enniskillen", "tyrone", "mourne", "sperrins", "antrim coast",
+]
+
+
+def offscope_haystack(names, aliases):
+    """Pipe-separated match strings for the out-of-scope search panels."""
+    seen = [n.lower().replace(",", "") for n in names] + list(aliases)
+    return "|".join(sorted(set(seen)))
+
+
 # --- Assemble, de-dupe, tag nation, sort -------------------------------------
 records = {}
 for name in ENGLAND:
@@ -213,6 +255,10 @@ noindex_tag = ('<meta name="robots" content="noindex, nofollow">\n'
 def esc(s):
     return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
              .replace('"', "&quot;"))
+
+
+scotland_hay = esc(offscope_haystack(SCOTLAND, SCOTLAND_ALIASES))
+ni_hay = esc(offscope_haystack(NORTHERN_IRELAND, NORTHERN_IRELAND_ALIASES))
 
 
 def haystack(name):
@@ -420,6 +466,21 @@ HTML = f'''<!DOCTYPE html>
 
   .no-match {{ padding: 18px 2px; color: var(--ink-soft); display: none; }}
 
+  /* shown when someone searches a Scottish or NI place: explain, don't dead-end */
+  .offscope {{
+    display: none;
+    margin: 14px 0 0; background: var(--paper-2);
+    border-left: 3px solid var(--waymark); border-radius: 0 8px 8px 0;
+    padding: 16px 18px;
+  }}
+  .offscope h3 {{
+    font-family: "Bricolage Grotesque", ui-sans-serif, sans-serif;
+    font-size: 0.98rem; margin: 0 0 6px; font-weight: 600;
+  }}
+  .offscope p {{ margin: 0; font-size: 0.9rem; color: var(--ink-soft); }}
+  .offscope a {{ color: var(--rowmaps-dk); font-weight: 600; }}
+  .offscope b {{ color: var(--ink); font-weight: 600; }}
+
   .prep {{
     margin: 30px 0 0; background: var(--paper-2);
     border-left: 3px solid var(--waymark); border-radius: 0 8px 8px 0;
@@ -518,6 +579,16 @@ HTML = f'''<!DOCTYPE html>
   <ul class="authorities" id="list">
 {rows_html}
   </ul>
+  <div class="offscope" id="offscope-scotland" data-names="{scotland_hay}">
+    <h3>Scotland works differently</h3>
+    <p>Not a gap in this list &mdash; a different system. The <a href="https://www.legislation.gov.uk/asp/2003/2/contents" target="_blank" rel="noopener noreferrer">Land Reform (Scotland) Act 2003</a> gives a right of responsible access to most land and water, rather than recording particular routes on a definitive map. Every Scottish council, plus the Cairngorms and Loch Lomond &amp; The Trossachs park authorities, is an <b>access authority</b> with a statutory duty to uphold that right. An obstruction goes to that authority&rsquo;s access officer.</p>
+  </div>
+
+  <div class="offscope" id="offscope-ni" data-names="{ni_hay}">
+    <h3>Northern Ireland works differently</h3>
+    <p>Not covered here. Public rights of way are the responsibility of the <b>11 district councils</b> under the <a href="https://www.legislation.gov.uk/nisi/1983/1895/contents" target="_blank" rel="noopener noreferrer">Access to the Countryside (Northern Ireland) Order 1983</a>, which requires them to protect and maintain routes and to keep maps of them. Far fewer paths are legally recorded than in Great Britain, so a path in regular use may have no recorded status at all &mdash; your district council&rsquo;s countryside access team is the place to start.</p>
+  </div>
+
   <p class="no-match" id="noMatch">No authority by that name here. Check the spelling, or search that council&rsquo;s own website for &ldquo;report a problem with a public right of way&rdquo;.</p>
 
   <div class="prep">
@@ -549,6 +620,7 @@ HTML = f'''<!DOCTYPE html>
     var input = document.getElementById('filter');
     var items = Array.prototype.slice.call(document.querySelectorAll('#list > li'));
     var noMatch = document.getElementById('noMatch');
+    var offscope = Array.prototype.slice.call(document.querySelectorAll('.offscope'));
 
     function apply() {{
       var q = (input.value || '').trim().toLowerCase();
@@ -560,7 +632,21 @@ HTML = f'''<!DOCTYPE html>
         li.style.display = show ? '' : 'none';
         if (show) shown++;
       }});
-      noMatch.style.display = (shown === 0) ? 'block' : 'none';
+
+      // Scotland / Northern Ireland: answer the question rather than dead-end.
+      // Only once nothing here matched, so searching "north" doesn't summon a
+      // panel alongside a screen of English results. Three characters minimum.
+      var offscopeHit = false;
+      offscope.forEach(function (panel) {{
+        var names = (panel.getAttribute('data-names') || '').split('|');
+        var hit = shown === 0 && q.length >= 3 && names.some(function (n) {{
+          return n.indexOf(q) !== -1;
+        }});
+        panel.style.display = hit ? 'block' : 'none';
+        if (hit) offscopeHit = true;
+      }});
+
+      noMatch.style.display = (shown === 0 && !offscopeHit) ? 'block' : 'none';
     }}
 
     input.addEventListener('input', apply);
