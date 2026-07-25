@@ -463,6 +463,33 @@ NATIONAL_PARKS = [
                  "the whole park including the Devon side."),
     },
     {
+        "title": "In the New Forest, it&rsquo;s the councils, not the National Park",
+        "match": ["new forest", "lyndhurst", "brockenhurst", "beaulieu", "burley",
+                  "fordingbridge", "hampshire", "wiltshire"],
+        "where": "In the New Forest",
+        "authorities": [],
+        "body": ("The Authority sends footpath maintenance reports &ldquo;direct to the "
+                 "relevant Highway Authority, using the online forms provided for Hampshire "
+                 "or Wiltshire&rdquo;. Both are in the list above. There are some 310km of "
+                 "rights of way in the park, so a good deal of it is council business."),
+    },
+    {
+        # Legal responsibility stays with the county; the Authority's rangers do the
+        # physical work under delegation. Reports go to the county either way, so no
+        # row note — but the panel resolves searches for Hadrian's Wall and the like.
+        "title": "In Northumberland National Park, reports go to the county",
+        "match": ["hadrians wall", "hadrian's wall", "cheviot", "cheviots",
+                  "kielder", "rothbury", "wooler", "bellingham", "coquetdale",
+                  "simonside", "northumberland"],
+        "where": "In Northumberland National Park",
+        "authorities": [],
+        "body": ("The Authority states that responsibility for rights of way lies with "
+                 "<b>Northumberland County Council</b> as highway authority, and it is in "
+                 "the list above. The Park&rsquo;s rangers carry out the physical "
+                 "maintenance and improvement of the network under delegation from the "
+                 "council, but the reporting route is the council&rsquo;s."),
+    },
+    {
         "title": "On Dartmoor, report it to the National Park",
         "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
                   "moretonhampstead", "chagford", "two moors way", "okehampton",
