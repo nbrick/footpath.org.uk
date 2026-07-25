@@ -419,7 +419,8 @@ HTML = f'''<!DOCTYPE html>
     line-height: 1.05;
     letter-spacing: -0.025em;
     margin: 0 0 10px;
-    max-width: 20ch;
+    max-width: 17ch;
+    text-wrap: balance;
   }}
   .hero p {{
     font-size: 1.06rem; color: var(--ink-soft); margin: 0; max-width: 48ch;
