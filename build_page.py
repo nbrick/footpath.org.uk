@@ -374,6 +374,26 @@ PROW_KM = {
 # Only parks that have been checked appear here. The rest simply have no panel.
 NATIONAL_PARKS = [
     {
+        "title": "In Bannau Brycheiniog, report it to the National Park",
+        "match": ["bannau brycheiniog", "brecon beacons", "brecon", "pen y fan",
+                  "black mountains", "fforest fawr", "crickhowell", "talgarth",
+                  "ystradfellte", "llangorse",
+                  "powys", "carmarthenshire", "monmouthshire", "blaenau gwent",
+                  "caerphilly", "merthyr tydfil", "rhondda cynon taf", "torfaen",
+                  "neath port talbot"],
+        "url": "https://rightsofway.beacons-npa.gov.uk",
+        "link": "Report a right of way problem",
+        "where": "In Bannau Brycheiniog (the Brecon Beacons)",
+        "authorities": ["Powys", "Carmarthenshire", "Monmouthshire",
+                        "Blaenau Gwent", "Caerphilly", "Merthyr Tydfil",
+                        "Rhondda Cynon Taf", "Torfaen", "Neath Port Talbot"],
+        "body": ("Powys Council states that paths and land inside the park are managed "
+                 "directly by the National Park Authority, which runs its own "
+                 "rights-of-way reporting system. The park reaches into nine Welsh "
+                 "authorities, each of which remains the highway authority outside the "
+                 "boundary."),
+    },
+    {
         "title": "On Dartmoor, report it to the National Park",
         "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
                   "moretonhampstead", "chagford", "two moors way", "okehampton",
