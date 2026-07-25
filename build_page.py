@@ -374,6 +374,17 @@ PROW_KM = {
 # Only parks that have been checked appear here. The rest simply have no panel.
 NATIONAL_PARKS = [
     {
+        "title": "On Dartmoor, report it to the National Park",
+        "match": ["dartmoor", "princetown", "haytor", "postbridge", "widecombe",
+                  "moretonhampstead", "chagford", "two moors way", "okehampton"],
+        "url": "https://www.dartmoor.gov.uk/enjoy-dartmoor/outdoor-activities/report-a-path-problem",
+        "link": "Report a path problem",
+        "body": ("Dartmoor National Park Authority manages the public rights of way "
+                 "inside the park <b>on behalf of Devon County Council</b>, and takes "
+                 "reports through its own system &mdash; first-time users have to create "
+                 "an account. Pavements, roads and cycleways still go to Devon."),
+    },
+    {
         "title": "In the Lake District, report it to the National Park",
         "match": ["lake district", "lakes", "windermere", "keswick", "ambleside",
                   "scafell", "helvellyn", "borrowdale", "langdale"],
