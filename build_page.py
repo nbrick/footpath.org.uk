@@ -375,7 +375,11 @@ HTML = f'''<!DOCTYPE html>
     background: var(--field); border: 1.5px solid #B4B6A6;
     border-radius: 8px; color: var(--ink);
     box-shadow: 0 1px 2px rgba(32,41,31,0.06);
+    -webkit-appearance: none; appearance: none;
   }}
+  /* drop WebKit's search furniture, but keep the clear button — it's useful here */
+  .filter::-webkit-search-decoration,
+  .filter::-webkit-search-results-button {{ -webkit-appearance: none; }}
   .filter::placeholder {{ color: var(--ink-soft); }}
   .filter:focus-visible {{ outline: 3px solid var(--focus); outline-offset: 1px; border-color: var(--focus); }}
 
@@ -503,8 +507,10 @@ HTML = f'''<!DOCTYPE html>
     <span class="count"><b>{done_count}</b> of {total} linked so far</span>
   </div>
   <div class="controls">
-    <label for="filter" style="position:absolute;left:-9999px;">Filter authorities by name</label>
-    <input id="filter" class="filter" type="text" inputmode="search" autocomplete="off" placeholder="Start typing the council or county where the path is&hellip;">
+    <input id="filter" class="filter" type="search" name="authority" inputmode="search"
+           aria-label="Search for a council or county"
+           autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"
+           enterkeyhint="search" placeholder="Start typing the council or county where the path is&hellip;">
   </div>
 
   <p class="coverage">Every highway authority in England and Wales, for paths already recorded on the definitive map. Scotland and Northern Ireland have separate systems and aren&rsquo;t covered. Rows marked &ldquo;Not checked yet&rdquo; are ones nobody has verified a reporting link for &mdash; every link here was opened and confirmed by hand before it went up.</p>
