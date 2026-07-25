@@ -374,7 +374,7 @@ PROW_KM = {
 # Only parks that have been checked appear here. The rest simply have no panel.
 NATIONAL_PARKS = [
     {
-        "title": "In Bannau Brycheiniog, report it to the National Park",
+        "title": "In Bannau Brycheiniog (the Brecon Beacons), report it to the National Park",
         "match": ["bannau brycheiniog", "brecon beacons", "brecon", "pen y fan",
                   "black mountains", "fforest fawr", "crickhowell", "talgarth",
                   "ystradfellte", "llangorse",
@@ -389,9 +389,11 @@ NATIONAL_PARKS = [
                         "Rhondda Cynon Taf", "Torfaen", "Neath Port Talbot"],
         "body": ("Powys Council states that paths and land inside the park are managed "
                  "directly by the National Park Authority, which runs its own "
-                 "rights-of-way reporting system. The park reaches into nine Welsh "
-                 "authorities, each of which remains the highway authority outside the "
-                 "boundary."),
+                 "rights-of-way reporting system. The park took its Welsh name in 2023; "
+                 "the authority is still legally the Brecon Beacons National Park "
+                 "Authority, which is why the link lands on a beacons-npa.gov.uk address. "
+                 "Nine Welsh authorities reach into the park, and each remains the highway "
+                 "authority outside it."),
     },
     {
         "title": "On Dartmoor, report it to the National Park",
