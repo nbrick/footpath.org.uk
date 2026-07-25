@@ -3,6 +3,11 @@
 highway authorities. Verified links are rendered as real anchors; everything
 else gets a red 'Link needed' placeholder. Single source of truth lives here."""
 
+from pathlib import Path
+
+# Output lands next to this script, so the build works from any directory.
+OUT_DIR = Path(__file__).resolve().parent
+
 # --- Authorities we have a verified reporting link for -----------------------
 DONE = {
     "Bath and North East Somerset": "https://fix.bathnes.gov.uk/",
@@ -126,7 +131,6 @@ rows = []
 for name in authorities:
     nation = records[name]
     hay = esc(haystack(name))
-    disp = esc(name.replace("&", "&amp;")) if "&" not in name else name.replace("&", "&amp;")
     disp = name.replace("&", "&amp;")
     if name in DONE:
         url = esc(DONE[name])
@@ -424,14 +428,14 @@ HTML = f'''<!DOCTYPE html>
 </html>
 '''
 
-with open("/home/claude/index.html", "w", encoding="utf-8") as f:
+with open(OUT_DIR / "index.html", "w", encoding="utf-8") as f:
     f.write(HTML)
 
 # robots.txt — effective once the site is served from the domain root
 # (footpath.org.uk/robots.txt). On the github.io/<repo>/ project path it is
 # not read by crawlers; the noindex meta tag is what keeps the preview private.
 ROBOTS = "User-agent: *\nDisallow: /\n"
-with open("/home/claude/robots.txt", "w", encoding="utf-8") as f:
+with open(OUT_DIR / "robots.txt", "w", encoding="utf-8") as f:
     f.write(ROBOTS)
 
 print(f"Total authorities: {total}")
