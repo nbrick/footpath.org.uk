@@ -11,20 +11,20 @@ Ireland have separate systems and aren't included.
 ## What's in here
 
 - `index.html` — the whole site (one self-contained file)
-- `robots.txt` — asks crawlers to stay away (see note below on when it applies)
+- `robots.txt` — generated, and tied to the noindex flag (see below)
 - `CNAME` — claims `footpath.org.uk` for GitHub Pages
-- `build_page.py` — regenerates `index.html`; the single source of truth for the
-  authority list, links, and the noindex flag
+- `build_page.py` — regenerates `index.html` and `robots.txt`; the single source
+  of truth for the authority list, links, ordering and the noindex flag
 - `README.md` — this file
 
-`build_page.py` only writes `index.html` and `robots.txt`, so rebuilding never
+`build_page.py` writes only `index.html` and `robots.txt`, so rebuilding never
 touches `CNAME`.
 
 ## Current state
 
-The repo is public and the site is live at
-`https://nbrick.github.io/footpath.org.uk/`, served by GitHub Pages from `main`
-at the repo root.
+**Live at `https://footpath.org.uk`**, served by GitHub Pages from `main` at the
+repo root. All four entry points — apex and `www`, over HTTP and HTTPS — end on
+`https://footpath.org.uk/`, with Enforce HTTPS on.
 
 DNS is on Cloudflare: four `A` records to GitHub's Pages IPs plus a `www` CNAME,
 all **DNS only** rather than proxied, because proxying blocks GitHub from issuing
@@ -42,9 +42,36 @@ wrong link is worse than no link, because it sends someone reporting a real
 obstruction to the wrong place. Rows nobody has checked say so plainly rather
 than guessing.
 
-Coverage is better than the row count suggests. The list is ordered by roughly
-how much path network each authority looks after, so the rows that matter most
-were done first: **120 of 175 rows, but about 94% of the estimated network**.
+Coverage is better than the row count suggests, because the list is worked in
+order of how much path network each authority looks after: **123 of 175 rows,
+but about 95% of the estimated network**. Wales is at 18 of 22.
+
+## Ordering, and the network estimates
+
+The list is sorted by `PROW_KM`, a rough estimate of each authority's
+rights-of-way network in kilometres, largest first. Alphabetical put Barking and
+Dagenham at the top and buried North Yorkshire; this puts the places people
+actually walk first. The coverage note above the list says so, because a list of
+place names in a non-obvious order needs to explain itself.
+
+**Those numbers are estimates and are never displayed.** This is the one place
+in the project where an unchecked figure is safe: being wrong changes a row's
+position, not where a report goes. There is no authoritative per-authority
+dataset — Ordnance Survey's FOI231141 gives national totals only and disclaims
+being authoritative — so they were estimated, then sanity-checked against those
+totals, landing within about 1% for England.
+
+Individual figures can still be badly out. Warrington was estimated at 400km and
+states 136 miles; Knowsley was estimated at 200km and states 53km. Both are
+metropolitan boroughs, so that group probably runs high. Figures marked
+`# stated` came from a council's own page — worth capturing whenever one is
+spotted, since every link check is a chance to replace a guess.
+
+`CHECKED` records the ISO date each link was last opened and confirmed. Absent
+means no confirmed check. Nothing renders it yet; it exists so a recheck can run
+oldest-first, and so the footer's hand-typed "links last checked" can eventually
+be derived from data. Sort a recheck queue by date rather than by list position —
+positions move whenever an estimate is corrected.
 
 ## National parks
 
@@ -73,30 +100,42 @@ Adding a park means adding one entry to `NATIONAL_PARKS`. Set `authorities` to
 an empty list where the councils keep the function, and omit `url` where the
 answer is a row in the list rather than another website.
 
-## Keeping it out of search for now
+## Keeping it out of search
 
-`index.html` carries a `<meta name="robots" content="noindex, nofollow">` tag.
-That is the thing that actually keeps the preview out of Google.
+One flag controls both halves. `NOINDEX = True` in `build_page.py` puts
+`<meta name="robots" content="noindex, nofollow">` in the page **and** makes
+`robots.txt` say `Disallow: /`. `NOINDEX = False` removes the tag and opens
+robots.txt in the same build.
 
-`robots.txt` is included for later: crawlers read robots.txt only from a site's
-host root. On `nbrick.github.io/footpath.org.uk/` that root is
-`nbrick.github.io/robots.txt` — which this repo doesn't control — so the
-robots.txt here has no effect on the github.io preview. It starts working once
-the site is served from `footpath.org.uk/` at its own root.
+They are tied together deliberately, because they are not independent.
+`Disallow: /` stops a crawler fetching the page at all, so it never sees the
+noindex tag either — turning off one without the other would look like launching
+and change nothing. Worse, a disallowed URL can still be indexed bare from an
+external link, with the meta tag unreadable, which is the exact outcome the flag
+exists to prevent.
 
-Neither noindex nor robots.txt stops a determined scraper; they only ask
-well-behaved crawlers to stay away.
+Note that `robots.txt` only became live when the site moved to its own domain.
+On the old `nbrick.github.io/footpath.org.uk/` path, crawlers read
+`nbrick.github.io/robots.txt` instead, so the file here did nothing.
 
-## When you're ready for the real domain
+Neither control stops a determined scraper; they only ask well-behaved crawlers
+to stay away.
 
-1. In `build_page.py`, set `NOINDEX = False`, then run `python3 build_page.py`
-   to drop the noindex tag so the site can be indexed.
-2. Add a `CNAME` file at the repo root containing one line: `footpath.org.uk`.
-3. Settings -> Pages -> Custom domain -> `footpath.org.uk` -> Save.
-4. DNS at your provider — apex `@` as four A records: `185.199.108.153`,
-   `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (optionally the
-   AAAA IPv6 records too), and a CNAME for `www` -> `nbrick.github.io`.
-5. Tick Enforce HTTPS once DNS has propagated.
+## Going live
+
+Everything is done except the flag.
+
+- ✅ `CNAME` at the repo root, and the custom domain set in Settings → Pages
+- ✅ DNS on Cloudflare: four apex `A` records to `185.199.108.153`, `.109.153`,
+  `.110.153`, `.111.153`, plus `www` as a CNAME to `nbrick.github.io`, all
+  **DNS only** rather than proxied
+- ✅ Certificate issued, Enforce HTTPS on, all four entry points converging
+- ✅ `wrong-link@footpath.org.uk` forwarding and tested
+- ⬜ **Set `NOINDEX = False` in `build_page.py`, rebuild, push.** That is launch.
+
+Keep the Cloudflare records **DNS only**. Proxying blocks GitHub from issuing its
+certificate, and Cloudflare's AI-crawler features can append directives to
+`robots.txt` on proxied hostnames — which would silently override the flag above.
 
 ## Updating the authority links
 
@@ -111,8 +150,9 @@ authority's page first; a wrong link is worse than none.
 
 ## Still to do
 
-- **Link coverage.** 55 of 175 authorities still unchecked, together holding
-  about 6% of the estimated network. Wales is the weakest region. Many councils
+- **Link coverage.** 52 of 175 authorities still unchecked, together holding
+  about 4% of the estimated network. The largest single gaps are West
+  Northamptonshire and Bradford; Wales is four short of complete. Many councils
   block automated fetching with a 403, so those need opening in a browser.
 - **Inner London — decided: treat as ordinary rows.** The source list flags twelve
   boroughs as having no definitive map, but that doesn't survive checking.
@@ -130,14 +170,10 @@ authority's page first; a wrong link is worse than none.
   is to leave it at 175 rather than adjust it on an assumption. Worth revisiting
   at launch, where the count probably doesn't need the prominence it currently
   has.
-- **A contact address on the project domain.** The footer currently sends people
-  to GitHub issues, which needs an account most visitors won't have — walkers,
-  not developers. Deferred until the domain and DNS exist at launch, so the alias
-  can live on the project domain and be re-pointed if it attracts spam.
-
-  **Decided: `wrong-link@footpath.org.uk`**, with `wronglink@` configured as a
-  second alias to the same inbox so a dropped hyphen doesn't bounce. Publish only
-  the hyphenated form — it parses faster than the run-together version.
+- **A contact address — done, recorded here for the reasoning.**
+  `wrong-link@footpath.org.uk` is live in the footer, with `wronglink@` as a
+  second alias so a dropped hyphen doesn't bounce. Only the hyphenated form is
+  published; it parses faster than the run-together version.
 
   **Named for its purpose, not generically, on purpose.** A `hello@` or
   `contact@` address will receive blocked-path reports, and the moment this site
@@ -150,9 +186,9 @@ authority's page first; a wrong link is worse than none.
   The GitHub issues link stays alongside it as a secondary route — it also does
   the provenance work of showing the site is maintained in the open.
 
-  The address alone won't be enough. The footer needs to say plainly that path
-  problems go to the council and not to us, and a bounce or autoreply saying the
-  same would catch the rest.
+  The address alone isn't enough, so the footer also says plainly that a blocked
+  path needs reporting to the authority and that a report sent here would go
+  nowhere. An autoreply saying the same would catch the rest.
 - **Google Fonts.** The page pulls Bricolage Grotesque from
   `fonts.googleapis.com`, so every visitor's browser contacts Google before the
   page renders. Worth self-hosting the font or dropping it, both to remove the
@@ -188,16 +224,10 @@ Roughly in order of value per hour of work.
 - **Grid reference helper.** The hardest field on any council form is "exactly
   where". Browser geolocation converted to an OS grid reference in-page, with
   nothing transmitted anywhere.
-- **Order the list by something more useful than the alphabet.** Sorting by
-  length of rights-of-way network would put the authorities where blocked paths
-  actually happen at the top — currently Barking and Dagenham leads and North
-  Yorkshire, with the largest network in England outside the national parks, is
-  buried. Two caveats. The figures need sourcing per authority (Rights of Way
-  Improvement Plans and Defra survey data both carry them, so it is 175 more
-  things to verify and get wrong). And alphabetical is what people expect from a
-  list they might scan, so any other order probably has to be stated on the page
-  rather than left to be inferred. A cheaper variant: keep the alphabet and show
-  network length as row metadata instead.
+- **Replace the network estimates with stated figures.** The ordering works, but
+  it rests on guesses that can be out by a factor of two or four. Every link
+  check is a chance to capture a council's own figure; see the ordering section
+  above.
 
 ### Deliberately not doing
 
