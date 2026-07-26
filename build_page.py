@@ -173,7 +173,7 @@ DESC = {
     "Isle of Anglesey": "Path maintenance page — phone or general online form",
     "Isle of Wight": "Rights-of-way team page — online forms or phone",
     "Kirklees": "Rights-of-way page — email and phone",
-    "Knowsley": "Rights-of-way page — phone and email",
+    "Knowsley": "Rights-of-way page — phone, or the road problem form",
     "Lambeth": "Highway issue form — choose “Footway obstruction”",
     "Lancashire": "Email report — no online form",
     "Leicestershire": "Council report-it portal — covers rights of way",
@@ -336,7 +336,8 @@ PROW_KM = {
     "Hounslow": 40, "Isle of Anglesey": 800, "Isle of Wight": 800,
     "Isles of Scilly": 30, "Islington": 10, "Kensington and Chelsea": 10,
     "Kent": 6900, "Kingston upon Hull": 30, "Kingston upon Thames": 60,
-    "Kirklees": 1300, "Knowsley": 200, "Lambeth": 15, "Lancashire": 3700,
+    "Kirklees": 1300, "Lambeth": 15, "Lancashire": 3700,
+    "Knowsley": 53,  # stated: approximately 53 kilometres
     "Leeds": 1200, "Leicester": 80, "Leicestershire": 4000, "Lewisham": 30,
     "Lincolnshire": 4000, "Liverpool": 100, "Luton": 80, "Manchester": 200,
     "Medway": 400, "Merthyr Tydfil": 300, "Merton": 40, "Middlesbrough": 100,
