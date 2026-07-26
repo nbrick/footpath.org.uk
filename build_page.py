@@ -224,6 +224,76 @@ DESC = {
     "Wrexham": "Rights-of-way page — email",
     "York": "Rights-of-way page — email and phone",
 }
+
+# --- When each link was last opened and confirmed ----------------------------
+# ISO date per authority. An authority absent from this dict has no confirmed
+# check date — either it has no link at all, or its link predates this record.
+#
+# Council pages move constantly. Today alone Herefordshire's form had already
+# been superseded, Hartlepool's had moved host, and three URLs resolved to a
+# homepage while returning 200. A link being right once is not evidence it is
+# right now, and this is what makes that measurable rather than assumed.
+#
+# Not currently rendered. It exists so a recheck can be prioritised oldest-first,
+# and so the footer's "links last checked" claim can eventually be derived from
+# data instead of being typed by hand and quietly going stale.
+CHECKED = {
+    "Barnsley": "2026-07-26", "Bath and North East Somerset": "2026-07-26",
+    "Bedford": "2026-07-26", "Blackburn with Darwen": "2026-07-26",
+    "Bolton": "2026-07-26", "Bracknell Forest": "2026-07-26",
+    "Brighton and Hove": "2026-07-26", "Buckinghamshire": "2026-07-26",
+    "Bury": "2026-07-26", "Caerphilly": "2026-07-26",
+    "Calderdale": "2026-07-26", "Cambridgeshire": "2026-07-26",
+    "Cardiff": "2026-07-26", "Carmarthenshire": "2026-07-26",
+    "Central Bedfordshire": "2026-07-26", "Ceredigion": "2026-07-26",
+    "Cheshire East": "2026-07-26", "Cheshire West and Chester": "2026-07-26",
+    "Conwy": "2026-07-26", "Cornwall": "2026-07-26",
+    "County Durham": "2026-07-26", "Coventry": "2026-07-26",
+    "Croydon": "2026-07-26", "Cumberland": "2026-07-26",
+    "Darlington": "2026-07-26", "Denbighshire": "2026-07-26",
+    "Derbyshire": "2026-07-26", "Devon": "2026-07-26",
+    "Doncaster": "2026-07-26", "Dorset": "2026-07-26", "Dudley": "2026-07-26",
+    "East Riding of Yorkshire": "2026-07-26", "East Sussex": "2026-07-26",
+    "Essex": "2026-07-26", "Flintshire": "2026-07-26",
+    "Gateshead": "2026-07-26", "Gloucestershire": "2026-07-26",
+    "Gwynedd": "2026-07-26", "Hampshire": "2026-07-26",
+    "Havering": "2026-07-26", "Herefordshire": "2026-07-26",
+    "Hertfordshire": "2026-07-26", "Hillingdon": "2026-07-26",
+    "Isle of Anglesey": "2026-07-26", "Isle of Wight": "2026-07-26",
+    "Kent": "2026-07-26", "Kirklees": "2026-07-26",
+    "Lancashire": "2026-07-26", "Leeds": "2026-07-26",
+    "Leicestershire": "2026-07-26", "Lincolnshire": "2026-07-26",
+    "Manchester": "2026-07-26", "Medway": "2026-07-26",
+    "Merthyr Tydfil": "2026-07-26", "Milton Keynes": "2026-07-26",
+    "Monmouthshire": "2026-07-26", "Neath Port Talbot": "2026-07-26",
+    "Newcastle upon Tyne": "2026-07-26", "Newport": "2026-07-26",
+    "Norfolk": "2026-07-26", "North Lincolnshire": "2026-07-26",
+    "North Northamptonshire": "2026-07-26", "North Somerset": "2026-07-26",
+    "North Tyneside": "2026-07-26", "North Yorkshire": "2026-07-26",
+    "Northumberland": "2026-07-26", "Nottinghamshire": "2026-07-26",
+    "Oldham": "2026-07-26", "Oxfordshire": "2026-07-26",
+    "Pembrokeshire": "2026-07-26", "Peterborough": "2026-07-26",
+    "Plymouth": "2026-07-26", "Powys": "2026-07-26",
+    "Redcar and Cleveland": "2026-07-26", "Rhondda Cynon Taf": "2026-07-26",
+    "Rochdale": "2026-07-26", "Rotherham": "2026-07-26",
+    "Rutland": "2026-07-26", "Salford": "2026-07-26",
+    "Sheffield": "2026-07-26", "Shropshire": "2026-07-26",
+    "Solihull": "2026-07-26", "Somerset": "2026-07-26",
+    "South Gloucestershire": "2026-07-26", "Staffordshire": "2026-07-26",
+    "Stockport": "2026-07-26", "Stockton-on-Tees": "2026-07-26",
+    "Stoke-on-Trent": "2026-07-26", "Suffolk": "2026-07-26",
+    "Sunderland": "2026-07-26", "Surrey": "2026-07-26",
+    "Swansea": "2026-07-26", "Swindon": "2026-07-26",
+    "Tameside": "2026-07-26", "Thurrock": "2026-07-26",
+    "Trafford": "2026-07-26", "Wakefield": "2026-07-26",
+    "Walsall": "2026-07-26", "Warrington": "2026-07-26",
+    "Warwickshire": "2026-07-26", "West Berkshire": "2026-07-26",
+    "West Sussex": "2026-07-26", "Westmorland and Furness": "2026-07-26",
+    "Wigan": "2026-07-26", "Wiltshire": "2026-07-26",
+    "Windsor and Maidenhead": "2026-07-26", "Wirral": "2026-07-26",
+    "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
+    "Wrexham": "2026-07-26", "York": "2026-07-26",
+}
 DEFAULT_DESC = "Rights-of-way report form"
 
 # Extra filter keywords for authorities people search by another name.
