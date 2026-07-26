@@ -261,7 +261,7 @@ CHECKED = {
     "Hertfordshire": "2026-07-26", "Hillingdon": "2026-07-26",
     "Isle of Anglesey": "2026-07-26", "Isle of Wight": "2026-07-26",
     "Kent": "2026-07-26", "Kirklees": "2026-07-26",
-    "Lancashire": "2026-07-26", "Leeds": "2026-07-26",
+    "Knowsley": "2026-07-26", "Lancashire": "2026-07-26", "Leeds": "2026-07-26",
     "Leicestershire": "2026-07-26", "Lincolnshire": "2026-07-26",
     "Manchester": "2026-07-26", "Medway": "2026-07-26",
     "Merthyr Tydfil": "2026-07-26", "Milton Keynes": "2026-07-26",
