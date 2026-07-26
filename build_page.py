@@ -206,7 +206,6 @@ DESC = {
     "Stockton-on-Tees": "Rights-of-way page — email",
     "Stoke-on-Trent": "Highways report form — choose “Issue on a public rights of way”",
     "Sunderland": "Rights-of-way page — email and phone",
-    "Swansea": "Rights-of-way problem page",
     "Swindon": "Rights-of-way page — email",
     "Tameside": "Rights-of-way page — links to the report form",
     "Thurrock": "Highway report map — covers rights of way",
