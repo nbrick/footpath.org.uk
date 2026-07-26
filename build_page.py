@@ -309,8 +309,9 @@ ENGLAND = [
 # real figures means 175 Rights of Way Improvement Plans of varying vintage.
 #
 # Improve these opportunistically: councils often state their network length on
-# the very page being checked for DONE. Isle of Wight's ~500 miles and Rochdale's
-# 552 km came that way.
+# the very page being checked for DONE. Figures marked "stated" came that way.
+# Worth knowing they can be badly out — Warrington was estimated at 400km and
+# states 136 miles, so roughly double.
 DEFAULT_PROW_KM = 300
 PROW_KM = {
     "Barking and Dagenham": 40, "Barnet": 100, "Barnsley": 800,
@@ -358,7 +359,8 @@ PROW_KM = {
     "Swindon": 400, "Tameside": 400, "Telford and Wrekin": 500, "Thurrock": 300,
     "Torbay": 150, "Torfaen": 400, "Tower Hamlets": 15, "Trafford": 200,
     "Vale of Glamorgan": 800, "Wakefield": 800, "Walsall": 300,
-    "Waltham Forest": 40, "Wandsworth": 20, "Warrington": 400,
+    "Waltham Forest": 40, "Wandsworth": 20,
+    "Warrington": 219,  # stated: 136 miles
     "Warwickshire": 2600, "West Berkshire": 1000, "West Northamptonshire": 2000,
     "West Sussex": 4000, "Westminster": 10, "Westmorland and Furness": 3500,
     "Wigan": 500, "Wiltshire": 6400, "Windsor and Maidenhead": 300, "Wirral": 400,
