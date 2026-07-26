@@ -44,6 +44,7 @@ DONE = {
     "East Riding of Yorkshire": "https://www.eastriding.gov.uk/leisure/countryside-and-walks/public-rights-of-way/maintenance-of-public-rights-of-way/",
     "East Sussex": "https://www.eastsussex.gov.uk/leisure-tourism/discover-east-sussex/rights-of-way/problems-on-rights-of-way/report",
     "Essex": "https://www.essexhighways.org/tell-us/public-rights-of-way-issues",
+    "Flintshire": "https://www.flintshire.gov.uk/en/Resident/Streetscene/Public-rights-of-way.aspx",
     "Gateshead": "https://www.gateshead.gov.uk/article/4471/Public-rights-of-way",
     "Gloucestershire": "https://www.gloucestershire.gov.uk/prow/report-a-problem/",
     "Gwynedd": "https://www.gwynedd.llyw.cymru/en/Residents/Parking-roads-and-travel/Public-Rights-of-Way/Public-Rights-of-Way.aspx",
@@ -70,6 +71,7 @@ DONE = {
     "Merthyr Tydfil": "https://www.merthyr.gov.uk/do-it-online/report/rights-of-way/",
     "Milton Keynes": "https://www.milton-keynes.gov.uk/environment-parks-and-open-spaces/rights-way/public-rights-way",
     "Monmouthshire": "https://access.monmouthshire.gov.uk/standardmap.aspx",
+    "Neath Port Talbot": "https://www.npt.gov.uk/parking-roads-and-travel/travel/countryside-and-public-rights-of-way/maintenance-of-public-rights-of-way-in-neath-port-talbot/",
     "Newcastle upon Tyne": "https://new.newcastle.gov.uk/travel/management/rightsofway/report",
     "Newport": "https://www.newport.gov.uk/our-city/see-and-do/green-spaces/public-rights-way",
     "Norfolk": "https://www.norfolk.gov.uk/roads-and-transport/roads/report-a-problem",
@@ -129,6 +131,7 @@ DONE = {
     "Wirral": "https://my.wirral.gov.uk/service/Public_Right_of_Way_problem",
     "Wokingham": "https://www.wokingham.gov.uk/roads/report/report-problems-public-rights-way",
     "Worcestershire": "https://capublic.worcestershire.gov.uk/PROWPublic/PROWFault.aspx",
+    "Wrexham": "https://www.wrexham.gov.uk/service/public-rights-way",
     "York": "https://www.york.gov.uk/ReportPROWProblem",
 }
 
@@ -158,6 +161,7 @@ DESC = {
     "Doncaster": "Rights-of-way page — links to the report form",
     "Dudley": "Rights-of-way page — links to the report form",
     "East Riding of Yorkshire": "Rights-of-way page — links to the report map",
+    "Flintshire": "Rights-of-way page — email and phone",
     "Gateshead": "Rights-of-way page",
     "Gwynedd": "Rights-of-way page — links to the report form",
     "Hackney": "Highway obstruction report — no rights-of-way form published",
@@ -176,6 +180,7 @@ DESC = {
     "Manchester": "Rights-of-way page — links to the report form",
     "Milton Keynes": "Rights-of-way page — phone, no online form",
     "Monmouthshire": "Interactive rights-of-way map — sign-in needed to report",
+    "Neath Port Talbot": "Rights-of-way page — email",
     "Newport": "Rights-of-way page",
     "Norfolk": "Report form — scroll to “Public right of way or trail”",
     "North Lincolnshire": "Countryside access page — links to the report form",
@@ -215,6 +220,7 @@ DESC = {
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
     "Windsor and Maidenhead": "Rights-of-way page — links to the report form",
     "Wirral": "Report form — account optional",
+    "Wrexham": "Rights-of-way page — email",
     "York": "Rights-of-way page — email and phone",
 }
 DEFAULT_DESC = "Rights-of-way report form"
