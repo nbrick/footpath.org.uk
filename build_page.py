@@ -908,7 +908,7 @@ HTML = f'''<!DOCTYPE html>
      Kept as a quiet footnote to the row above rather than a block of its own,
      so a list with seventeen of them still reads as one list. */
   .parknote {{
-    margin: -11px 0 0; padding: 0 4px 14px 18px;
+    margin: -3px 0 0; padding: 0 4px 14px 18px;
     font-size: 0.78rem; line-height: 1.45;
     color: var(--ink-soft); max-width: 62ch; position: relative;
   }}
