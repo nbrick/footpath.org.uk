@@ -21,6 +21,7 @@ DONE = {
     "Bradford": "https://www.bradford.gov.uk/environment/countryside-and-rights-of-way/public-rights-of-way-in-bradford-map-of-paths/",
     "Bridgend": "https://rightsofway.bridgend.gov.uk/how-to-use-this-site-introduction",
     "Brighton and Hove": "https://www.brighton-hove.gov.uk/report-problem-public-right-way",
+    "Bromley": "https://www.bromley.gov.uk/transport-streets/rights-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
     "Bury": "https://www.bury.gov.uk/index.aspx?articleid=11283",
     "Caerphilly": "https://www.caerphilly.gov.uk/things-to-do/green-spaces/public-rights-of-way/report-a-problem-with-a-public-right-of-way",
@@ -156,6 +157,7 @@ DESC = {
     "Bracknell Forest": "Parks and countryside enquiry — covers rights of way",
     "Bradford": "Rights-of-way team email — no report form",
     "Bridgend": "Interactive rights-of-way map — sign-in needed to report",
+    "Bromley": "Rights-of-way page — enter a postcode to report a problem",
     "Bury": "Rights-of-way page — links to the report form",
     "Caerphilly": "Report page — form, or phone if it’s urgent",
     "Calderdale": "Rights-of-way page — email or contact form",
@@ -317,6 +319,7 @@ CHECKED = {
     "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
     "Bournemouth, Christchurch and Poole": "2026-10-10", "St Helens": "2026-10-10",
+    "Bromley": "2026-10-10",
     "North East Lincolnshire": "2026-10-10", "Telford and Wrekin": "2026-10-10",
     "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
@@ -426,7 +429,9 @@ PROW_KM = {
     "Blaenau Gwent": 300,  # stated: over 300 kilometres
     "Bolton": 500, "Bournemouth, Christchurch and Poole": 300,
     "Bracknell Forest": 200, "Bradford": 1200, "Brent": 30, "Bridgend": 700,
-    "Brighton and Hove": 200, "Bristol": 100, "Bromley": 300,
+    "Brighton and Hove": 200, "Bristol": 100,
+    "Bromley": 195,  # stated: more than 120 miles
+   
     "Buckinghamshire": 3200, "Bury": 400, "Caerphilly": 800, "Calderdale": 1000,
     "Cambridgeshire": 3200, "Camden": 15, "Cardiff": 400, "Carmarthenshire": 4000,
     "Central Bedfordshire": 1200, "Ceredigion": 2400, "Cheshire East": 2300,
