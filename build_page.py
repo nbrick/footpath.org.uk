@@ -313,7 +313,8 @@ DEFAULT_DESC = "Rights-of-way report form"
 # Linked, but we can't vouch that the destination reaches whoever deals with
 # rights of way. Distinct from "no form" rows like Bradford or Torfaen, where the
 # contact is plainly the rights-of-way team and only the format is limited. These
-# are best guesses — the descriptor says why, and the row says it's a guess.
+# are best guesses — the descriptor says why, and a note under the row says
+# plainly that we're unsure it's the best route.
 UNCLEAR = {
     "Vale of Glamorgan",
 }
@@ -805,13 +806,15 @@ for name in authorities:
         url = esc(DONE[name])
         desc = esc(DESC.get(name, DEFAULT_DESC))
         unclear = name in UNCLEAR
+        unclear_note = ('\n      <p class="parknote unclearnote">It’s unclear to us '
+                        'whether this is the best reporting route.</p>')
         rows.append(
             f'''    <li class="done{' unclear' if unclear else ''}">
       <a class="row" href="{url}" target="_blank" rel="noopener noreferrer" data-name="{hay}">
         <span class="name">{disp}</span>
         <span class="meta"><span class="tag">{nation}</span><span class="desc">{desc}</span></span>
-        <span class="go">{'Best guess' if unclear else 'Report a problem'} &rarr;</span>
-      </a>{park_notes(name)}
+        <span class="go">Report a problem &rarr;</span>
+      </a>{unclear_note if unclear else ''}{park_notes(name)}
     </li>''')
     else:
         rows.append(
@@ -971,9 +974,8 @@ HTML = f'''<!DOCTYPE html>
   }}
   a.row:hover .name {{ text-decoration: underline; text-decoration-color: var(--rowmaps); text-decoration-thickness: 2px; }}
   a.row:hover .go {{ transform: translateX(3px); color: var(--rowmaps-dk); }}
-  /* best-guess rows: still a link, but the call to action steps back */
-  li.unclear .go {{ color: var(--ink-soft); font-weight: 500; }}
-  li.unclear a.row:hover .go {{ color: var(--ink); }}
+  /* best-guess rows: same quiet note line as the park notes, own marker */
+  .unclearnote::before {{ content: "?"; font-weight: 700; }}
 
   .name {{ font-weight: 600; font-size: 1.08rem; letter-spacing: -0.01em; }}
   /* flex so a descriptor wrapping to a second line lines up with the first,

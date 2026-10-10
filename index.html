@@ -145,9 +145,8 @@
   }
   a.row:hover .name { text-decoration: underline; text-decoration-color: var(--rowmaps); text-decoration-thickness: 2px; }
   a.row:hover .go { transform: translateX(3px); color: var(--rowmaps-dk); }
-  /* best-guess rows: still a link, but the call to action steps back */
-  li.unclear .go { color: var(--ink-soft); font-weight: 500; }
-  li.unclear a.row:hover .go { color: var(--ink); }
+  /* best-guess rows: same quiet note line as the park notes, own marker */
+  .unclearnote::before { content: "?"; font-weight: 700; }
 
   .name { font-weight: 600; font-size: 1.08rem; letter-spacing: -0.01em; }
   /* flex so a descriptor wrapping to a second line lines up with the first,
@@ -800,8 +799,9 @@
       <a class="row" href="https://www.valeofglamorgan.gov.uk/en/living/do_it_online/Report.aspx" target="_blank" rel="noopener noreferrer" data-name="vale of glamorgan">
         <span class="name">Vale of Glamorgan</span>
         <span class="meta"><span class="tag">Wales</span><span class="desc">No rights-of-way option; “Obstruction to roads” mentions footpaths</span></span>
-        <span class="go">Best guess &rarr;</span>
+        <span class="go">Report a problem &rarr;</span>
       </a>
+      <p class="parknote unclearnote">It’s unclear to us whether this is the best reporting route.</p>
     </li>
     <li class="done">
       <a class="row" href="https://myaccount.wakefield.gov.uk/forms/footpaths-and-bridleways/" target="_blank" rel="noopener noreferrer" data-name="wakefield">
