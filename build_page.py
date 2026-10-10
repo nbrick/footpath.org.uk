@@ -16,6 +16,7 @@ DONE = {
     "Blackburn with Darwen": "https://www.blackburn.gov.uk/transport-and-travel/public-rights-way",
     "Blaenau Gwent": "https://countryside.blaenau-gwent.gov.uk/how-to-use-this-site-introduction",
     "Bolton": "https://www.bolton.gov.uk/walking-cycling-rights-way/public-right-way",
+    "Bournemouth, Christchurch and Poole": "https://www.bcpcouncil.gov.uk/roads-and-travel/travel-and-transport/public-rights-of-way",
     "Bracknell Forest": "https://www.bracknell-forest.gov.uk/parks-and-countryside/make-general-parks-and-countryside-enquiry",
     "Bradford": "https://www.bradford.gov.uk/environment/countryside-and-rights-of-way/public-rights-of-way-in-bradford-map-of-paths/",
     "Bridgend": "https://rightsofway.bridgend.gov.uk/how-to-use-this-site-introduction",
@@ -150,6 +151,7 @@ DESC = {
     "Blackburn with Darwen": "Rights-of-way page — links to the report form",
     "Blaenau Gwent": "Rights-of-way map site — public reporting, or team email and phone",
     "Bolton": "Rights-of-way page — email and phone",
+    "Bournemouth, Christchurch and Poole": "Rights-of-way page — no clear report route; emailing rightsofway@bcpcouncil.gov.uk is the best bet",
     "Bracknell Forest": "Parks and countryside enquiry — covers rights of way",
     "Bradford": "Rights-of-way team email — no report form",
     "Bridgend": "Interactive rights-of-way map — sign-in needed to report",
@@ -312,6 +314,7 @@ CHECKED = {
     # October 2026
     "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
+    "Bournemouth, Christchurch and Poole": "2026-10-10",
     "North East Lincolnshire": "2026-10-10", "Telford and Wrekin": "2026-10-10",
     "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
