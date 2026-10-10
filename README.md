@@ -133,6 +133,16 @@ Everything is done except the flag.
 - ✅ `wrong-link@footpath.org.uk` forwarding and tested
 - ⬜ **Set `NOINDEX = False` in `build_page.py`, rebuild, push.** That is launch.
 
+Agreed order before flipping it (October 2026):
+
+1. Fill the remaining gaps, biggest network first.
+2. Recheck every existing link — the July checks are months old, and one day's
+   work in July found a superseded form, a host move and three silent homepage
+   redirects.
+3. Put a liveness plan in place, so links are rechecked on a schedule rather
+   than whenever someone remembers.
+4. Then launch.
+
 Keep the Cloudflare records **DNS only**. Proxying blocks GitHub from issuing its
 certificate, and Cloudflare's AI-crawler features can append directives to
 `robots.txt` on proxied hostnames — which would silently override the flag above.
