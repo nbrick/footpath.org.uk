@@ -14,6 +14,7 @@ DONE = {
     "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
     "Bedford": "https://www.bedford.gov.uk/parking-roads-and-travel/public-rights-way/public-rights-way-overview",
     "Blackburn with Darwen": "https://www.blackburn.gov.uk/transport-and-travel/public-rights-way",
+    "Blaenau Gwent": "https://countryside.blaenau-gwent.gov.uk/how-to-use-this-site-introduction",
     "Bolton": "https://www.bolton.gov.uk/walking-cycling-rights-way/public-right-way",
     "Bracknell Forest": "https://www.bracknell-forest.gov.uk/parks-and-countryside/make-general-parks-and-countryside-enquiry",
     "Bradford": "https://www.bradford.gov.uk/environment/countryside-and-rights-of-way/public-rights-of-way-in-bradford-map-of-paths/",
@@ -145,6 +146,7 @@ DESC = {
     "Barnsley": "Rights-of-way page — links to the report form",
     "Bedford": "Rights-of-way page — links to the report form",
     "Blackburn with Darwen": "Rights-of-way page — links to the report form",
+    "Blaenau Gwent": "Rights-of-way map site — public reporting, or team email and phone",
     "Bolton": "Rights-of-way page — email and phone",
     "Bracknell Forest": "Parks and countryside enquiry — covers rights of way",
     "Bradford": "Rights-of-way team email — no report form",
@@ -304,9 +306,9 @@ CHECKED = {
     "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
     "Wrexham": "2026-07-26", "York": "2026-07-26",
     # October 2026
-    "Bradford": "2026-10-10", "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
-    "Vale of Glamorgan": "2026-10-10",
-    "West Northamptonshire": "2026-10-10",
+    "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
+    "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
+    "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
@@ -410,7 +412,8 @@ PROW_KM = {
     "Barking and Dagenham": 40, "Barnet": 100, "Barnsley": 800,
     "Bath and North East Somerset": 1000, "Bedford": 600, "Bexley": 60,
     "Birmingham": 300, "Blackburn with Darwen": 400, "Blackpool": 30,
-    "Blaenau Gwent": 300, "Bolton": 500, "Bournemouth, Christchurch and Poole": 300,
+    "Blaenau Gwent": 300,  # stated: over 300 kilometres
+    "Bolton": 500, "Bournemouth, Christchurch and Poole": 300,
     "Bracknell Forest": 200, "Bradford": 1200, "Brent": 30, "Bridgend": 700,
     "Brighton and Hove": 200, "Bristol": 100, "Bromley": 300,
     "Buckinghamshire": 3200, "Bury": 400, "Caerphilly": 800, "Calderdale": 1000,
