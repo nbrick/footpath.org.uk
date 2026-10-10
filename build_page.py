@@ -144,7 +144,7 @@ DESC = {
     "Blackburn with Darwen": "Rights-of-way page — links to the report form",
     "Bolton": "Rights-of-way page — email and phone",
     "Bracknell Forest": "Parks and countryside enquiry — covers rights of way",
-    "Bradford": "Rights-of-way page — email",
+    "Bradford": "Rights-of-way team email — no report form",
     "Bury": "Rights-of-way page — links to the report form",
     "Caerphilly": "Report page — form, or phone if it&rsquo;s urgent",
     "Calderdale": "Rights-of-way page — email or contact form",
