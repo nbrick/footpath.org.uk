@@ -17,6 +17,7 @@ DONE = {
     "Bolton": "https://www.bolton.gov.uk/walking-cycling-rights-way/public-right-way",
     "Bracknell Forest": "https://www.bracknell-forest.gov.uk/parks-and-countryside/make-general-parks-and-countryside-enquiry",
     "Bradford": "https://www.bradford.gov.uk/environment/countryside-and-rights-of-way/public-rights-of-way-in-bradford-map-of-paths/",
+    "Bridgend": "https://rightsofway.bridgend.gov.uk/how-to-use-this-site-introduction",
     "Brighton and Hove": "https://www.brighton-hove.gov.uk/report-problem-public-right-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
     "Bury": "https://www.bury.gov.uk/index.aspx?articleid=11283",
@@ -146,6 +147,7 @@ DESC = {
     "Bolton": "Rights-of-way page — email and phone",
     "Bracknell Forest": "Parks and countryside enquiry — covers rights of way",
     "Bradford": "Rights-of-way team email — no report form",
+    "Bridgend": "Interactive rights-of-way map — sign-in needed to report",
     "Bury": "Rights-of-way page — links to the report form",
     "Caerphilly": "Report page — form, or phone if it&rsquo;s urgent",
     "Calderdale": "Rights-of-way page — email or contact form",
@@ -300,7 +302,7 @@ CHECKED = {
     "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
     "Wrexham": "2026-07-26", "York": "2026-07-26",
     # October 2026
-    "Bradford": "2026-10-10", "Torfaen": "2026-10-10",
+    "Bradford": "2026-10-10", "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
     "West Northamptonshire": "2026-10-10",
 }
 DEFAULT_DESC = "Rights-of-way report form"
