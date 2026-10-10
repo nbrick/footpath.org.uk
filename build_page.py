@@ -116,6 +116,7 @@ DONE = {
     "Tameside": "https://www.tameside.gov.uk/rightsofway",
     "Thurrock": "https://highwayreport.thurrock.gov.uk/",
     "Torbay": "https://www.torbay.gov.uk/leisure-sports-and-community/parks/prow/",
+    "Torfaen": "https://www.torfaen.gov.uk/lgsl/en/Countryside/Publicrightsofway-general/Rights-of-Way.aspx",
     "Tower Hamlets": "https://www.towerhamlets.gov.uk/lgnl/transport_and_streets/roads,_highways_and_pavements/obstructions-to-roads.aspx",
     "Trafford": "https://www.trafford.gov.uk/streets-roads-and-transport/roads-highways-and-pavements/public-rights-way-prow/about-public-rights-way-prow",
     "Wakefield": "https://myaccount.wakefield.gov.uk/forms/footpaths-and-bridleways/",
@@ -214,6 +215,7 @@ DESC = {
     "Tameside": "Rights-of-way page — links to the report form",
     "Thurrock": "Highway report map — covers rights of way",
     "Torbay": "Rights-of-way page — links to the report form",
+    "Torfaen": "Rights-of-way page — Access Team phone, no report form",
     "Tower Hamlets": "Highway obstruction report — no rights-of-way form published",
     "Trafford": "Rights-of-way page",
     "Walsall": "Rights-of-way page — email and phone",
@@ -298,7 +300,8 @@ CHECKED = {
     "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
     "Wrexham": "2026-07-26", "York": "2026-07-26",
     # October 2026
-    "Bradford": "2026-10-10", "West Northamptonshire": "2026-10-10",
+    "Bradford": "2026-10-10", "Torfaen": "2026-10-10",
+    "West Northamptonshire": "2026-10-10",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
