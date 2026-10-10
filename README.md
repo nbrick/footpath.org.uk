@@ -43,8 +43,8 @@ obstruction to the wrong place. Rows nobody has checked say so plainly rather
 than guessing.
 
 Coverage is better than the row count suggests, because the list is worked in
-order of how much path network each authority looks after: **123 of 175 rows,
-but about 95% of the estimated network**. Wales is at 18 of 22.
+order of how much path network each authority looks after: **130 of 175 rows,
+but about 95% of the estimated network**. Wales is complete, 22 of 22.
 
 ## Ordering, and the network estimates
 
@@ -160,10 +160,14 @@ authority's page first; a wrong link is worse than none.
 
 ## Still to do
 
-- **Link coverage.** 52 of 175 authorities still unchecked, together holding
-  about 4% of the estimated network. The largest single gaps are West
-  Northamptonshire and Bradford; Wales is four short of complete. Many councils
-  block automated fetching with a 403, so those need opening in a browser.
+- **Link coverage.** 45 of 175 authorities still unchecked, all in England and
+  mostly urban, together holding a few percent of the estimated network. The
+  largest remaining gaps are Telford and Wrekin, then a group of ~300km
+  estimates (BCP, St Helens, Bromley, Sefton, Birmingham). Many councils block
+  automated fetching with a 403, so those need opening in a browser. Some
+  councils run a separate rights-of-way map site (often `rightsofway.` or
+  `countryside.` subdomains) that their main site barely links to — worth
+  asking about whenever the main site has no route.
 - **Inner London — decided: treat as ordinary rows.** The source list flags twelve
   boroughs as having no definitive map, but that doesn't survive checking.
   Wildlife and Countryside Act 1981 s.66 defines "surveying authority" to include

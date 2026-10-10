@@ -78,6 +78,7 @@ DONE = {
     "Newcastle upon Tyne": "https://new.newcastle.gov.uk/travel/management/rightsofway/report",
     "Newport": "https://www.newport.gov.uk/our-city/see-and-do/green-spaces/public-rights-way",
     "Norfolk": "https://www.norfolk.gov.uk/roads-and-transport/roads/report-a-problem",
+    "North East Lincolnshire": "https://www.nelincs.gov.uk/report-it/",
     "North Lincolnshire": "https://www.northlincs.gov.uk/planning-and-environment/access-to-the-countryside/",
     "North Northamptonshire": "https://www.northnorthants.gov.uk/rights-way-and-searches/report-public-right-way-issue",
     "North Somerset": "https://www.n-somerset.gov.uk/my-services/libraries-leisure-open-spaces/parks-countryside/public-rights-way/report-issue-public-right-way",
@@ -193,6 +194,7 @@ DESC = {
     "Neath Port Talbot": "Rights-of-way page — email",
     "Newport": "Rights-of-way page",
     "Norfolk": "Report form — scroll to “Public right of way or trail”",
+    "North East Lincolnshire": "Council report page — under “Streets and travel”, “Roads, footpaths and cycleways” covers rights of way; sign-in needed",
     "North Lincolnshire": "Countryside access page — links to the report form",
     "North Tyneside": "Rights-of-way FAQs — leads with how to report",
     "North Yorkshire": "Rights-of-way page — links to the report form",
@@ -308,6 +310,7 @@ CHECKED = {
     # October 2026
     "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
+    "North East Lincolnshire": "2026-10-10",
     "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
 DEFAULT_DESC = "Rights-of-way report form"
@@ -439,7 +442,8 @@ PROW_KM = {
     "Medway": 400, "Merthyr Tydfil": 300, "Merton": 40, "Middlesbrough": 100,
     "Milton Keynes": 500, "Monmouthshire": 2200, "Neath Port Talbot": 800,
     "Newcastle upon Tyne": 200, "Newham": 15, "Newport": 400, "Norfolk": 3700,
-    "North East Lincolnshire": 500, "North Lincolnshire": 900,
+    "North East Lincolnshire": 200,  # stated: approximately 200 kilometres
+    "North Lincolnshire": 900,
     "North Northamptonshire": 1600, "North Somerset": 800, "North Tyneside": 150,
     "North Yorkshire": 6100, "Northumberland": 4000, "Nottingham": 100,
     "Nottinghamshire": 3200, "Oldham": 600, "Oxfordshire": 4000,
