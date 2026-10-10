@@ -108,6 +108,7 @@ DONE = {
     "South Gloucestershire": "https://beta.southglos.gov.uk/public-rights-of-way/",
     "South Tyneside": "https://www.southtyneside.gov.uk/article/12906/Report-a-problem-with-a-path-public-right-of-way",
     "Southend-on-Sea": "https://www.southend.gov.uk/xfp/form/223",
+    "St Helens": "https://www.sthelens.gov.uk/article/2283/Roads-and-footpaths",
     "Staffordshire": "https://prow.staffordshire.gov.uk/standardmap.aspx",
     "Stockport": "https://www.stockport.gov.uk/public-rights-of-way-map",
     "Stockton-on-Tees": "https://www.stockton.gov.uk/article/6231/Public-rights-of-way",
@@ -216,6 +217,7 @@ DESC = {
     "Sheffield": "Rights-of-way page — email or general enquiry form",
     "Solihull": "Rights-of-way page — links to the report form",
     "South Gloucestershire": "Rights-of-way page — email and phone",
+    "St Helens": "Roads and footpaths report form — doesn’t say whether it covers rights of way",
     "Staffordshire": "Interactive rights-of-way map — sign-in needed to report",
     "Stockport": "Rights-of-way map — find the path number, then get in touch",
     "Stockton-on-Tees": "Rights-of-way page — email",
@@ -314,7 +316,7 @@ CHECKED = {
     # October 2026
     "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
-    "Bournemouth, Christchurch and Poole": "2026-10-10",
+    "Bournemouth, Christchurch and Poole": "2026-10-10", "St Helens": "2026-10-10",
     "North East Lincolnshire": "2026-10-10", "Telford and Wrekin": "2026-10-10",
     "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
@@ -326,6 +328,7 @@ DEFAULT_DESC = "Rights-of-way report form"
 # are best guesses — the descriptor says why, and a note under the row says
 # plainly that we're unsure it's the best route.
 UNCLEAR = {
+    "St Helens",
     "Vale of Glamorgan",
 }
 
@@ -459,7 +462,9 @@ PROW_KM = {
     "Sefton": 300, "Sheffield": 1000, "Shropshire": 5600, "Slough": 60,
     "Solihull": 500, "Somerset": 6000, "South Gloucestershire": 1000,
     "South Tyneside": 150, "Southampton": 50, "Southend-on-Sea": 50,
-    "Southwark": 20, "St Helens": 300, "Staffordshire": 4000, "Stockport": 500,
+    "Southwark": 20, "Staffordshire": 4000,
+    "St Helens": 160,  # stated: in excess of 100 miles (160 km)
+    "Stockport": 500,
     "Stockton-on-Tees": 400, "Stoke-on-Trent": 200, "Suffolk": 5600,
     "Sunderland": 300, "Surrey": 3400, "Sutton": 60, "Swansea": 1000,
     "Swindon": 400, "Tameside": 400, "Telford and Wrekin": 500, "Thurrock": 300,
