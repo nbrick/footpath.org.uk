@@ -117,6 +117,7 @@ DONE = {
     "Swansea": "https://www.swansea.gov.uk/rightofwayproblem",
     "Swindon": "https://www.swindon.gov.uk/info/20031/roads_parking_and_transport/570/public_rights_of_way",
     "Tameside": "https://www.tameside.gov.uk/rightsofway",
+    "Telford and Wrekin": "https://webforms.telford.gov.uk/form/305",
     "Thurrock": "https://highwayreport.thurrock.gov.uk/",
     "Torbay": "https://www.torbay.gov.uk/leisure-sports-and-community/parks/prow/",
     "Torfaen": "https://www.torfaen.gov.uk/lgsl/en/Countryside/Publicrightsofway-general/Rights-of-Way.aspx",
@@ -220,6 +221,7 @@ DESC = {
     "Sunderland": "Rights-of-way page — email and phone",
     "Swindon": "Rights-of-way page — email",
     "Tameside": "Rights-of-way page — links to the report form",
+    "Telford and Wrekin": "Rights-of-way enquiry form — choose “Obstructed Public Rights of Way access”",
     "Thurrock": "Highway report map — covers rights of way",
     "Torbay": "Rights-of-way page — links to the report form",
     "Torfaen": "Rights-of-way page — Access Team phone, no report form",
@@ -310,7 +312,7 @@ CHECKED = {
     # October 2026
     "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
-    "North East Lincolnshire": "2026-10-10",
+    "North East Lincolnshire": "2026-10-10", "Telford and Wrekin": "2026-10-10",
     "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
 DEFAULT_DESC = "Rights-of-way report form"
