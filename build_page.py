@@ -16,6 +16,7 @@ DONE = {
     "Blackburn with Darwen": "https://www.blackburn.gov.uk/transport-and-travel/public-rights-way",
     "Bolton": "https://www.bolton.gov.uk/walking-cycling-rights-way/public-right-way",
     "Bracknell Forest": "https://www.bracknell-forest.gov.uk/parks-and-countryside/make-general-parks-and-countryside-enquiry",
+    "Bradford": "https://www.bradford.gov.uk/environment/countryside-and-rights-of-way/public-rights-of-way-in-bradford-map-of-paths/",
     "Brighton and Hove": "https://www.brighton-hove.gov.uk/report-problem-public-right-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
     "Bury": "https://www.bury.gov.uk/index.aspx?articleid=11283",
@@ -123,6 +124,7 @@ DONE = {
     "Warrington": "https://www.warrington.gov.uk/public-rights-way",
     "Warwickshire": "https://rightsofway.warwickshire.gov.uk/",
     "West Berkshire": "https://www.westberks.gov.uk/prowmaintenance",
+    "West Northamptonshire": "https://westnorthants.gov.uk/roads-and-paths-maintenance/report-potholes-or-highway-problem",
     "West Sussex": "https://www.westsussex.gov.uk/land-waste-and-housing/public-paths-and-the-countryside/public-rights-of-way/report-a-problem-with-a-right-of-way/",
     "Westmorland and Furness": "https://www.westmorlandandfurness.gov.uk/parks-culture-and-leisure/countryside-access-and-rights-way",
     "Wigan": "https://www.wigan.gov.uk/Resident/Parking-Roads-Travel/Public-rights-of-way/Report-a-problem.aspx",
@@ -142,6 +144,7 @@ DESC = {
     "Blackburn with Darwen": "Rights-of-way page — links to the report form",
     "Bolton": "Rights-of-way page — email and phone",
     "Bracknell Forest": "Parks and countryside enquiry — covers rights of way",
+    "Bradford": "Rights-of-way page — email",
     "Bury": "Rights-of-way page — links to the report form",
     "Caerphilly": "Report page — form, or phone if it&rsquo;s urgent",
     "Calderdale": "Rights-of-way page — email or contact form",
@@ -218,6 +221,7 @@ DESC = {
     "Warrington": "Rights-of-way page — links to the report form",
     "Warwickshire": "Interactive rights-of-way map — report via “New issue”",
     "West Berkshire": "Rights-of-way page — links to the report form",
+    "West Northamptonshire": "Highways report page — covers rights of way",
     "Westmorland and Furness": "Rights-of-way page — links to the report form",
     "Windsor and Maidenhead": "Rights-of-way page — links to the report form",
     "Wirral": "Report form — account optional",
@@ -293,6 +297,8 @@ CHECKED = {
     "Windsor and Maidenhead": "2026-07-26", "Wirral": "2026-07-26",
     "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
     "Wrexham": "2026-07-26", "York": "2026-07-26",
+    # October 2026
+    "Bradford": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
