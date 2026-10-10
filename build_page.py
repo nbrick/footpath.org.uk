@@ -120,6 +120,7 @@ DONE = {
     "Torfaen": "https://www.torfaen.gov.uk/lgsl/en/Countryside/Publicrightsofway-general/Rights-of-Way.aspx",
     "Tower Hamlets": "https://www.towerhamlets.gov.uk/lgnl/transport_and_streets/roads,_highways_and_pavements/obstructions-to-roads.aspx",
     "Trafford": "https://www.trafford.gov.uk/streets-roads-and-transport/roads-highways-and-pavements/public-rights-way-prow/about-public-rights-way-prow",
+    "Vale of Glamorgan": "https://www.valeofglamorgan.gov.uk/en/living/do_it_online/Report.aspx",
     "Wakefield": "https://myaccount.wakefield.gov.uk/forms/footpaths-and-bridleways/",
     "Walsall": "https://go.walsall.gov.uk/roads-parking-and-travel/public-rights-of-way-prow",
     "Wandsworth": "https://www.wandsworth.gov.uk/roads-and-transport/report-a-street-problem/",
@@ -149,7 +150,7 @@ DESC = {
     "Bradford": "Rights-of-way team email — no report form",
     "Bridgend": "Interactive rights-of-way map — sign-in needed to report",
     "Bury": "Rights-of-way page — links to the report form",
-    "Caerphilly": "Report page — form, or phone if it&rsquo;s urgent",
+    "Caerphilly": "Report page — form, or phone if it’s urgent",
     "Calderdale": "Rights-of-way page — email or contact form",
     "Cambridgeshire": "Rights-of-way page — links to the report form",
     "Carmarthenshire": "Rights-of-way contact page — report form or email",
@@ -220,6 +221,7 @@ DESC = {
     "Torfaen": "Rights-of-way page — Access Team phone, no report form",
     "Tower Hamlets": "Highway obstruction report — no rights-of-way form published",
     "Trafford": "Rights-of-way page",
+    "Vale of Glamorgan": "No rights-of-way option; “Obstruction to roads” mentions footpaths",
     "Walsall": "Rights-of-way page — email and phone",
     "Wandsworth": "Street problem form — choose “Highway obstructions”",
     "Warrington": "Rights-of-way page — links to the report form",
@@ -303,9 +305,18 @@ CHECKED = {
     "Wrexham": "2026-07-26", "York": "2026-07-26",
     # October 2026
     "Bradford": "2026-10-10", "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
+    "Vale of Glamorgan": "2026-10-10",
     "West Northamptonshire": "2026-10-10",
 }
 DEFAULT_DESC = "Rights-of-way report form"
+
+# Linked, but we can't vouch that the destination reaches whoever deals with
+# rights of way. Distinct from "no form" rows like Bradford or Torfaen, where the
+# contact is plainly the rights-of-way team and only the format is limited. These
+# are best guesses — the descriptor says why, and the row says it's a guess.
+UNCLEAR = {
+    "Vale of Glamorgan",
+}
 
 # Extra filter keywords for authorities people search by another name.
 ALIASES = {
@@ -793,12 +804,13 @@ for name in authorities:
     if name in DONE:
         url = esc(DONE[name])
         desc = esc(DESC.get(name, DEFAULT_DESC))
+        unclear = name in UNCLEAR
         rows.append(
-            f'''    <li class="done">
+            f'''    <li class="done{' unclear' if unclear else ''}">
       <a class="row" href="{url}" target="_blank" rel="noopener noreferrer" data-name="{hay}">
         <span class="name">{disp}</span>
         <span class="meta"><span class="tag">{nation}</span><span class="desc">{desc}</span></span>
-        <span class="go">Report a problem &rarr;</span>
+        <span class="go">{'Best guess' if unclear else 'Report a problem'} &rarr;</span>
       </a>{park_notes(name)}
     </li>''')
     else:
@@ -959,6 +971,9 @@ HTML = f'''<!DOCTYPE html>
   }}
   a.row:hover .name {{ text-decoration: underline; text-decoration-color: var(--rowmaps); text-decoration-thickness: 2px; }}
   a.row:hover .go {{ transform: translateX(3px); color: var(--rowmaps-dk); }}
+  /* best-guess rows: still a link, but the call to action steps back */
+  li.unclear .go {{ color: var(--ink-soft); font-weight: 500; }}
+  li.unclear a.row:hover .go {{ color: var(--ink); }}
 
   .name {{ font-weight: 600; font-size: 1.08rem; letter-spacing: -0.01em; }}
   /* flex so a descriptor wrapping to a second line lines up with the first,
