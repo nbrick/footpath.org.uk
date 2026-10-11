@@ -10,6 +10,7 @@ OUT_DIR = Path(__file__).resolve().parent
 
 # --- Authorities we have a verified reporting link for -----------------------
 DONE = {
+    "Barnet": "https://www.barnet.gov.uk/roads-and-pavements/transport-and-around-barnet/public-rights-way/about-public-rights-way",
     "Barnsley": "https://www.barnsley.gov.uk/services/parks-and-open-spaces/public-footpaths-and-rights-of-way/using-a-public-right-of-way/",
     "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
     "Bedford": "https://www.bedford.gov.uk/parking-roads-and-travel/public-rights-way/public-rights-way-overview",
@@ -154,6 +155,7 @@ DONE = {
 
 # Short descriptor of where a verified link lands. Default = dedicated RoW form.
 DESC = {
+    "Barnet": "Rights-of-way page — “Report a problem” at the bottom leads to the highways portal",
     "Barnsley": "Rights-of-way page — links to the report form",
     "Bedford": "Rights-of-way page — links to the report form",
     "Birmingham": "Highway obstruction report — doesn’t mention rights of way",
@@ -326,6 +328,7 @@ CHECKED = {
     "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
     "Wrexham": "2026-07-26", "York": "2026-07-26",
     # October 2026
+    "Barnet": "2026-10-11",
     "Birmingham": "2026-10-11", "Blaenau Gwent": "2026-10-10",
     "Bournemouth, Christchurch and Poole": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Bromley": "2026-10-10",
