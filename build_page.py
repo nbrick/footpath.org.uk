@@ -56,6 +56,7 @@ DONE = {
     "Gloucestershire": "https://www.gloucestershire.gov.uk/prow/report-a-problem/",
     "Gwynedd": "https://www.gwynedd.llyw.cymru/en/Residents/Parking-roads-and-travel/Public-Rights-of-Way/Public-Rights-of-Way.aspx",
     "Hackney": "https://hackney.gov.uk/highway-obstructions/",
+    "Halton": "https://www.halton.gov.uk/report-it-and-contact-us/report-road-issues-and-street-lights",
     "Hampshire": "https://www.hants.gov.uk/landplanningandenvironment/rightsofway/reportaproblem",
     "Hartlepool": "https://online.hartlepool.gov.uk/service/Online___enquiry_form?serviceHbc=Countryside%20access",
     "Havering": "https://www.havering.gov.uk/planning-3/public-rights-way",
@@ -187,6 +188,7 @@ DESC = {
     "Gateshead": "Rights-of-way page",
     "Gwynedd": "Rights-of-way page — links to the report form",
     "Hackney": "Highway obstruction report — no rights-of-way form published",
+    "Halton": "Highways email — doesn’t mention rights of way",
     "Hartlepool": "Countryside access enquiry form",
     "Havering": "Rights-of-way page — links to the parks enquiry form",
     "Herefordshire": "Highways report form — covers rights of way",
@@ -324,7 +326,7 @@ CHECKED = {
     "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
     "Bournemouth, Christchurch and Poole": "2026-10-10", "St Helens": "2026-10-10",
-    "Birmingham": "2026-10-11", "Derby": "2026-10-11", "Bromley": "2026-10-10", "Sefton": "2026-10-10",
+    "Birmingham": "2026-10-11", "Derby": "2026-10-11", "Halton": "2026-10-11", "Bromley": "2026-10-10", "Sefton": "2026-10-10",
     "North East Lincolnshire": "2026-10-10", "Telford and Wrekin": "2026-10-10",
     "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
@@ -337,6 +339,7 @@ DEFAULT_DESC = "Rights-of-way report form"
 # plainly that we're unsure it's the best route.
 UNCLEAR = {
     "Birmingham",
+    "Halton",
     "St Helens",
     "Vale of Glamorgan",
 }
