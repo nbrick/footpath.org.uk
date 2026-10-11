@@ -13,6 +13,7 @@ DONE = {
     "Barnsley": "https://www.barnsley.gov.uk/services/parks-and-open-spaces/public-footpaths-and-rights-of-way/using-a-public-right-of-way/",
     "Bath and North East Somerset": "https://www.bathnes.gov.uk/report-problem-public-right-way",
     "Bedford": "https://www.bedford.gov.uk/parking-roads-and-travel/public-rights-way/public-rights-way-overview",
+    "Birmingham": "https://www.birmingham.gov.uk/info/20110/report_road_and_pavement_issues/645/report_a_highway_or_pavement_obstruction",
     "Blackburn with Darwen": "https://www.blackburn.gov.uk/transport-and-travel/public-rights-way",
     "Blaenau Gwent": "https://countryside.blaenau-gwent.gov.uk/how-to-use-this-site-introduction",
     "Bolton": "https://www.bolton.gov.uk/walking-cycling-rights-way/public-right-way",
@@ -151,6 +152,7 @@ DONE = {
 DESC = {
     "Barnsley": "Rights-of-way page — links to the report form",
     "Bedford": "Rights-of-way page — links to the report form",
+    "Birmingham": "Highway obstruction report — doesn’t mention rights of way",
     "Blackburn with Darwen": "Rights-of-way page — links to the report form",
     "Blaenau Gwent": "Rights-of-way map site — public reporting, or team email and phone",
     "Bolton": "Rights-of-way page — email and phone",
@@ -320,7 +322,7 @@ CHECKED = {
     "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
     "Bournemouth, Christchurch and Poole": "2026-10-10", "St Helens": "2026-10-10",
-    "Bromley": "2026-10-10", "Sefton": "2026-10-10",
+    "Birmingham": "2026-10-11", "Bromley": "2026-10-10", "Sefton": "2026-10-10",
     "North East Lincolnshire": "2026-10-10", "Telford and Wrekin": "2026-10-10",
     "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
 }
@@ -332,6 +334,7 @@ DEFAULT_DESC = "Rights-of-way report form"
 # are best guesses — the descriptor says why, and a note under the row says
 # plainly that we're unsure it's the best route.
 UNCLEAR = {
+    "Birmingham",
     "St Helens",
     "Vale of Glamorgan",
 }
