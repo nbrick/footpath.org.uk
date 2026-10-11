@@ -454,7 +454,6 @@ PROW_KM = {
     "Bolton": 500, "Bournemouth, Christchurch and Poole": 300,
     "Bracknell Forest": 200, "Bradford": 1200, "Brent": 30, "Bridgend": 700,
     "Brighton and Hove": 200, "Bristol": 178,  # stated: 111 miles, or 178 kilometres
-   
     "Bromley": 195,  # stated: more than 120 miles
     "Buckinghamshire": 3200, "Bury": 400, "Caerphilly": 800, "Calderdale": 1000,
     "Cambridgeshire": 3200, "Camden": 15, "Cardiff": 400, "Carmarthenshire": 4000,
