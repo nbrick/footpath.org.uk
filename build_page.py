@@ -23,6 +23,7 @@ DONE = {
     "Bradford": "https://www.bradford.gov.uk/environment/countryside-and-rights-of-way/public-rights-of-way-in-bradford-map-of-paths/",
     "Bridgend": "https://rightsofway.bridgend.gov.uk/how-to-use-this-site-introduction",
     "Brighton and Hove": "https://www.brighton-hove.gov.uk/report-problem-public-right-way",
+    "Bristol": "https://www.bristol.gov.uk/residents/streets-travel/highways/public-rights-of-way/public-rights-of-way-service",
     "Bromley": "https://www.bromley.gov.uk/transport-streets/rights-way",
     "Buckinghamshire": "https://www.buckinghamshire.gov.uk/environment/countryside-and-public-rights-of-way/public-rights-of-way/report-an-issue-with-a-public-footpath-bridleway-or-byway/",
     "Bury": "https://www.bury.gov.uk/index.aspx?articleid=11283",
@@ -166,6 +167,7 @@ DESC = {
     "Bracknell Forest": "Parks and countryside enquiry — covers rights of way",
     "Bradford": "Rights-of-way team email — no report form",
     "Bridgend": "Interactive rights-of-way map — sign-in needed to report",
+    "Bristol": "Rights-of-way page — no report form; email the rights-of-way team",
     "Bromley": "Rights-of-way page — enter a postcode to report a problem",
     "Bury": "Rights-of-way page — links to the report form",
     "Caerphilly": "Report page — form, or phone if it’s urgent",
@@ -328,7 +330,7 @@ CHECKED = {
     "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
     "Wrexham": "2026-07-26", "York": "2026-07-26",
     # October 2026
-    "Barnet": "2026-10-11",
+    "Barnet": "2026-10-11", "Bristol": "2026-10-11",
     "Birmingham": "2026-10-11", "Blaenau Gwent": "2026-10-10",
     "Bournemouth, Christchurch and Poole": "2026-10-10", "Bradford": "2026-10-10",
     "Bridgend": "2026-10-10", "Bromley": "2026-10-10",
@@ -341,13 +343,17 @@ CHECKED = {
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
-# Linked, but we can't vouch that the destination reaches whoever deals with
-# rights of way. Distinct from "no form" rows like Bradford or Torfaen, where the
-# contact is plainly the rights-of-way team and only the format is limited. These
-# are best guesses — the descriptor says why, and a note under the row says
-# plainly that we're unsure it's the best route.
+# Linked, but we can't vouch that this is how the council wants problems
+# reported — usually because the destination is a general highways route that
+# never mentions rights of way, sometimes (Bristol) because the council gives
+# its rights-of-way team's contact only for other purposes. Distinct from "no
+# form" rows like Bradford or Torfaen, where the council plainly points problem
+# reports at the team and only the format is limited. These are best guesses —
+# the descriptor says why, and a note under the row says plainly that we're
+# unsure it's the best route.
 UNCLEAR = {
     "Birmingham",
+    "Bristol",
     "Halton",
     "St Helens",
     "Vale of Glamorgan",
@@ -447,7 +453,8 @@ PROW_KM = {
     "Blaenau Gwent": 300,  # stated: over 300 kilometres
     "Bolton": 500, "Bournemouth, Christchurch and Poole": 300,
     "Bracknell Forest": 200, "Bradford": 1200, "Brent": 30, "Bridgend": 700,
-    "Brighton and Hove": 200, "Bristol": 100,
+    "Brighton and Hove": 200, "Bristol": 178,  # stated: 111 miles, or 178 kilometres
+   
     "Bromley": 195,  # stated: more than 120 miles
     "Buckinghamshire": 3200, "Bury": 400, "Caerphilly": 800, "Calderdale": 1000,
     "Cambridgeshire": 3200, "Camden": 15, "Cardiff": 400, "Carmarthenshire": 4000,
