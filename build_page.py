@@ -145,6 +145,7 @@ DONE = {
     "Windsor and Maidenhead": "https://www.rbwm.gov.uk/transport-and-streets/rights-way",
     "Wirral": "https://my.wirral.gov.uk/service/Public_Right_of_Way_problem",
     "Wokingham": "https://www.wokingham.gov.uk/roads/report/report-problems-public-rights-way",
+    "Wolverhampton": "https://www.wolverhampton.gov.uk/report-obstruction-rights-way",
     "Worcestershire": "https://capublic.worcestershire.gov.uk/PROWPublic/PROWFault.aspx",
     "Wrexham": "https://www.wrexham.gov.uk/service/public-rights-way",
     "York": "https://www.york.gov.uk/ReportPROWProblem",
@@ -323,12 +324,14 @@ CHECKED = {
     "Wokingham": "2026-07-26", "Worcestershire": "2026-07-26",
     "Wrexham": "2026-07-26", "York": "2026-07-26",
     # October 2026
-    "Blaenau Gwent": "2026-10-10", "Bradford": "2026-10-10",
-    "Bridgend": "2026-10-10", "Torfaen": "2026-10-10",
-    "Bournemouth, Christchurch and Poole": "2026-10-10", "St Helens": "2026-10-10",
-    "Birmingham": "2026-10-11", "Derby": "2026-10-11", "Halton": "2026-10-11", "Bromley": "2026-10-10", "Sefton": "2026-10-10",
-    "North East Lincolnshire": "2026-10-10", "Telford and Wrekin": "2026-10-10",
-    "Vale of Glamorgan": "2026-10-10", "West Northamptonshire": "2026-10-10",
+    "Birmingham": "2026-10-11", "Blaenau Gwent": "2026-10-10",
+    "Bournemouth, Christchurch and Poole": "2026-10-10", "Bradford": "2026-10-10",
+    "Bridgend": "2026-10-10", "Bromley": "2026-10-10",
+    "Derby": "2026-10-11", "Halton": "2026-10-11",
+    "North East Lincolnshire": "2026-10-10", "Sefton": "2026-10-10",
+    "St Helens": "2026-10-10", "Telford and Wrekin": "2026-10-10",
+    "Torfaen": "2026-10-10", "Vale of Glamorgan": "2026-10-10",
+    "West Northamptonshire": "2026-10-10", "Wolverhampton": "2026-10-11",
 }
 DEFAULT_DESC = "Rights-of-way report form"
 
